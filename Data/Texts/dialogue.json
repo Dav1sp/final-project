@@ -1,0 +1,49 @@
+{
+  "scene_intro": {
+    "Lumia": [
+      {
+        "PT": "Oi, me chamo Nacar, sou seu novo colega de trabalho. Qual seu nome?",
+        "EN": "Hi, I'm Nacar, your new coworker. What is your name?",
+        "input": true,
+        "input_name": "character_name"
+      },
+      {
+        "PT": "Prazer em conhecê-lo, %s.",
+        "EN": "Nice to meet you, %s.",
+        "input": false,
+        "receive_input": true,
+        "receive_input_order": ["character_name"]
+      },
+      {
+        "PT": "Nossa próxima missão vai ser na Ria Formosa, em Portugal. Eu vou cuidar do seu transporte.",
+        "EN": "Our next mission will be in Ria Formosa, Portugal. I will handle your transport.",
+        "input": false
+      },
+      {
+        "PT": "Então, sobre a nossa missão:",
+        "EN": "So, about our mission:",
+        "input": false
+      },
+      {
+        "PT": "Alguns peixes estão tendo desentendimentos socioambientais lá, então você precisa ir para compreender melhor essa situação.",
+        "EN": "Some fish are having socio-environmental disagreements there, so you need to go and understand the situation better.",
+        "input": false
+      },
+      {
+        "PT": "Depois disso, você conta pra mim e pro resto da equipe o que descobriu e juntos a gente decide o que fazer sobre.",
+        "EN": "After that, report back to me and the team on what you found, and together we will decide what to do.",
+        "input": false
+      },
+      {
+        "PT": "É isso, tá na hora de ir, te vejo na hora de voltar.",
+        "EN": "That's it, time to go. See you when you get back.",
+        "input": false
+      },
+      {
+        "PT": "Até mais.",
+        "EN": "See you later.",
+        "input": false
+      }
+    ]
+  }
+}
