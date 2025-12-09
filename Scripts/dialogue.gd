@@ -12,7 +12,7 @@ const CHAR_READ_RATE = 0.05
 @onready var input_val = $disable_input/insertInput
 
 var player_data = {}
-var current_language = "EN"
+var current_language = "ME"
 
 var is_waiting_for_space = false
 var is_waiting_for_input = false
@@ -23,7 +23,7 @@ const DIALOGUE_FILE = preload("res://Data/dialogue.json")
 func _ready():
 	hide_textbox()
 	var dialogue_data = DIALOGUE_FILE.data
-	start_dialogue(dialogue_data['scene_intro']['Nacar'])
+	start_dialogue(dialogue_data['scene_intro']['Nacar'],current_language)
 	print(dialogue_data['scene_intro']['Nacar'])
 
 
@@ -64,14 +64,14 @@ func add_text(next_text,person):
 	show_textbox()
 
 
-func start_dialogue(dialogue_array: Array):
+func start_dialogue(dialogue_array: Array,language):
 	show_textbox()
 	
 	# Loop through every line in the array one by one
 	for line_data in dialogue_array:
 		
 		# A. PREPARE THE TEXT
-		var text_to_show = line_data.get(current_language, "...")
+		var text_to_show = line_data.get(language, "...")
 		
 		# Check if we need to swap %s for a variable (like "Hugo")
 		if line_data.has("receive_input") and line_data["receive_input"]:

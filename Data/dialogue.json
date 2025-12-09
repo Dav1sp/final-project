@@ -4,38 +4,62 @@
 	  {
 		"PT": "Oi, me chamo Nacar, sou seu novo colega de trabalho. Qual seu nome?",
 		"EN": "Hi, I'm Nacar, your new coworker. What is your name?",
+		"JP": "こんにちは、私はNacarです。あなたの新しい同僚です。お名前は何ですか？",
+		"IT": "Ciao, mi chiamo Nacar, sono il tuo nuovo collega. Come ti chiami?",
+		"ME": "Zdravo, zovem se Nacar, tvoj sam novi kolega. Kako se zoveš?",
 		"input": true,
 		"input_name": "character_name"
 	  },
 	  {
 		"PT": "Prazer em conhecê-lo, %s.",
 		"EN": "Nice to meet you, %s.",
+		"JP": "はじめまして、%s。",
+		"IT": "Piacere di conoscerti, %s.",
+		"ME": "Drago mi je da te upoznam, %s.",
 		"receive_input": true,
 		"receive_input_order": ["character_name"]
 	  },
 	  {
 		"PT": "Nossa próxima missão vai ser na Ria Formosa, em Portugal. Eu vou cuidar do seu transporte.",
 		"EN": "Our next mission will be in Ria Formosa, Portugal. I will handle your transport.",
+		"JP": "次のミッションはポルトガルのリア・フォルモーサで行います。あなたの移動は私が手配します。",
+		"IT": "La nostra prossima missione sarà nella Ria Formosa, in Portogallo. Mi occuperò del tuo trasporto.",
+		"ME": "Naša naredna misija biće u Ria Formosa, Portugal. Ja ću se pobrinuti za tvoj transport."
 	  },
 	  {
 		"PT": "Então, sobre a nossa missão:",
 		"EN": "So, about our mission:",
+		"JP": "それでは、ミッションについてですが：",
+		"IT": "Allora, riguardo alla nostra missione:",
+		"ME": "Dakle, o našoj misiji:"
 	  },
 	  {
 		"PT": "Alguns peixes estão tendo desentendimentos socioambientais lá, então você precisa ir para compreender melhor essa situação.",
 		"EN": "Some fish are having socio-environmental disagreements there, so you need to go and understand the situation better.",
+		"JP": "そこでは魚たちが社会環境的なトラブルに巻き込まれています。状況をよりよく理解するために現地に行く必要があります。",
+		"IT": "Alcuni pesci stanno avendo disaccordi socio-ambientali lì, quindi devi andare per capire meglio la situazione.",
+		"ME": "Neki ribe imaju socio-ekološke nesuglasice tamo, pa trebaš otići da bolje razumiješ situaciju."
 	  },
 	  {
 		"PT": "Depois disso, você conta pra mim e pro resto da equipe o que descobriu e juntos a gente decide o que fazer sobre.",
 		"EN": "After that, report back to me and the team on what you found, and together we will decide what to do.",
+		"JP": "その後、発見したことを私とチームに報告してください。そして一緒にどう対応するか決めましょう。",
+		"IT": "Dopo di ciò, riferisci a me e al resto del team ciò che hai scoperto e insieme decideremo cosa fare.",
+		"ME": "Nakon toga, javi meni i ostatku tima šta si otkrio i zajedno ćemo odlučiti šta dalje."
 	  },
 	  {
 		"PT": "É isso, tá na hora de ir, te vejo na hora de voltar.",
 		"EN": "That's it, time to go. See you when you get back.",
+		"JP": "以上です。出発の時間です。戻ったら会いましょう。",
+		"IT": "Ecco fatto, è ora di andare. Ci vediamo al tuo ritorno.",
+		"ME": "To je to, vrijeme je da ideš. Vidimo se kad se vratiš."
 	  },
 	  {
 		"PT": "Até mais.",
 		"EN": "See you later.",
+		"JP": "それでは、また。",
+		"IT": "A presto.",
+		"ME": "Vidimo se kasnije."
 	  }
 	]
   }

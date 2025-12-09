@@ -16,6 +16,10 @@ script = ExtResource("1_nxchv")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="Ameijoa2" parent="Sprit" instance=ExtResource("1_ell0l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9203578, 0, 4.023012e-08)
+
+[node name="ameijoaup" parent="Sprit/Ameijoa2" index="1"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.61, 0, 0, 0, 1.12, 0, 0, 0)
 
 [node name="Camera" type="Node3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)

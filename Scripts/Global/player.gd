@@ -13,6 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var camera_pivot = $Camera
 var cam_initial_rot
+@onready var animation = $Sprit/Ameijoa2/AnimationPlayer
 
 func _ready():
 	cam_initial_rot = camera_pivot.rotation 
@@ -58,4 +59,5 @@ func _physics_process(delta):
 	
 
 func run_animation():
+	animation.play("open")
 	return

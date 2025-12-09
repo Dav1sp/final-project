@@ -9,7 +9,6 @@
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.78788173, -0.5333215, 0.30791327, 2.7805946e-08, 0.49999994, 0.86602545, -0.61582655, 0.68232566, -0.3939408, 0, 17.564447, -1.3424759)
-shadow_enabled = true
 
 [node name="Map" parent="." instance=ExtResource("1_0xm2m")]
 
