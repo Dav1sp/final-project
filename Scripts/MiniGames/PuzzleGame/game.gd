@@ -8,13 +8,13 @@ const UI_HEIGHT: int = 90
 @export var shuffle_limit: int = 20
 @export var image_path: String = "res://Assets/PuzzleGame/velika.png"
 @export var grey_tile_path: String = "res://Assets/PuzzleGame/greytile.png"
-
 var tiles: Array[Node2D] = []
 var solved_names: Array[String] = []
 
 var mouse_event: InputEventMouseButton = null
 
 var tile_scene: PackedScene = preload("res://Scenes/MiniGames/PuzzleGame/tile.tscn")
+@onready var image = $TextureRect
 
 var tile_h: int = 0
 var offset: int = 0
@@ -33,7 +33,7 @@ var board_h: int = 0
 @onready var ui_root: Control = $CanvasLayer/UI
 @onready var moves_label: Label = $CanvasLayer/UI/MovementsLabel
 @onready var win_label: Label = $CanvasLayer/UI/WinLabel
-
+signal space_confirmado
 
 func _ready() -> void:
 	ui_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -44,6 +44,7 @@ func _ready() -> void:
 
 
 func start_game() -> void:
+	self.image.texture = load(image_path)
 	for n: Node2D in tiles:
 		if is_instance_valid(n):
 			n.queue_free()
@@ -194,8 +195,10 @@ func _process(_delta: float) -> void:
 
 		if _current_names() == solved_names and movecounter > 1:
 			full_image.show()
-			win_label.text = "Well done! You solved the puzzle in " + str(movecounter) + " moves."
+			win_label.text = "Well done! You solved the puzzle in " + str(movecounter) + " moves.\nPress SpaceBar to continue"
 			win_label.visible = true
+			await space_confirmado
+			queue_free()
 
 
 func check_neighbours(rows: int, cols: int) -> void:
@@ -271,3 +274,9 @@ func _current_names() -> Array[String]:
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		mouse_event = event as InputEventMouseButton
+		
+func _input(event):
+	# Esta função serve APENAS para disparar o sinal
+	if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
+		# Isto avisa o "await" lá em cima que pode continuar
+		space_confirmado.emit()

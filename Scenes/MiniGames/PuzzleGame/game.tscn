@@ -3,13 +3,17 @@
 [ext_resource type="Script" uid="uid://cy2dap11fkhmr" path="res://Scripts/MiniGames/PuzzleGame/game.gd" id="1_umimx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kiyph"]
-size = Vector2(1000, 1000)
+size = Vector2(1150, 1000)
 
 [node name="Game" type="Area2D"]
+process_priority = 10
+process_physics_priority = 10
+collision_priority = 10.0
+priority = 10
 script = ExtResource("1_umimx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(500, 500)
+position = Vector2(575, 500)
 shape = SubResource("RectangleShape2D_kiyph")
 
 [node name="FullImage" type="Sprite2D" parent="."]
@@ -75,3 +79,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 1, 0.8980392, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 888.0
+offset_top = 20.0
+offset_right = 1130.0
+offset_bottom = 262.0
+size_flags_horizontal = 8
+expand_mode = 1

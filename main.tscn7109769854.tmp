@@ -40,7 +40,6 @@ transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0.835, 0, 0.014)
 collision_layer = 8
 metadata/type_minigame = "slide_puzzle"
 metadata/path = "res://Assets/PuzzleGame/velika.png"
-metadata/game = "\"res://Scenes/MiniGames/PuzzleGame/game.tscn\""
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/landscape/Ameijoa/iteract range"]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
