@@ -14,6 +14,10 @@ config/name="Final Project"
 run/main_scene="uid://bv3gum3en5j8a"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/TweenAnimation/plugin.cfg")

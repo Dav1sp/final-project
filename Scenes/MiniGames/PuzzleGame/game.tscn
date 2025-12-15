@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpunnmwwmlb88"]
+
+[ext_resource type="Script" uid="uid://cy2dap11fkhmr" path="res://Scripts/MiniGames/PuzzleGame/game.gd" id="1_umimx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kiyph"]
+size = Vector2(1000, 1000)
+
+[node name="Game" type="Area2D"]
+script = ExtResource("1_umimx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(500, 500)
+shape = SubResource("RectangleShape2D_kiyph")
+
+[node name="FullImage" type="Sprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(516, 516)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MovementsLabel" type="Label" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.5
+offset_top = -23.0
+offset_right = 54.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Moves:0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinLabel" type="Label" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -72.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0.72033906, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Well done! You solved the puzzle."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="Background" type="ColorRect" parent="BackgroundLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 0.8980392, 1)
