@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 signal player_pressed_space
-signal player_pressed_enter
 const CHAR_READ_RATE = 0.05
 
 @onready var textbox_container = $TextboxContainer
@@ -12,8 +11,7 @@ const CHAR_READ_RATE = 0.05
 @onready var input_val = $disable_input/insertInput
 
 var player_data = {}
-var current_language = "ME"
-
+var current_language = "EN"
 var is_waiting_for_space = false
 var is_waiting_for_input = false
 
@@ -24,7 +22,6 @@ func _ready():
 	hide_textbox()
 	var dialogue_data = DIALOGUE_FILE.data
 	start_dialogue(dialogue_data['scene_intro']['Nacar'],current_language)
-	print(dialogue_data['scene_intro']['Nacar'])
 
 
 func hide_textbox():

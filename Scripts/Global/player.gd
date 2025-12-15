@@ -13,7 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var camera_pivot = $Camera
 var cam_initial_rot
-@onready var animation = $Sprit/Ameijoa2/AnimationPlayer
+@onready var animation = $Sprit/mermaid/AnimationPlayer
 
 func _ready():
 	cam_initial_rot = camera_pivot.rotation 
@@ -52,12 +52,14 @@ func _physics_process(delta):
 		
 	move_and_slide()
 	# Make camera follow position
-	camera_pivot.global_position = global_position
 
 	# Lock camera rotation (keeps whatever you set in editor)
 	camera_pivot.global_rotation = cam_initial_rot
 	
 
 func run_animation():
-	animation.play("open")
+	if velocity.x == 0 and velocity.z == 0:
+		animation.play("Idle")
+	else:
+		animation.play("Walk", 0.0, 1.5)
 	return
