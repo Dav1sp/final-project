@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://iena2uryphwk"]
+
+[ext_resource type="Script" uid="uid://22qmenk0fgsu" path="res://Scripts/MiniGames/BrakeoutGame/paddle.gd" id="1_wvhl5"]
+[ext_resource type="Texture2D" uid="uid://cbkaohe5wvkjs" path="res://Assets/BrakeoutGame/paddle.png" id="2_wnpos"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wvhl5"]
+radius = 13.9999075
+height = 184.03523
+
+[node name="Paddle" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_wvhl5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_wnpos")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wvhl5")
