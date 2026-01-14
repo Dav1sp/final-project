@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://drbhg36djnfnf"]
+
+[ext_resource type="Script" uid="uid://c2t88rrxl4aqd" path="res://Scripts/MiniGames/BrakeoutGame/ball.gd" id="1_v8bk4"]
+[ext_resource type="Texture2D" uid="uid://wiqxcyf3k410" path="res://Assets/BrakeoutGame/ball.png" id="2_x1osi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v8bk4"]
+
+[sub_resource type="Curve" id="Curve_v8bk4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.73837215, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_x1osi"]
+offsets = PackedFloat32Array(0, 0.63013697)
+colors = PackedColorArray(0.50894934, 0.17357996, 0.7540578, 1, 1, 1, 1, 1)
+
+[node name="Ball" type="CharacterBody2D"]
+script = ExtResource("1_v8bk4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_x1osi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v8bk4")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.5529412)
+amount = 1000
+texture = ExtResource("2_x1osi")
+lifetime = 0.4
+emission_shape = 1
+emission_sphere_radius = 10.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.02
+scale_amount_max = 0.02
+scale_amount_curve = SubResource("Curve_v8bk4")
+color_ramp = SubResource("Gradient_x1osi")

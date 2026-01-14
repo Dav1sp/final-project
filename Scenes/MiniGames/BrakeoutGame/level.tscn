@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://d24aw6k8nb2o1"]
+
+[ext_resource type="PackedScene" uid="uid://iena2uryphwk" path="res://Scenes/MiniGames/BrakeoutGame/paddle.tscn" id="1_d8q4e"]
+[ext_resource type="Script" uid="uid://bxap7tuumi5k8" path="res://Scripts/MiniGames/BrakeoutGame/level.gd" id="1_eva6k"]
+[ext_resource type="PackedScene" uid="uid://drbhg36djnfnf" path="res://Scenes/MiniGames/BrakeoutGame/ball.tscn" id="2_blgqk"]
+[ext_resource type="Texture2D" uid="uid://sqhqmthglgph" path="res://Assets/BrakeoutGame/0f0f0378-e0cc-4f27-aa82-be980337a7e4.png" id="4_3k080"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blgqk"]
+size = Vector2(20, 653.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eva6k"]
+size = Vector2(22.5, 647)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3k080"]
+size = Vector2(1171, 23.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uiph6"]
+size = Vector2(1150.5, 25)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_eva6k")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 325)
+
+[node name="Paddle" parent="." instance=ExtResource("1_d8q4e")]
+position = Vector2(585, 594)
+
+[node name="Ball" parent="." instance=ExtResource("2_blgqk")]
+position = Vector2(702, 399)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="Left Wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-9, 323.25)
+shape = SubResource("RectangleShape2D_blgqk")
+
+[node name="Right Wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1162, 323.5)
+shape = SubResource("RectangleShape2D_eva6k")
+
+[node name="Celling" type="CollisionShape2D" parent="Walls"]
+position = Vector2(585, -12)
+shape = SubResource("RectangleShape2D_3k080")
+
+[node name="0f0f0378E0Cc4f27Aa82Be980337a7e4" type="Sprite2D" parent="."]
+modulate = Color(0.121088095, 0.121088095, 0.121088095, 0.9372549)
+z_index = -1
+position = Vector2(575, 325)
+texture = ExtResource("4_3k080")
+
+[node name="Deatzone" type="Area2D" parent="." groups=["Brick"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deatzone"]
+position = Vector2(578, 661)
+shape = SubResource("RectangleShape2D_uiph6")
+
+[connection signal="body_exited" from="Deatzone" to="Ball" method="_on_deatzone_body_exited"]
