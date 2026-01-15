@@ -1,54 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://bv3gum3en5j8a"]
+[gd_scene load_steps=3 format=3 uid="uid://bv3gum3en5j8a"]
 
 [ext_resource type="PackedScene" uid="uid://c8rrtcfyixvq4" path="res://Scenes/Levels/scene_1.tscn" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://xpl5ulvfsfh4" path="res://Assets/Sprites/Ameijoa.blend" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cdfwegc2olax1" path="res://Scenes/Characters/ameijoa_1.tscn" id="2_h2yge"]
-[ext_resource type="Script" uid="uid://b2864lbbyimxk" path="res://Assets/Sprites/ameijoa.gd" id="3_1bvp3"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_lquwl"]
-size = Vector3(1.4584961, 0.98095703, 1.6482086)
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_1bvp3"]
-radius = 2.2890625
 
 [node name="Main" type="Node3D"]
 metadata/_edit_vertical_guides_ = [-84242.0]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.78788173, -0.5333215, 0.30791327, 2.7805946e-08, 0.49999994, 0.86602545, -0.61582655, 0.68232566, -0.3939408, 0, 17.564447, -1.3424759)
-
 [node name="Map" parent="." instance=ExtResource("1_0xm2m")]
 
-[node name="Ameijoa" parent="Map/landscape" index="1" instance=ExtResource("2_1bvp3")]
-transform = Transform3D(-0.699898, 0, -0.011947896, 0, 0.7, 0, 0.011947896, 0, -0.699898, 51.27141, 0.94424874, 1.0259045)
-script = ExtResource("3_1bvp3")
-
-[node name="ameijoaup" parent="Map/landscape/Ameijoa" index="1"]
-transform = Transform3D(0.9999967, -0.0015614876, 0, 0.0025598155, 0.609998, 0, 0, 0, 1.12, 0, 0, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Map/landscape/Ameijoa"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83520126, 0, 0.014257431)
+[node name="StaticBody3D" parent="Map/teste/Landscape_001" index="0"]
 collision_layer = 2
-collision_mask = 7
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/landscape/Ameijoa/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12743378, -0.009521484, -0.03150034)
-shape = SubResource("BoxShape3D_lquwl")
-
-[node name="iteract range" type="Area3D" parent="Map/landscape/Ameijoa"]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0.835, 0, 0.014)
-collision_layer = 8
-metadata/type_minigame = "slide_puzzle"
-metadata/path = "res://Assets/PuzzleGame/velika.png"
-metadata/game = "\"res://Scenes/MiniGames/PuzzleGame/game.tscn\""
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/landscape/Ameijoa/iteract range"]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("CylinderShape3D_1bvp3")
-debug_color = Color(0, 0.62664413, 0.5122134, 0.41960785)
 
 [node name="character" parent="." instance=ExtResource("2_h2yge")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 22.83682, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 22.83682, 0)
 
 [node name="Skeleton3D" parent="character/Sprit/mermaid/Character" index="0"]
 bones/0/position = Vector3(1774.0944, 0.28433183, -347.69543)
@@ -116,11 +80,14 @@ size_flags_horizontal = 2
 size_flags_vertical = 10
 text = "Press E to Speak"
 
-[connection signal="body_entered" from="Map/landscape/Ameijoa/iteract range" to="Map/landscape/Ameijoa" method="_on_iteract_range_body_entered"]
-[connection signal="body_exited" from="Map/landscape/Ameijoa/iteract range" to="Map/landscape/Ameijoa" method="_on_iteract_range_body_exited"]
+[connection signal="body_entered" from="Map/iteract range" to="Map" method="_on_iteract_range_body_entered"]
+[connection signal="body_exited" from="Map/iteract range" to="Map" method="_on_iteract_range_body_exited"]
 
 [editable path="Map"]
-[editable path="Map/landscape"]
-[editable path="Map/landscape/Ameijoa"]
+[editable path="Map/teste"]
+[editable path="Map/Node3D"]
+[editable path="Map/Node3D/alga do amor"]
+[editable path="Map/Node3D2"]
+[editable path="Map/Node3D2/alga do amor"]
 [editable path="character"]
 [editable path="character/Sprit/mermaid"]

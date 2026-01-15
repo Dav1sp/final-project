@@ -2,9 +2,9 @@ extends Node
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @export var animation_name: String = "open"
-@export var min_time := 5.0
-@export var max_time := 15.0
-@onready var iteract = $"../../../text_box"
+@export var min_time := 3.0
+@export var max_time := 6.0
+@onready var iteract = $"../../text_box"
 @onready var iteract_range = $"iteract range"
 
 var player_in_zone := false
@@ -39,6 +39,7 @@ func _play_animation():
 
 
 func _on_iteract_range_body_entered(body: Node3D) -> void:
+	print(body)
 	body.body_enter_the_area(iteract_range)
 	iteract.show()
 

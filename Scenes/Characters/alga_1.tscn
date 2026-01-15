@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://kvlfn8fpmsoa"]
+
+[ext_resource type="PackedScene" uid="uid://4145df6lnutm" path="res://Assets/Sprites/alga do amor.blend" id="1_57vj5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w2dq7"]
+size = Vector3(1.8636475, 3.850525, 4.7993774)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="alga do amor" parent="." instance=ExtResource("1_57vj5")]
+transform = Transform3D(-0.3, 2.6226834e-08, 0, -2.6226834e-08, -0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07720947, 1.5472717, 0.7244568)
+shape = SubResource("BoxShape3D_w2dq7")
+
+[editable path="alga do amor"]

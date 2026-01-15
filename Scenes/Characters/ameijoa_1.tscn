@@ -8,7 +8,7 @@ radius = 0.9296875
 height = 6.446533
 
 [node name="character" type="CharacterBody3D"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 collision_mask = 7
 script = ExtResource("1_nxchv")
 
