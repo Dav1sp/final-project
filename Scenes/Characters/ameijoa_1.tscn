@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdfwegc2olax1"]
+[gd_scene load_steps=5 format=3 uid="uid://cdfwegc2olax1"]
 
-[ext_resource type="Script" uid="uid://cmga7usu71kuu" path="res://Scripts/Global/player.gd" id="1_nxchv"]
+[ext_resource type="Script" uid="uid://dbsxfmvjfv7l4" path="res://Scripts/Global/player.2.0.gd" id="1_nxchv"]
 [ext_resource type="PackedScene" uid="uid://c40fd6f0m2ta8" path="res://Assets/Sprites/mermaid.blend" id="2_nxchv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nxchv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nxchv"]
 radius = 0.9296875
@@ -13,9 +15,9 @@ collision_mask = 7
 script = ExtResource("1_nxchv")
 
 [node name="Sprit" type="Node3D" parent="."]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="mermaid" parent="Sprit" instance=ExtResource("2_nxchv")]
+unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Sprit/mermaid/Character" index="0"]
@@ -67,11 +69,18 @@ bones/23/position = Vector3(-0.0005006396, 11.334772, -0.00017093703)
 bones/23/rotation = Quaternion(0.4670675, -0.15573724, 0.08398534, 0.8663374)
 bones/24/position = Vector3(-0.0003039655, 6.198936, -3.019326e-05)
 
-[node name="Camera" type="Node3D" parent="."]
+[node name="CameraPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 4.352646, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Camera"]
-transform = Transform3D(-1, 1.2820429e-08, 1.453724e-07, 5.164662e-08, 0.9627578, 0.2703653, -1.364922e-07, 0.2703653, -0.9627578, 0, 4.208, -11)
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+transform = Transform3D(-1, -2.1770404e-08, -9.32299e-08, -6.5311234e-08, 0.8671491, 0.49804893, 7.000147e-08, 0.49804893, -0.8671491, 0, 0, 0)
+shape = SubResource("SphereShape3D_nxchv")
+spring_length = 20.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
+unique_name_in_owner = true
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 fov = 45.829117
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

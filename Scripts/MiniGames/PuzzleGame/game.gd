@@ -1,50 +1,68 @@
 extends Area2D
 
-const GRID: int = 4
 const GAP: int = 2
-const MARGIN: int = 20
+const MARGIN: int = 10
 const UI_HEIGHT: int = 90 
 
 @export var shuffle_limit: int = 20
-@export var image_path: String = "res://Assets/PuzzleGame/velika.png"
-@export var grey_tile_path: String = "res://Assets/PuzzleGame/greytile.png"
+@export var image_path: String = "res://Assets/PuzzleGame/thumb__2400_0_0_0_auto.jpg"
+@export var player: CharacterBody3D
+@export var npc: Node3D
+@export var GRID: int = 4
+
+var grey_tile_path = ColorRect.new()
 var tiles: Array[Node2D] = []
 var solved_names: Array[String] = []
 
 var mouse_event: InputEventMouseButton = null
 
 var tile_scene: PackedScene = preload("res://Scenes/MiniGames/PuzzleGame/tile.tscn")
-@onready var image = $TextureRect
+@onready var image_help = $CanvasLayer/ColorRect/TextureRect
+@onready var image_background =$BackgroundLayer/TextureRect
+@onready var swap_sound = $swapSound
 
 var tile_h: int = 0
 var offset: int = 0
 var t: int = 0
 var movecounter: int = 0
 var previous: String = ""
-
+var sound:bool = false
 var board_size: int = 0
 var board_origin: Vector2 = Vector2.ZERO
 var board_w: int = 0
 var board_h: int = 0
-
-@onready var full_image: Sprite2D = $FullImage
+@onready var game_panel: Panel = $Panel
+@onready var full_image: Sprite2D = $Panel/FullImage
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 @onready var ui_root: Control = $CanvasLayer/UI
 @onready var moves_label: Label = $CanvasLayer/UI/MovementsLabel
 @onready var win_label: Label = $CanvasLayer/UI/WinLabel
+@onready var best_label: Label = $CanvasLayer/UI/BestScore
+var sound_timer: SceneTreeTimer
+var sound_ranges = [
+		[0.0, 0.41], 
+		[0.85, 1.15],
+		[1.82, 2.15],
+		[2.72, 3.05],
+		[3.47, 3.90],
+		[4.20, 4.71],
+	]
+	
 signal space_confirmado
 
 func _ready() -> void:
 	ui_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	moves_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	win_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-
+	grey_tile_path.color = Color(2.015, 2.015, 2.015, 0.729) # RGBA: last value = alpha (0.0-1.0)
+	grey_tile_path.size = Vector2(64, 64) 
 	start_game()
 
 
 func start_game() -> void:
-	self.image.texture = load(image_path)
+	self.image_help.texture = load(image_path)
+	self.image_background.texture = load(image_path)
 	for n: Node2D in tiles:
 		if is_instance_valid(n):
 			n.queue_free()
@@ -59,7 +77,9 @@ func start_game() -> void:
 	moves_label.text = "Moves: 0"
 	win_label.visible = false
 	win_label.text = ""
-
+	
+	var panel_size: Vector2 = game_panel.size
+	
 	var vp: Vector2 = get_viewport_rect().size  
 
 	var usable_h: float = vp.y - float(UI_HEIGHT)
@@ -71,13 +91,13 @@ func start_game() -> void:
 	board_w = GRID * offset - GAP
 	board_h = GRID * offset - GAP
 
-	var usable_size: Vector2 = Vector2(vp.x, usable_h)
-	board_origin = (usable_size - Vector2(float(board_w), float(board_h))) / 2.0
+	var center_offset = (panel_size - Vector2(float(board_w), float(board_h))) / 2.0
+	board_origin = game_panel.position + center_offset
 
 	if collision_shape.shape is RectangleShape2D:
 		var rs: RectangleShape2D = collision_shape.shape as RectangleShape2D
-		rs.size = vp
-	collision_shape.position = vp / 2.0
+		rs.size = panel_size
+	collision_shape.position = game_panel.position + (panel_size / 2.0)
 
 	var image: Image = Image.load_from_file(image_path)
 	if image == null:
@@ -94,19 +114,13 @@ func start_game() -> void:
 	image.resize(GRID * tile_h, GRID * tile_h, Image.INTERPOLATE_CUBIC)
 	var texture: ImageTexture = ImageTexture.create_from_image(image)
 
-	var grey_image: Image = Image.load_from_file(grey_tile_path)
-	if grey_image == null:
-		push_error("Ne mogu da učitam grey tile: " + grey_tile_path)
-		return
+	var grey_image = grey_tile_path
 
-	var gw: int = grey_image.get_width()
-	var gh: int = grey_image.get_height()
+	var gw: int = grey_image.size.x
+	var gh: int = grey_image.size.y
 	var gside: int = min(gw, gh)
 	var gx0: int = int((gw - gside) / 2)
 	var gy0: int = int((gh - gside) / 2)
-	grey_image = grey_image.get_region(Rect2i(gx0, gy0, gside, gside))
-
-	grey_image.resize(tile_h, tile_h, Image.INTERPOLATE_CUBIC)
 
 	var grey_texture: ImageTexture = ImageTexture.create_from_image(grey_image)
 
@@ -116,14 +130,13 @@ func start_game() -> void:
 
 	full_image.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 
-	full_image.position = board_origin + Vector2(float(board_w), float(board_h)) / 2.0
+	full_image.position = panel_size / 2.0
 
 	var tex_size: Vector2 = full_image.texture.get_size()
 	if tex_size.x > 0.0 and tex_size.y > 0.0:
 		full_image.scale = Vector2(float(board_w) / tex_size.x, float(board_h) / tex_size.y)
 	else:
 		full_image.scale = Vector2.ONE
-
 	for j: int in range(GRID):
 		for i: int in range(GRID):
 			var region: Rect2i = Rect2i(i * tile_h, j * tile_h, tile_h, tile_h)
@@ -154,6 +167,7 @@ func start_game() -> void:
 	solved_names = _current_names()
 
 	shuffle_tiles()
+	self.sound = true
 	movecounter = 0
 	moves_label.text = "Moves: 0"
 	win_label.visible = false
@@ -243,6 +257,9 @@ func find_empty(position: Vector2, pos: int) -> bool:
 
 	if tiles[new_pos].tilename == "Tile16" and tiles[new_pos].tilename != previous:
 		swap_tiles(pos, new_pos)
+		if sound:
+			var selected = sound_ranges.pick_random()
+			play_sound_segment(selected[0], selected[1])
 		t += 1
 		return true
 
@@ -263,7 +280,23 @@ func swap_tiles(tile_src: int, tile_dst: int) -> void:
 
 	previous = tiles[tile_dst].tilename
 
-
+func play_sound_segment(start_time: float, end_time: float) -> void:
+	# 1. Começa a tocar a partir do segundo X
+	self.swap_sound.play(start_time)
+	
+	# 2. Calcula quanto tempo o som deve durar
+	var duration = end_time - start_time
+	
+	# 3. Cria um timer que espera essa duração
+	# Usamos uma variável para o timer para evitar erros se o som for interrompido
+	sound_timer = get_tree().create_timer(duration)
+	
+	# 4. Espera o tempo acabar
+	await sound_timer.timeout
+	
+	# 5. Pára o som
+	swap_sound.stop()
+	
 func _current_names() -> Array[String]:
 	var arr: Array[String] = []
 	for n: Node2D in tiles:
@@ -276,7 +309,15 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 		mouse_event = event as InputEventMouseButton
 		
 func _input(event):
+	if event.is_action_pressed('ui_cancel'):
+		exit_game()
 	# Esta função serve APENAS para disparar o sinal
 	if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
 		# Isto avisa o "await" lá em cima que pode continuar
 		space_confirmado.emit()
+
+func exit_game():
+	self.player.minigame = false
+	self.npc.iteract.show()
+	queue_free()
+	pass

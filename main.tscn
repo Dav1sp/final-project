@@ -6,62 +6,8 @@
 [node name="Main" type="Node3D"]
 metadata/_edit_vertical_guides_ = [-84242.0]
 
-[node name="Map" parent="." instance=ExtResource("1_0xm2m")]
-
-[node name="StaticBody3D" parent="Map/teste/Landscape_001" index="0"]
-collision_layer = 2
-
 [node name="character" parent="." instance=ExtResource("2_h2yge")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 22.83682, 0)
-
-[node name="Skeleton3D" parent="character/Sprit/mermaid/Character" index="0"]
-bones/0/position = Vector3(1774.0944, 0.28433183, -347.69543)
-bones/0/rotation = Quaternion(-0.70710677, 0, 0, 0.70710677)
-bones/1/position = Vector3(0.00024414063, 33.322266, -0.072198845)
-bones/1/rotation = Quaternion(-0.0010833123, 0, 0, 0.9999994)
-bones/2/position = Vector3(0, 38.876705, -2.9802322e-08)
-bones/2/rotation = Quaternion(-1.1641532e-10, 2.9802543e-08, -3.469447e-18, 1)
-bones/3/position = Vector3(-6.1849505e-08, 44.430626, 1.0234144e-06)
-bones/3/rotation = Quaternion(8.1490725e-10, -2.980254e-08, 4.326776e-17, 1)
-bones/4/position = Vector3(-0.00024414063, 49.984356, -9.611249e-07)
-bones/4/rotation = Quaternion(0.0010833116, -2.797421e-20, -2.9889473e-23, 0.9999994)
-bones/5/position = Vector3(0, 50.91455, 11.125029)
-bones/5/rotation = Quaternion(-9.469047e-11, 1.6270112e-29, -1.2911419e-17, 1)
-bones/6/position = Vector3(0, 147.58307, 32.247723)
-bones/6/rotation = Quaternion(-4.7102766e-22, 1, 0, -7.5497894e-08)
-bones/7/position = Vector3(-25.712402, 42.33011, -0.038468383)
-bones/7/rotation = Quaternion(0.566965, -0.4222998, 0.56781733, 0.4216599)
-bones/8/position = Vector3(7.212162e-06, 53.221905, -8.119852e-05)
-bones/8/rotation = Quaternion(-0.10657888, 0.0004972484, -0.0046376195, 0.99429333)
-bones/9/position = Vector3(6.839633e-06, 33.25426, 0.0004189409)
-bones/9/rotation = Quaternion(-0.04052268, -0.00027961662, 0.0068922816, 0.9991548)
-bones/10/position = Vector3(2.026558e-06, 55.811146, 3.8882834e-05)
-bones/11/position = Vector3(25.712036, 42.330593, 0.0053005554)
-bones/11/rotation = Quaternion(0.567451, 0.4219348, -0.56733334, 0.42202285)
-bones/12/position = Vector3(2.413243e-05, 53.221672, 0.00089342095)
-bones/12/rotation = Quaternion(-0.106592394, -0.00011079917, 0.0010336847, 0.9943023)
-bones/13/position = Vector3(-3.874302e-07, 33.252724, -5.0208764e-05)
-bones/13/rotation = Quaternion(-0.04049831, 5.4110256e-05, -0.0013364602, 0.9991787)
-bones/14/position = Vector3(-1.3373792e-06, 55.809372, 5.1624498e-05)
-bones/15/position = Vector3(-25.045898, -18.60965, -0.32249355)
-bones/15/rotation = Quaternion(-2.5534297e-05, 0.0004119551, 0.9980716, 0.062071428)
-bones/16/position = Vector3(0.0032173386, 119.2422, -1.9268482e-06)
-bones/16/rotation = Quaternion(-0.00072518777, 2.0316076e-05, -0.016333498, 0.99986637)
-bones/17/position = Vector3(-0.006123813, 101.07521, 9.525102e-06)
-bones/17/rotation = Quaternion(0.04400243, 0.9220382, -0.36845255, 0.110236414)
-bones/18/position = Vector3(-0.00056529045, 13.388036, -0.00024938583)
-bones/18/rotation = Quaternion(0.37102646, 0.09719452, -0.039079305, 0.9226947)
-bones/19/position = Vector3(0.00013971329, 6.811898, 0.00010597706)
-bones/20/position = Vector3(25.04602, -18.60965, -0.27788734)
-bones/20/rotation = Quaternion(-3.905449e-06, -5.911419e-05, 0.9980718, -0.062070705)
-bones/20/scale = Vector3(1.0000198, 1.0000001, 1.0000001)
-bones/21/position = Vector3(-0.0027178577, 119.24317, 5.905167e-07)
-bones/21/rotation = Quaternion(-0.015249554, -0.00024735948, 0.016307482, 0.9997507)
-bones/22/position = Vector3(0.0010687959, 101.12307, -3.0994415e-05)
-bones/22/rotation = Quaternion(-0.050578024, 0.94769114, -0.25027177, -0.19153966)
-bones/23/position = Vector3(-0.0007162094, 11.334816, -0.00038671494)
-bones/23/rotation = Quaternion(0.4670673, -0.15573736, 0.08398534, 0.86633736)
-bones/24/position = Vector3(-0.00033807755, 6.19892, -0.00016307831)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -35.49684, 0.94299865, 0)
 
 [node name="text_box" type="CanvasLayer" parent="."]
 visible = false
@@ -80,14 +26,7 @@ size_flags_horizontal = 2
 size_flags_vertical = 10
 text = "Press E to Speak"
 
-[connection signal="body_entered" from="Map/iteract range" to="Map" method="_on_iteract_range_body_entered"]
-[connection signal="body_exited" from="Map/iteract range" to="Map" method="_on_iteract_range_body_exited"]
+[node name="Node3D" parent="." instance=ExtResource("1_0xm2m")]
 
-[editable path="Map"]
-[editable path="Map/teste"]
-[editable path="Map/Node3D"]
-[editable path="Map/Node3D/alga do amor"]
-[editable path="Map/Node3D2"]
-[editable path="Map/Node3D2/alga do amor"]
 [editable path="character"]
 [editable path="character/Sprit/mermaid"]

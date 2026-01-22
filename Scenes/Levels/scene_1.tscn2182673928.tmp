@@ -1,0 +1,139 @@
+[gd_scene load_steps=12 format=3 uid="uid://c8rrtcfyixvq4"]
+
+[ext_resource type="PackedScene" uid="uid://c2ymdx37jqmbo" path="res://Assets/Sprites/teste.blend" id="1_4yla7"]
+[ext_resource type="Script" uid="uid://b36mech0s4nx4" path="res://Scenes/Levels/scene_1.gd" id="1_6jpfq"]
+[ext_resource type="PackedScene" uid="uid://kvlfn8fpmsoa" path="res://Scenes/Characters/alga_1.tscn" id="3_dip06"]
+[ext_resource type="PackedScene" uid="uid://xpl5ulvfsfh4" path="res://Assets/Sprites/Ameijoa.blend" id="4_4w154"]
+[ext_resource type="Script" uid="uid://b2864lbbyimxk" path="res://Assets/Sprites/ameijoa.gd" id="5_sesmc"]
+[ext_resource type="Script" uid="uid://m3v8ih2h7j3" path="res://Scenes/Levels/path_follow_3d.gd" id="6_0841h"]
+[ext_resource type="PackedScene" uid="uid://boa1p0qsmbqes" path="res://Scenes/Characters/gold_fish.tscn" id="6_sesmc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4yla7"]
+size = Vector3(145.27997, 11.892273, 88.999084)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0841h"]
+size = Vector3(1.4584961, 0.98095703, 1.6482086)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jfcky"]
+radius = 2.2890625
+
+[sub_resource type="Curve3D" id="Curve3D_sesmc"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, -20, 0, 0, 0, 0, 0, 24, 0, 0, 0, 0, -3, 0, 0, -18, 0, 0, 8, 0, 0, 0, -31, 0, -18, 0, 0, 0, 0, 0, 0, -31, 0, -54, 0, 0, 0, 0, 0, 0, 0, 0, -54, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_6jpfq")
+
+[node name="teste" parent="." instance=ExtResource("1_4yla7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45985854, 0, -1.7782347)
+
+[node name="Landscape_001" parent="teste" index="0"]
+transform = Transform3D(3.882, 0, 0, 0, 3, 0, 0, 0, 3.882, 0, 0, 0)
+
+[node name="Cube_002" parent="teste" index="1"]
+transform = Transform3D(2, 0, 0, 0, 0.777, 0, 0, 0, 2, 0, -1.1392117, 0)
+
+[node name="iteract range" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0.835, 1.4983642, 0.014)
+collision_layer = 8
+metadata/type_minigame = "slide_puzzle"
+metadata/path = "res://Assets/PuzzleGame/velika.png"
+metadata/game = "\"res://Scenes/MiniGames/PuzzleGame/game.tscn\""
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="iteract range"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 26.820099, 4.446637, -2.5169983)
+shape = SubResource("BoxShape3D_4yla7")
+debug_color = Color(1, 0.5176471, 0.9019608, 1)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.78788173, -0.5333215, 0.30791327, 2.7805946e-08, 0.49999994, 0.86602545, -0.61582655, 0.68232566, -0.3939408, 0, 17.564447, -1.3424759)
+visible = false
+light_color = Color(0.12049707, 0.7023928, 0.84143853, 1)
+light_energy = 2.0
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.4311365, 0.36363065, -0.8257688, -0.53332144, 0.8409114, 0.09184989, 0.72779775, 0.40080038, 0.5564796, -9.780864, 25.184052, 11.171054)
+light_color = Color(0.9782129, 0.9911198, 1, 1)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="alga_2" parent="Node3D" instance=ExtResource("3_dip06")]
+transform = Transform3D(-0.121330544, -0.03471838, -0.08032833, -0.018192919, 0.13729124, -0.037810408, 0.08630133, -0.019868424, -0.12090383, 24.619825, -3.1512892, 0.4291204)
+
+[node name="alga_morta" parent="Node3D/alga_2/alga do amor" index="1"]
+visible = false
+
+[node name="alga_1" parent="Node3D" instance=ExtResource("3_dip06")]
+transform = Transform3D(-0.1213082, -0.036491472, -0.08032869, -0.01823307, 0.14398934, -0.037876405, 0.086324275, -0.0208672, -0.12088293, 24.798409, -3.088146, 0.58756214)
+
+[node name="alga_morta" parent="Node3D/alga_1/alga do amor" index="1"]
+visible = false
+
+[node name="alga_4" parent="Node3D" instance=ExtResource("3_dip06")]
+transform = Transform3D(-0.06076448, -0.028480502, 0.13384762, -0.017138923, 0.1400487, 0.025008105, -0.13606593, -0.0049217353, -0.062923856, 24.321661, -3.1353905, 1.7736237)
+
+[node name="alga_morta" parent="Node3D/alga_4/alga do amor" index="1"]
+visible = false
+
+[node name="alga_3" parent="Node3D" instance=ExtResource("3_dip06")]
+transform = Transform3D(-0.11365536, -0.014067709, 0.09677144, -0.010491366, 0.1423022, 0.0104395505, -0.09732621, 0.0010883656, -0.11413284, 24.619825, -3.0659704, 1.5968088)
+
+[node name="alga_morta" parent="Node3D/alga_3/alga do amor" index="1"]
+visible = false
+
+[node name="StaticBody3D" parent="Node3D/alga_3" index="1"]
+visible = false
+
+[node name="NPCS" type="Node3D" parent="."]
+
+[node name="ostra" parent="NPCS" instance=ExtResource("4_4w154")]
+transform = Transform3D(-0.29995632, 0, -0.005120527, 0, 0.3, 0, 0.005120527, 0, -0.29995632, 24.840061, -3.0451305, 1.0259045)
+script = ExtResource("5_sesmc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NPCS/ostra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83520126, 0, 0.014257431)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCS/ostra/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12743378, -0.009521484, -0.03150034)
+shape = SubResource("BoxShape3D_0841h")
+
+[node name="iteract range" type="Area3D" parent="NPCS/ostra"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0.835, 0, 0.014)
+collision_layer = 8
+metadata/type_minigame = "slide_puzzle"
+metadata/path = "res://Assets/PuzzleGame/velika.png"
+metadata/game = "\"res://Scenes/MiniGames/PuzzleGame/game.tscn\""
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCS/ostra/iteract range"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_jfcky")
+debug_color = Color(0, 0.62664413, 0.5122134, 0.41960785)
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 24.783085, -2.2122848, 3.0541782)
+curve = SubResource("Curve3D_sesmc")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+script = ExtResource("6_0841h")
+
+[node name="Node3D" parent="Path3D/PathFollow3D" instance=ExtResource("6_sesmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[connection signal="body_entered" from="NPCS/ostra/iteract range" to="NPCS/ostra" method="_on_iteract_range_body_entered"]
+[connection signal="body_exited" from="NPCS/ostra/iteract range" to="NPCS/ostra" method="_on_iteract_range_body_exited"]
+
+[editable path="teste"]
+[editable path="Node3D/alga_2"]
+[editable path="Node3D/alga_2/alga do amor"]
+[editable path="Node3D/alga_1"]
+[editable path="Node3D/alga_1/alga do amor"]
+[editable path="Node3D/alga_4"]
+[editable path="Node3D/alga_4/alga do amor"]
+[editable path="Node3D/alga_3"]
+[editable path="Node3D/alga_3/alga do amor"]

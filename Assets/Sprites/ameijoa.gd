@@ -39,11 +39,13 @@ func _play_animation():
 
 
 func _on_iteract_range_body_entered(body: Node3D) -> void:
-	print(body)
-	body.body_enter_the_area(iteract_range)
-	iteract.show()
+	if body is CharacterBody3D:
+		body.body_enter_the_area(iteract_range)
+		iteract.show()
+
 
 
 func _on_iteract_range_body_exited(body: Node3D) -> void:
-	body.body_leave_the_area()
-	iteract.hide()
+	if body is CharacterBody3D:
+		body.body_leave_the_area()
+		iteract.hide()
