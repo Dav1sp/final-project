@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxw58yajadxvg"]
+
+[ext_resource type="Script" uid="uid://bxents1u7gdi7" path="res://Scripts/MiniGames/BrakeoutGame/game_manager.gd" id="1_tatf0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tatf0"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_tatf0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_left = -1.0
+offset_top = 609.0
+offset_right = 1151.0
+offset_bottom = 651.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="CanvasLayer" groups=["Brick"]]
+visible = false
+offset_left = 1013.0
+offset_top = 608.0
+offset_right = 1147.0
+offset_bottom = 650.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 2
+
+[node name="WinLabel" type="Label" parent="CanvasLayer"]
+process_mode = 2
+visible = false
+offset_left = 243.0
+offset_top = 254.0
+offset_right = 880.0
+offset_bottom = 417.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_tatf0")
+text = "CONGRATULATIONS, YOU COMPLETED THE GAME!"
+horizontal_alignment = 1
+vertical_alignment = 1
