@@ -488,6 +488,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_2rc0f")
 text = "QUIT"
 
 [node name="Volume" type="Button" parent="CanvasLayer"]
+visible = false
 offset_left = 67.0
 offset_top = 24.0
 offset_right = 109.0
@@ -521,7 +522,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Mute" type="Button" parent="CanvasLayer"]
-visible = false
 offset_left = 67.0
 offset_top = 24.0
 offset_right = 109.0

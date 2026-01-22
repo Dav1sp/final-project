@@ -71,7 +71,7 @@ bones/24/position = Vector3(-0.0003039655, 6.198936, -3.019326e-05)
 
 [node name="CameraPivot" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 4.352646, 0)
+transform = Transform3D(-4.024549e-08, -0.39024907, 0.9207093, -1.7058333e-08, 0.9207093, 0.39024907, -1, 2.182346e-15, -4.3711395e-08, 0, 4.352646, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
 transform = Transform3D(-1, -2.1770404e-08, -9.32299e-08, -6.5311234e-08, 0.8671491, 0.49804893, 7.000147e-08, 0.49804893, -0.8671491, 0, 0, 0)
