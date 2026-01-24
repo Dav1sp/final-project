@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://br14qfybabtmm"]
+
+[ext_resource type="PackedScene" uid="uid://ovhq6o4ajfvd" path="res://Assets/Decoration/coraldomeuamor1.blend" id="1_72s1w"]
+[ext_resource type="Script" uid="uid://bw71x4nshxpqf" path="res://decoration.gd" id="2_miwst"]
+
+[node name="coraldomeuamor1" node_paths=PackedStringArray("deadbody", "alivebody") instance=ExtResource("1_72s1w")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+script = ExtResource("2_miwst")
+deadbody = NodePath("Cube_002")
+alivebody = NodePath("Cube_001")
+appear = 50.0

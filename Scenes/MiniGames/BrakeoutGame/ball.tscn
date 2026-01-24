@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://drbhg36djnfnf"]
+[gd_scene load_steps=7 format=3 uid="uid://drbhg36djnfnf"]
 
 [ext_resource type="Script" uid="uid://c2t88rrxl4aqd" path="res://Scripts/MiniGames/BrakeoutGame/ball.gd" id="1_v8bk4"]
+[ext_resource type="Texture2D" uid="uid://crjjpv3whplbp" path="res://Assets/BrakeoutGame/ball_2.png" id="2_muhd6"]
 [ext_resource type="Texture2D" uid="uid://wiqxcyf3k410" path="res://Assets/BrakeoutGame/ball.png" id="2_x1osi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v8bk4"]
@@ -10,19 +11,21 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.73837215, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_x1osi"]
-offsets = PackedFloat32Array(0, 0.63013697)
-colors = PackedColorArray(0.50894934, 0.17357996, 0.7540578, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0, 0.68475455)
+colors = PackedColorArray(0.75844043, 0.58178794, 0.6399297, 1, 0.7658302, 0.5724233, 0.41027606, 1)
 
 [node name="Ball" type="CharacterBody2D"]
 script = ExtResource("1_v8bk4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_x1osi")
+position = Vector2(-2.6, 13.3)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_muhd6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_v8bk4")
+one_way_collision = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 modulate = Color(1, 1, 1, 0.5529412)

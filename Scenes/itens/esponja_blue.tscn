@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://toqyap00yaam"]
+
+[ext_resource type="PackedScene" uid="uid://b2116elm8et2" path="res://Assets/Decoration/esponja.blend" id="1_ko6ua"]
+[ext_resource type="Script" uid="uid://bw71x4nshxpqf" path="res://decoration.gd" id="2_e5i1g"]
+
+[node name="esponja" node_paths=PackedStringArray("deadbody", "alivebody") instance=ExtResource("1_ko6ua")]
+script = ExtResource("2_e5i1g")
+deadbody = NodePath("Coralllllmorta")
+alivebody = NodePath("Coralllll")
+appear = 50.0

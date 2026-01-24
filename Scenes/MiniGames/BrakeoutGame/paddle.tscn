@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://iena2uryphwk"]
 
 [ext_resource type="Script" uid="uid://22qmenk0fgsu" path="res://Scripts/MiniGames/BrakeoutGame/paddle.gd" id="1_wvhl5"]
-[ext_resource type="Texture2D" uid="uid://cbkaohe5wvkjs" path="res://Assets/BrakeoutGame/paddle.png" id="2_wnpos"]
+[ext_resource type="Texture2D" uid="uid://dqeipcs2ej5vg" path="res://Assets/BrakeoutGame/paddle_2.png" id="2_wvhl5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wvhl5"]
 radius = 13.9999075
@@ -12,9 +12,12 @@ motion_mode = 1
 script = ExtResource("1_wvhl5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_wnpos")
+position = Vector2(16, -18)
+scale = Vector2(0.185, 0.185)
+texture = ExtResource("2_wvhl5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.2)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_wvhl5")
+one_way_collision_margin = 0.0

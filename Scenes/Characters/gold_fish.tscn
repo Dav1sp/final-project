@@ -156,6 +156,7 @@ _data = {
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_lqx6s")
+animation_name = "swim_all"
 
 [node name="peixedoamorblend2" parent="." instance=ExtResource("2_lqx6s")]
 
@@ -164,31 +165,40 @@ bones/1/rotation = Quaternion(-0.0060014683, 0.0028636912, 0.003945736, 0.999970
 bones/2/rotation = Quaternion(0.024066666, -0.003784118, -0.0061639594, 0.99968415)
 
 [node name="Skeleton3D" parent="peixedoamorblend2/Armature_001" index="0"]
-bones/1/rotation = Quaternion(-0.0060014674, 0.0028636924, 0.0039457427, 0.99997014)
+bones/1/rotation = Quaternion(-0.0060014683, 0.0028636912, 0.003945736, 0.99997014)
+bones/2/rotation = Quaternion(0.024066666, -0.003784118, -0.0061639594, 0.99968415)
 
 [node name="Skeleton3D" parent="peixedoamorblend2/Armature_002" index="0"]
-bones/1/rotation = Quaternion(-0.0060014636, 0.0028636924, 0.0039457427, 0.99997014)
+bones/1/rotation = Quaternion(-0.0060014683, 0.0028636912, 0.003945736, 0.99997014)
+bones/2/rotation = Quaternion(0.024066666, -0.0037841182, -0.0061639594, 0.99968415)
 
 [node name="Skeleton3D" parent="peixedoamorblend2/Armature_003" index="0"]
-bones/1/rotation = Quaternion(-0.0060014655, 0.0028636914, 0.0039457446, 0.99997014)
+bones/1/rotation = Quaternion(-0.0060014683, 0.0028636912, 0.003945736, 0.99997014)
+bones/2/rotation = Quaternion(0.024066666, -0.003784118, -0.0061639594, 0.99968415)
 
 [node name="Skeleton3D" parent="peixedoamorblend2/Armature_004" index="0"]
-bones/1/rotation = Quaternion(-0.00600147, 0.0028636912, 0.0039457427, 0.99997014)
+bones/1/rotation = Quaternion(-0.0060014683, 0.0028636912, 0.003945736, 0.99997014)
+bones/2/rotation = Quaternion(0.024066666, -0.0037841182, -0.0061639594, 0.99968415)
 
 [node name="Skeleton3D" parent="peixedoamorblend2/Armature_005" index="0"]
-bones/1/rotation = Quaternion(-0.0060014655, 0.0028636914, 0.0039457446, 0.99997014)
+bones/1/rotation = Quaternion(-0.0060014683, 0.0028636912, 0.003945736, 0.99997014)
+bones/2/rotation = Quaternion(0.024066666, -0.003784118, -0.0061639594, 0.99968415)
 
 [node name="Skeleton3D" parent="peixedoamorblend2/Armature_006" index="0"]
-bones/1/rotation = Quaternion(-0.00600147, 0.0028636917, 0.0039457446, 0.99997014)
+bones/1/rotation = Quaternion(-0.0060014683, 0.0028636912, 0.003945736, 0.99997014)
+bones/2/rotation = Quaternion(0.024066666, -0.0037841182, -0.0061639594, 0.99968415)
 
 [node name="Skeleton3D" parent="peixedoamorblend2/Armature_007" index="0"]
-bones/1/rotation = Quaternion(-0.006001471, 0.0028636917, 0.0039457427, 0.99997014)
+bones/1/rotation = Quaternion(-0.0060014683, 0.0028636912, 0.003945736, 0.99997014)
+bones/2/rotation = Quaternion(0.024066666, -0.0037841182, -0.0061639594, 0.99968415)
 
 [node name="Skeleton3D" parent="peixedoamorblend2/Armature_008" index="0"]
-bones/1/rotation = Quaternion(-0.0060014655, 0.0028636914, 0.0039457446, 0.99997014)
+bones/1/rotation = Quaternion(-0.0060014683, 0.0028636912, 0.003945736, 0.99997014)
+bones/2/rotation = Quaternion(0.024066666, -0.003784118, -0.0061639594, 0.99968415)
 
 [node name="Skeleton3D" parent="peixedoamorblend2/Armature_009" index="0"]
-bones/1/rotation = Quaternion(-0.0060014646, 0.0028636898, 0.0039457446, 0.99997014)
+bones/1/rotation = Quaternion(-0.0060014683, 0.0028636912, 0.003945736, 0.99997014)
+bones/2/rotation = Quaternion(0.024066666, -0.003784118, -0.0061639594, 0.99968415)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

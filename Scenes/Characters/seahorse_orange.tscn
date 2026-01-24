@@ -1,0 +1,113 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkutqv65ei7ra"]
+
+[ext_resource type="PackedScene" uid="uid://dclqglrl4w0k5" path="res://Assets/Sprites/Seahorse_orange.blend" id="1_uv220"]
+[ext_resource type="Script" uid="uid://baf6qcsw1yf3f" path="res://Scripts/Global/seahorse_orange.gd" id="2_li3m3"]
+
+[sub_resource type="Animation" id="Animation_ali1r"]
+resource_name = "Cube_001Action"
+length = 0.875
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube_001")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.21950886, 0, 0.9756105, 0.033333335, 1, 0, 0.21950886, 0, 0.9756105, 0.06666667, 1, 0, 0.2159316, 0, 0.9764085, 0.1, 1, 0, 0.20706117, 0, 0.978328, 0.13333334, 1, 0, 0.19252518, 0, 0.9812921, 0.16666667, 1, 0, 0.17330763, 0, 0.9848678, 0.2, 1, 0, 0.14988372, 0, 0.9887036, 0.23333333, 1, 0, 0.12481697, 0, 0.9921798, 0.26666668, 1, 0, 0.099149294, 0, 0.9950726, 0.3, 1, 0, 0.07393766, 0, 0.9972629, 0.33333334, 1, 0, 0.05024759, 0, 0.9987368, 0.36666667, 1, 0, 0.030716209, 0, 0.99952817, 0.4, 1, 0, 0.015885057, 0, 0.9998739, 0.43333334, 1, 0, 0.006809968, 0, 0.9999769, 0.46666667, 1, 0, 0.0043665622, 0, 0.9999905, 0.5, 1, 0, 0.009253368, 0, 0.9999572, 0.53333336, 1, 0, 0.022516109, 0, 0.99974656, 0.56666666, 1, 0, 0.040483832, 0, 0.9991802, 0.6, 1, 0, 0.062097024, 0, 0.9980701, 0.6333333, 1, 0, 0.0862896, 0, 0.9962701, 0.7, 1, 0, 0.13762066, 0, 0.990485, 0.73333335, 1, 0, 0.16160709, 0, 0.98685527, 0.76666665, 1, 0, 0.18292513, 0, 0.9831269, 0.8, 1, 0, 0.20056824, 0, 0.9796798, 0.8333333, 1, 0, 0.21354516, 0, 0.9769332, 0.8666667, 1, 0, 0.2183168, 0, 0.975878, 0.875, 1, 0, 0.21950886, 0, 0.9756105)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cube_002")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.18772101, 0, 0.9822224, 0)
+
+[sub_resource type="Animation" id="Animation_rjijb"]
+resource_name = "Cube_001Action_001"
+length = 0.875
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube_002")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.18772103, 0, -0.9822225, 0, 0.033333335, 1, 0.18772103, 0, -0.9822225, 0, 0.06666667, 1, 0.18455201, 0, -0.9828228, 0, 0.1, 1, 0.17669678, 0, -0.9842654, 0, 0.13333334, 1, 0.16383241, 0, -0.98648816, 0, 0.16666667, 1, 0.14683948, 0, -0.9891604, 0, 0.2, 1, 0.12614724, 0, -0.99201155, 0, 0.23333333, 1, 0.10402532, 0, -0.99457467, 0, 0.26666668, 1, 0.08139254, 0, -0.99668217, 0, 0.3, 1, 0.059177686, 0, -0.9982475, 0, 0.33333334, 1, 0.03831482, 0, -0.99926573, 0, 0.36666667, 1, 0.021120636, 0, -0.9997769, 0, 0.4, 1, 0.00806707, 0, -0.9999675, 0, 0.43333334, 1, 8.0537284e-05, 0, -1, 0, 0.46666667, 1, -0.0020697217, 0, -0.99999785, 0, 0.5, 1, 0.002230768, 0, -0.9999975, 0, 0.53333336, 1, 0.013903088, 0, -0.9999034, 0, 0.56666666, 1, 0.029718827, 0, -0.9995583, 0, 0.6, 1, 0.048748933, 0, -0.99881107, 0, 0.6333333, 1, 0.07005966, 0, -0.9975428, 0, 0.7, 1, 0.11532227, 0, -0.9933282, 0, 0.73333335, 1, 0.13650084, 0, -0.9906399, 0, 0.76666665, 1, 0.1553417, 0, -0.9878608, 0, 0.8, 1, 0.17094927, 0, -0.9852799, 0, 0.8333333, 1, 0.18243825, 0, -0.9832173, 0, 0.8666667, 1, 0.18666488, 0, -0.98242366, 0, 0.875, 1, 0.18772103, 0, -0.9822225, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cube_001")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.21950886, 0, 0.9756105)
+
+[sub_resource type="Animation" id="Animation_4qn4m"]
+resource_name = "swim"
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube_001")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.21950886, 0, 0.9756105, 0.033333335, 1, 0, 0.21950886, 0, 0.9756105, 0.06666667, 1, 0, 0.2159316, 0, 0.9764085, 0.1, 1, 0, 0.20706117, 0, 0.978328, 0.13333334, 1, 0, 0.19252518, 0, 0.9812921, 0.16666667, 1, 0, 0.17330763, 0, 0.9848678, 0.2, 1, 0, 0.14988372, 0, 0.9887036, 0.23333333, 1, 0, 0.12481697, 0, 0.9921798, 0.26666668, 1, 0, 0.099149294, 0, 0.9950726, 0.3, 1, 0, 0.07393766, 0, 0.9972629, 0.33333334, 1, 0, 0.05024759, 0, 0.9987368, 0.36666667, 1, 0, 0.030716209, 0, 0.99952817, 0.4, 1, 0, 0.015885057, 0, 0.9998739, 0.43333334, 1, 0, 0.006809968, 0, 0.9999769, 0.46666667, 1, 0, 0.0043665622, 0, 0.9999905, 0.5, 1, 0, 0.009253368, 0, 0.9999572, 0.53333336, 1, 0, 0.022516109, 0, 0.99974656, 0.56666666, 1, 0, 0.040483832, 0, 0.9991802, 0.6, 1, 0, 0.062097024, 0, 0.9980701, 0.6333333, 1, 0, 0.0862896, 0, 0.9962701, 0.7, 1, 0, 0.13762066, 0, 0.990485, 0.73333335, 1, 0, 0.16160709, 0, 0.98685527, 0.76666665, 1, 0, 0.18292513, 0, 0.9831269, 0.8, 1, 0, 0.20056824, 0, 0.9796798, 0.8333333, 1, 0, 0.21354516, 0, 0.9769332, 0.8666667, 1, 0, 0.2183168, 0, 0.975878, 0.875, 1, 0, 0.21950886, 0, 0.9756105)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cube_002")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.18772103, 0, -0.9822225, 0, 0.033333335, 1, 0.18772103, 0, -0.9822225, 0, 0.06666667, 1, 0.18455201, 0, -0.9828228, 0, 0.1, 1, 0.17669678, 0, -0.9842654, 0, 0.13333334, 1, 0.16383241, 0, -0.98648816, 0, 0.16666667, 1, 0.14683948, 0, -0.9891604, 0, 0.2, 1, 0.12614724, 0, -0.99201155, 0, 0.23333333, 1, 0.10402532, 0, -0.99457467, 0, 0.26666668, 1, 0.08139254, 0, -0.99668217, 0, 0.3, 1, 0.059177686, 0, -0.9982475, 0, 0.33333334, 1, 0.03831482, 0, -0.99926573, 0, 0.36666667, 1, 0.021120636, 0, -0.9997769, 0, 0.4, 1, 0.00806707, 0, -0.9999675, 0, 0.43333334, 1, 8.0537284e-05, 0, -1, 0, 0.46666667, 1, -0.0020697217, 0, -0.99999785, 0, 0.5, 1, 0.002230768, 0, -0.9999975, 0, 0.53333336, 1, 0.013903088, 0, -0.9999034, 0, 0.56666666, 1, 0.029718827, 0, -0.9995583, 0, 0.6, 1, 0.048748933, 0, -0.99881107, 0, 0.6333333, 1, 0.07005966, 0, -0.9975428, 0, 0.7, 1, 0.11532227, 0, -0.9933282, 0, 0.73333335, 1, 0.13650084, 0, -0.9906399, 0, 0.76666665, 1, 0.1553417, 0, -0.9878608, 0, 0.8, 1, 0.17094927, 0, -0.9852799, 0, 0.8333333, 1, 0.18243825, 0, -0.9832173, 0, 0.8666667, 1, 0.18666488, 0, -0.98242366, 0, 0.875, 1, 0.18772103, 0, -0.9822225, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sib2q"]
+_data = {
+&"Cube_001Action": SubResource("Animation_ali1r"),
+&"Cube_001Action_001": SubResource("Animation_rjijb"),
+&"swim": SubResource("Animation_4qn4m")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_li3m3"]
+size = Vector3(41.828003, 91.48959, 21.618774)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_li3m3"]
+height = 110.56189
+radius = 36.91211
+
+[node name="Seahorse_orange" instance=ExtResource("1_uv220")]
+script = ExtResource("2_li3m3")
+
+[node name="Cube_001" parent="." index="1"]
+transform = Transform3D(0.6349544, 0, 0.108918324, 0, 0.64422846, 0, -0.108918324, 0, 0.6349544, 0.3380055, 0, 2.4107845)
+
+[node name="Cube_002" parent="." index="2"]
+transform = Transform3D(0.6381328, -5.578734e-08, 0.08841309, 5.6320246e-08, 0.64422846, 0, 0.08841309, -7.729318e-09, -0.6381328, 0.3380055, 0, -2.7316658)
+
+[node name="AnimationPlayer" parent="." index="3"]
+libraries = {
+&"": SubResource("AnimationLibrary_sib2q")
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83520126, 0, 0.014257431)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.873713, -6.223648, -0.20560265)
+shape = SubResource("BoxShape3D_li3m3")
+
+[node name="iteract range" type="Area3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0.835, 0, 0.014)
+collision_layer = 8
+metadata/type_minigame = ""
+metadata/path = ""
+metadata/game = ""
+metadata/Type = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="iteract range" index="0"]
+transform = Transform3D(0.99949163, 0, 0.031881765, 0, 1.0000001, 0, -0.031881765, 0, 0.99949163, 10.2385845, -3.0864882, 0)
+shape = SubResource("CylinderShape3D_li3m3")
+debug_color = Color(0, 0.62664413, 0.5122134, 0.41960785)
+
+[connection signal="body_entered" from="iteract range" to="." method="_on_iteract_range_body_entered"]
+[connection signal="body_exited" from="iteract range" to="." method="_on_iteract_range_body_exited"]

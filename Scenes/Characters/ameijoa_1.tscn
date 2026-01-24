@@ -75,6 +75,7 @@ transform = Transform3D(-4.024549e-08, -0.39024907, 0.9207093, -1.7058333e-08, 0
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
 transform = Transform3D(-1, -2.1770404e-08, -9.32299e-08, -6.5311234e-08, 0.8671491, 0.49804893, 7.000147e-08, 0.49804893, -0.8671491, 0, 0, 0)
+collision_mask = 7
 shape = SubResource("SphereShape3D_nxchv")
 spring_length = 20.0
 

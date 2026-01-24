@@ -14,13 +14,17 @@ var grey_tile_path = ColorRect.new()
 var tiles: Array[Node2D] = []
 var solved_names: Array[String] = []
 
+var initial_layout: Array[String] = []
+
 var mouse_event: InputEventMouseButton = null
 
 var tile_scene: PackedScene = preload("res://Scenes/MiniGames/PuzzleGame/tile.tscn")
 @onready var image_help = $CanvasLayer/ColorRect/TextureRect
 @onready var image_background =$BackgroundLayer/TextureRect
 @onready var swap_sound = $swapSound
-
+@onready var mute_button = $CanvasLayer/Mute
+@onready var sound_button = $CanvasLayer/Volume
+@onready var setting_pannel = $setting_background
 var tile_h: int = 0
 var offset: int = 0
 var t: int = 0
@@ -167,12 +171,54 @@ func start_game() -> void:
 	solved_names = _current_names()
 
 	shuffle_tiles()
+	save_restart_state()
 	self.sound = true
 	movecounter = 0
 	moves_label.text = "Moves: 0"
 	win_label.visible = false
 	win_label.text = ""
 
+func save_restart_state():
+	initial_layout.clear()
+	for n in tiles:
+		initial_layout.append(n.tilename)
+		
+func restart_game():
+	if initial_layout.is_empty():
+		return
+		
+	movecounter = 0
+	moves_label.text = "Moves: 0"
+	win_label.visible = false
+	win_label.text = ""
+	full_image.hide()
+	previous = "" # Reset na peça anterior para não bloquear movimento
+	
+	# 1. Reconstruir o array 'tiles' na ordem correta baseada no save
+	var new_tiles_order: Array[Node2D] = []
+	
+	for saved_name in initial_layout:
+		# Encontrar a tile real que corresponde a este nome
+		for tile_obj in tiles:
+			if tile_obj.tilename == saved_name:
+				new_tiles_order.append(tile_obj)
+				break
+	
+	# Atualizar o array principal
+	tiles = new_tiles_order
+	
+	# 2. Resetar as posições visuais baseadas na nova ordem do array
+	for index in range(tiles.size()):
+		var col = index % GRID
+		var row = index / GRID
+		
+		var new_pos = Vector2(
+			board_origin.x + float(col * offset + tile_h / 2),
+			board_origin.y + float(row * offset + tile_h / 2)
+		)
+		
+		# Movemos a tile visualmente
+		tiles[index].position = new_pos
 
 func shuffle_tiles() -> void:
 	t = 0
@@ -209,9 +255,10 @@ func _process(_delta: float) -> void:
 
 		if _current_names() == solved_names and movecounter > 1:
 			full_image.show()
-			win_label.text = "Well done! You solved the puzzle in " + str(movecounter) + " moves.\nPress SpaceBar to continue"
-			win_label.visible = true
+			GameManager.win_label.text = 'Congratulation, you completed the game!\n Press space to continue'
+			GameManager.win_label.visible = true
 			await space_confirmado
+			GameManager.win_label.visible = false
 			queue_free()
 
 
@@ -319,5 +366,55 @@ func _input(event):
 func exit_game():
 	self.player.minigame = false
 	self.npc.iteract.show()
+	GameManager.win_label.visible = false
 	queue_free()
 	pass
+
+
+func _on_restart_pressed() -> void:
+	restart_game()
+	pass 
+
+
+func _on_quit_pressed() -> void:
+	exit_game()
+	pass 
+
+
+
+
+func _on_settings_pressed() -> void:
+	self.setting_pannel.show()
+	pass # Replace with function body.
+
+func _on_volume_pressed() -> void:
+	var master_bus = AudioServer.get_bus_index("Master")
+	
+	var is_muted = AudioServer.is_bus_mute(master_bus)
+
+	AudioServer.set_bus_mute(master_bus, not is_muted)
+	self.mute_button.show()
+	self.sound_button.hide()
+	pass
+
+func _on_mute_pressed() -> void:
+	var master_bus = AudioServer.get_bus_index("Master")
+	# Set mute to FALSE to hear sound again
+	AudioServer.set_bus_mute(master_bus, false)
+	self.mute_button.hide()
+	self.sound_button.show()
+	pass # Replace with function body.
+
+
+func _on_close_pressed() -> void:
+	self.setting_pannel.hide()
+	pass # Replace with function body.
+
+
+func _on_exit_game_pressed() -> void:
+	get_tree().quit()
+	pass # Replace with function body.
+
+
+func _on_save_game_pressed() -> void:
+	pass # Replace with function body.

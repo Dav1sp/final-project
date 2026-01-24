@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://mkmwrh7n0sv1"]
+
+[ext_resource type="PackedScene" uid="uid://djuagcwwtw586" path="res://Assets/Sprites/pearl.blend" id="1_xcduq"]
+[ext_resource type="Script" uid="uid://l8cf58w1h73a" path="res://Scenes/itens/item_colect.gd" id="2_b3bur"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_twigk"]
+height = 0.6620827
+radius = 1.0410156
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l5fxf"]
+size = Vector3(0.7618103, 0.5038452, 0.75401306)
+
+[node name="pearl" instance=ExtResource("1_xcduq")]
+script = ExtResource("2_b3bur")
+name_item = "Pearl"
+
+[node name="ameijoaup_001" parent="." index="0"]
+transform = Transform3D(-0.40898868, 0, -3.8160106e-08, 0, 0.29890516, 0, 3.5754926e-08, 0, -0.43650073, 0.69, 0, 0)
+
+[node name="iteract range" type="Area3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 8
+metadata/type = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="iteract range" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0.037797835, 0)
+shape = SubResource("CylinderShape3D_twigk")
+debug_color = Color(0, 0.62664413, 0.5122134, 0.41960785)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35125378, 0, 0.20360035)
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.99999845, -0.0017453283, 0, 0.0017453283, 0.99999845, -0.0032563508, 0.023972388, -0.2044718)
+shape = SubResource("BoxShape3D_l5fxf")
+
+[connection signal="body_entered" from="iteract range" to="." method="_on_iteract_range_body_entered"]
+[connection signal="body_exited" from="iteract range" to="." method="_on_iteract_range_body_exited"]

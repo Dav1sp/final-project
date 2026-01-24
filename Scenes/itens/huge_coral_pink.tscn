@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci15yfsmqyv6f"]
+
+[ext_resource type="PackedScene" uid="uid://cfq1wpm4qbgbq" path="res://Assets/Decoration/pink_colar_2.blend" id="1_nfij5"]
+[ext_resource type="Script" uid="uid://bw71x4nshxpqf" path="res://decoration.gd" id="2_xtaet"]
+
+[node name="pink_colar_2" node_paths=PackedStringArray("deadbody", "alivebody") instance=ExtResource("1_nfij5")]
+script = ExtResource("2_xtaet")
+deadbody = NodePath("Coral1_001")
+alivebody = NodePath("Coral1")
+appear = 50.0

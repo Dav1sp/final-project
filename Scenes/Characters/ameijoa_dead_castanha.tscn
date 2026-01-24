@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb32guavj4hf5"]
+
+[ext_resource type="PackedScene" uid="uid://ck4pgplqihatb" path="res://Assets/Sprites/Ameijoa_dead_castanha.blend" id="1_u3bm4"]
+
+[node name="Ameijoa_dead_castanha" instance=ExtResource("1_u3bm4")]
+
+[node name="ameijoaup" parent="." index="1"]
+transform = Transform3D(-1, 5.3327895e-08, 0, -8.742278e-08, -0.61, 0, 0, 0, 1.12, 0, 0, 0)

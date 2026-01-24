@@ -1,5 +1,7 @@
 extends PathFollow3D
 
+@export var velocity: float
+
 
 func _process(delta: float) -> void:
-	progress += 20*delta
+	progress += velocity*delta

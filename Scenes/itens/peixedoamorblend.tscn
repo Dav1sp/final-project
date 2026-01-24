@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bycsepks1fiep"]
+
+[ext_resource type="PackedScene" uid="uid://c07vxucdbgasm" path="res://Assets/Sprites/peixedoamorblend.blend" id="1_nh6nv"]
+[ext_resource type="Script" uid="uid://pcptsq44rx52" path="res://fish.gd" id="2_6kf62"]
+
+[node name="peixedoamorblend" instance=ExtResource("1_nh6nv")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+script = ExtResource("2_6kf62")
+animation_name = "swim"
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/rotation = Quaternion(-0.0060014683, 0.0028636912, 0.003945736, 0.99997014)
+bones/2/rotation = Quaternion(0.024066666, -0.003784118, -0.0061639594, 0.99968415)

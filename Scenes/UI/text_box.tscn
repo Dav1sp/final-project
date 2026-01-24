@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcyarng3uddky"]
+[gd_scene load_steps=5 format=3 uid="uid://dcyarng3uddky"]
 
 [ext_resource type="Script" uid="uid://cny5i8bo1ieb1" path="res://Scripts/dialogue.gd" id="1_v3au0"]
+[ext_resource type="FontFile" uid="uid://v770a62lemri" path="res://Assets/Fonts/TiresiasLpfont-qZ370.ttf" id="2_0fjus"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h34bx"]
 bg_color = Color(0.7381486, 0.9324047, 0.95790356, 1)
@@ -47,6 +48,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.003921569, 0.26666668, 0.34117648, 1)
+theme_override_fonts/font = ExtResource("2_0fjus")
 theme_override_font_sizes/font_size = 55
 text = "Name:"
 autowrap_trim_flags = 0
@@ -57,6 +59,11 @@ custom_minimum_size = Vector2(91, 155)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.003921569, 0.26666668, 0.34117648, 1)
+theme_override_fonts/normal_font = ExtResource("2_0fjus")
+theme_override_fonts/bold_font = ExtResource("2_0fjus")
+theme_override_fonts/bold_italics_font = ExtResource("2_0fjus")
+theme_override_fonts/italics_font = ExtResource("2_0fjus")
+theme_override_fonts/mono_font = ExtResource("2_0fjus")
 theme_override_font_sizes/normal_font_size = 55
 text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 scroll_following_visible_characters = true
@@ -69,6 +76,7 @@ justification_flags = 0
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_colors/font_color = Color(0.003921569, 0.26666668, 0.34117648, 1)
+theme_override_fonts/font = ExtResource("2_0fjus")
 theme_override_font_sizes/font_size = 20
 text = "Press Spacebar"
 label_settings = SubResource("LabelSettings_v3au0")
@@ -100,6 +108,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_0fjus")
 theme_override_font_sizes/font_size = 32
 
 [node name="Label" type="Label" parent="disable_input/insertInput"]
@@ -113,4 +122,5 @@ offset_left = -88.0
 offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_0fjus")
 text = "Press Enter"

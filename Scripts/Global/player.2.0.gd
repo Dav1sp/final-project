@@ -30,7 +30,8 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed('ui_cancel'):
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if Input.is_action_just_pressed("interact") and area !=null and !minigame:
-		do_minigame()
+		if(self.area.get_meta("Type") or self.area.get_meta("type")):
+			do_minigame()
 
 func _unhandled_input(event: InputEvent) -> void:
 	var is_camera_motion := (
@@ -111,6 +112,19 @@ func do_minigame():
 			game_scene.image_path = path_image
 			game_scene.npc = owner_node
 			game_scene.GRID = self.area.get_meta("grid")
+			get_tree().current_scene.add_child(game_scene)
+			await game_scene.tree_exited
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			self.input_enabled = true
+		"breakout":
+			var owner_node := self.area.get_parent() as Node3D
+			owner_node.iteract.hide()
+			input_enabled = false
+			var path_to_load = self.area.get_meta("game").replace('"', '')
+			GameManager.level = self.area.get_meta("level")
+			var game_scene = load(path_to_load).instantiate()
+			game_scene.npc = owner_node
+			game_scene.player = self
 			get_tree().current_scene.add_child(game_scene)
 			await game_scene.tree_exited
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

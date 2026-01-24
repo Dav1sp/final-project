@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://y70yb7hq0u5r"]
+
+[ext_resource type="PackedScene" uid="uid://c08tidq7nj6a5" path="res://Assets/Sprites/Trashbag.blend" id="1_na6da"]
+[ext_resource type="Script" uid="uid://l8cf58w1h73a" path="res://Scenes/itens/item_colect.gd" id="2_uxxwf"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_na6da"]
+height = 2.746582
+radius = 4.012207
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uxxwf"]
+size = Vector3(4.983032, 4.0336914, 4.4831543)
+
+[node name="Trashbag" instance=ExtResource("1_na6da")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+script = ExtResource("2_uxxwf")
+name_item = "Trash bag"
+
+[node name="iteract range" type="Area3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 8
+metadata/type = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="iteract range" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 1.3801272, 0)
+shape = SubResource("CylinderShape3D_na6da")
+debug_color = Color(0, 0.62664413, 0.5122134, 0.41960785)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.99999845, -0.0017453283, 0, 0.0017453283, 0.99999845, -0.14298102, 1.0079418, -0.19858128)
+shape = SubResource("BoxShape3D_uxxwf")
+
+[connection signal="body_entered" from="iteract range" to="." method="_on_iteract_range_body_entered"]
+[connection signal="body_exited" from="iteract range" to="." method="_on_iteract_range_body_exited"]
