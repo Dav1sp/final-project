@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bs6imvs03bdmj"]
+[gd_scene load_steps=6 format=3 uid="uid://bs6imvs03bdmj"]
 
 [ext_resource type="Script" uid="uid://bkjf0rh6gx18j" path="res://Scripts/MiniGames/WordleGame/game.gd" id="1_jc43q"]
-[ext_resource type="PackedScene" uid="uid://dcyarng3uddky" path="res://Scenes/UI/text_box.tscn" id="2_hpf7d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vs50p"]
 bg_color = Color(0.46135, 0.212246, 0.00836753, 1)
@@ -458,8 +457,5 @@ color = Color(0.8, 0.8, 0.8, 1)
 [node name="CursorTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
-
-[node name="TextBox" parent="." instance=ExtResource("2_hpf7d")]
-visible = false
 
 [connection signal="pressed" from="Menu/PlayButton" to="." method="_on_button_pressed"]
