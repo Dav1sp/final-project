@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnin4m8cawncx"]
+
+[ext_resource type="PackedScene" uid="uid://c6xeluxxgmika" path="res://Assets/Decoration/RIP.blend" id="1_p3044"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d3iom"]
+size = Vector3(1.6469727, 2.602539, 2.0405273)
+
+[node name="RIP" instance=ExtResource("1_p3044")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32348633, 1.4165039, 0.036865234)
+shape = SubResource("BoxShape3D_d3iom")

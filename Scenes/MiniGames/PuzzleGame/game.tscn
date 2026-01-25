@@ -466,6 +466,7 @@ autowrap_mode = 1
 clip_text = true
 
 [node name="quit" type="Button" parent="CanvasLayer"]
+visible = false
 offset_left = 951.0
 offset_top = 534.0
 offset_right = 1012.0
@@ -588,6 +589,7 @@ position = Vector2(-95, 516)
 
 [node name="swapSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_6ibk6")
+max_polyphony = 40
 
 [node name="setting_background" type="ColorRect" parent="."]
 visible = false

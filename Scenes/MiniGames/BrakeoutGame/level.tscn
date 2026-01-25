@@ -1,14 +1,16 @@
-[gd_scene load_steps=38 format=3 uid="uid://d24aw6k8nb2o1"]
+[gd_scene load_steps=40 format=3 uid="uid://d24aw6k8nb2o1"]
 
 [ext_resource type="PackedScene" uid="uid://iena2uryphwk" path="res://Scenes/MiniGames/BrakeoutGame/paddle.tscn" id="1_d8q4e"]
 [ext_resource type="Script" uid="uid://bxap7tuumi5k8" path="res://Scripts/MiniGames/BrakeoutGame/level.gd" id="1_eva6k"]
 [ext_resource type="PackedScene" uid="uid://drbhg36djnfnf" path="res://Scenes/MiniGames/BrakeoutGame/ball.tscn" id="2_blgqk"]
 [ext_resource type="Texture2D" uid="uid://bc1eroyhtu5kj" path="res://Assets/BrakeoutGame/123.webp" id="4_3k080"]
+[ext_resource type="AudioStream" uid="uid://ddsxgbaavmlnx" path="res://Assets/BrakeoutGame/mixkit-game-ball-tap-2073.wav" id="4_osm1q"]
 [ext_resource type="Texture2D" uid="uid://d0jyai52b8ald" path="res://Assets/PuzzleGame/light-cartoon-wood-texture-photo.jpg" id="4_uiph6"]
 [ext_resource type="Texture2D" uid="uid://htfqb3td83nt" path="res://Assets/icons/volume.png" id="6_66xa8"]
 [ext_resource type="Texture2D" uid="uid://b50go81a5u3xn" path="res://Assets/icons/setting.png" id="7_8c58j"]
 [ext_resource type="FontFile" uid="uid://v770a62lemri" path="res://Assets/Fonts/TiresiasLpfont-qZ370.ttf" id="7_xwxkg"]
 [ext_resource type="Texture2D" uid="uid://c731uqv2tvy7g" path="res://Assets/icons/mute.png" id="8_osm1q"]
+[ext_resource type="AudioStream" uid="uid://brwcse6an1o8o" path="res://Assets/Audio/pop-sound-effects-copyright-free.mp3" id="10_8c58j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_blgqk"]
 size = Vector2(20, 653.5)
@@ -266,6 +268,10 @@ position = Vector2(585, 523)
 z_index = 2
 position = Vector2(582, 499)
 
+[node name="AudioStreamPlayer2" parent="Ball" index="3"]
+stream = ExtResource("4_osm1q")
+pitch_scale = 1.0
+
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="Left Wall" type="CollisionShape2D" parent="Walls"]
@@ -485,6 +491,10 @@ text = "Close
 autowrap_mode = 1
 clip_text = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_8c58j")
+max_polyphony = 19
+
 [connection signal="body_exited" from="Deatzone" to="Ball" method="_on_deatzone_body_exited"]
 [connection signal="pressed" from="Panel/Panel/Volume" to="." method="_on_volume_pressed"]
 [connection signal="pressed" from="Panel/Panel/Settings" to="." method="_on_settings_pressed"]
@@ -492,3 +502,5 @@ clip_text = true
 [connection signal="pressed" from="setting_background/Setting_panel/Setting/Save_game" to="." method="_on_save_game_pressed"]
 [connection signal="pressed" from="setting_background/Setting_panel/Setting/Exit_game" to="." method="_on_exit_game_pressed"]
 [connection signal="pressed" from="setting_background/Setting_panel/Setting/Close" to="." method="_on_close_pressed"]
+
+[editable path="Ball"]

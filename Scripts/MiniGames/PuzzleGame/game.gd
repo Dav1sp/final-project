@@ -4,7 +4,7 @@ const GAP: int = 2
 const MARGIN: int = 10
 const UI_HEIGHT: int = 90 
 
-@export var shuffle_limit: int = 20
+@export var shuffle_limit: int = 40
 @export var image_path: String = "res://Assets/PuzzleGame/thumb__2400_0_0_0_auto.jpg"
 @export var player: CharacterBody3D
 @export var npc: Node3D
@@ -13,7 +13,7 @@ const UI_HEIGHT: int = 90
 var grey_tile_path = ColorRect.new()
 var tiles: Array[Node2D] = []
 var solved_names: Array[String] = []
-
+var song = false
 var initial_layout: Array[String] = []
 
 var mouse_event: InputEventMouseButton = null
@@ -255,10 +255,12 @@ func _process(_delta: float) -> void:
 
 		if _current_names() == solved_names and movecounter > 1:
 			full_image.show()
-			GameManager.win_label.text = 'Congratulation, you completed the game!\n Press space to continue'
-			GameManager.win_label.visible = true
+			GameManager.win_label.get_child(0).text = 'Congratulation, you completed the game!\n Press space to continue'
+			GameManager.win_label.show()
+			if !song:
+				GameManager.win_audio.play()
+				song = true
 			await space_confirmado
-			GameManager.win_label.visible = false
 			queue_free()
 
 
@@ -412,7 +414,7 @@ func _on_close_pressed() -> void:
 
 
 func _on_exit_game_pressed() -> void:
-	get_tree().quit()
+	exit_game()
 	pass # Replace with function body.
 
 

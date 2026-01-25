@@ -67,11 +67,11 @@ func setupLevel():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if GameManager.game_finished:
-		GameManager.win_label.text = 'Congratulation, you completed the game!\n Press space to continue'
-		GameManager.win_label.visible = true
+		GameManager.win_label.get_child(0).text = 'Congratulation, you completed the game!\n Press space to continue'
+		GameManager.win_label.show()
+		GameManager.win_audio.play()
 		await space_confirmado
 		GameManager.score = 0
-		GameManager.win_label.visible = false
 		exit_game()
 	pass
 func getColors():

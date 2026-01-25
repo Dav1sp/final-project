@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwhr5wqdsevbb"]
+
+[ext_resource type="PackedScene" uid="uid://5ujsktdf5s14" path="res://Assets/Decoration/ESPAÇO1.blend" id="1_jpmyi"]
+[ext_resource type="Script" uid="uid://bw71x4nshxpqf" path="res://decoration.gd" id="2_epxrk"]
+
+[node name="ESPAÇO1" instance=ExtResource("1_jpmyi")]
+
+[node name="Empty_007" parent="." index="4" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_epxrk")
+deadbody = NodePath("coral_dead_001")
+alivebody = NodePath("coral_001")
+appear = 50.0
+
+[node name="Empty_006" parent="." index="5" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_epxrk")
+deadbody = NodePath("alga_morta_006")
+alivebody = NodePath("Alga_006")
+appear = 50.0
+
+[node name="Empty_005" parent="." index="6" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_epxrk")
+deadbody = NodePath("alga_morta_005")
+alivebody = NodePath("Alga_005")
+appear = 50.0
+
+[node name="Empty_004" parent="." index="7" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_epxrk")
+deadbody = NodePath("alga_morta_004")
+alivebody = NodePath("Alga_004")
+appear = 50.0
+
+[node name="Empty_003" parent="." index="8" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_epxrk")
+deadbody = NodePath("Alga_003")
+alivebody = NodePath("alga_morta_003")
+appear = 50.0
+
+[node name="Empty_002" parent="." index="9" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_epxrk")
+deadbody = NodePath("Cube_046")
+alivebody = NodePath("Cube_045")
+appear = 50.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Empty_002/Cube_045" index="0"]
+transform = Transform3D(1.9953057, -0.08989984, 0.10331442, 0.07610317, 1.9822096, 0.25505757, -0.11386025, -0.25052765, 1.9809774, -0.013053894, 0.3543148, -0.014434814)
+light_color = Color(0.7797063, 0.6839225, 0.9978768, 1)
+omni_range = 0.25892103
+
+[node name="Cube_046" parent="Empty_002" index="1"]
+visible = false
+
+[node name="Empty_001" parent="." index="10" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_epxrk")
+deadbody = NodePath("alga_morta_002")
+alivebody = NodePath("Alga_002")
+appear = 50.0
+
+[node name="Empty" parent="." index="11" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_epxrk")
+deadbody = NodePath("alga_morta_001")
+alivebody = NodePath("Alga_001")
+appear = 50.0

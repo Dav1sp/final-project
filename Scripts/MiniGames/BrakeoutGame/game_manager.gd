@@ -5,11 +5,13 @@ var score = 0 # player's score
 var level = 0 #player's current level
 var game_finished := false
 var bricks_left := 0
-@onready var win_label: Label = $CanvasLayer/WinLabel
+@onready var win_label: Panel = $CanvasLayer/Panel
 @onready var score_label: TextEdit = $CanvasLayer/ScoreLabel
+@onready var lose_audio: AudioStreamPlayer = $loseAudio
+@onready var win_audio: AudioStreamPlayer = $winAudio
 
 func _ready():
-	$CanvasLayer/ScoreLabel.visible = false
+	$CanvasLayer/ScoreLabel.hide()
 
 
 # add points to score (called from elsewhere)
@@ -22,7 +24,7 @@ func win_game():
 	game_finished = true
 
 func show_score(show: bool): 
-	$CanvasLayer/ScoreLabel.visible = show
+	$CanvasLayer/ScoreLabel.show()
 
 func _process(delta: float) -> void:
 	# update GUI with new score

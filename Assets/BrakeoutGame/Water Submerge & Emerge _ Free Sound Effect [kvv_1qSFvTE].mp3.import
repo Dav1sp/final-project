@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://donhaxgxwhc5t"
+path="res://.godot/imported/Water Submerge & Emerge _ Free Sound Effect [kvv_1qSFvTE].mp3-14f33d7784b0f6aaf393b4dd222c900e.mp3str"
+
+[deps]
+
+source_file="res://Assets/BrakeoutGame/Water Submerge & Emerge _ Free Sound Effect [kvv_1qSFvTE].mp3"
+dest_files=["res://.godot/imported/Water Submerge & Emerge _ Free Sound Effect [kvv_1qSFvTE].mp3-14f33d7784b0f6aaf393b4dd222c900e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

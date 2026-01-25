@@ -9,7 +9,8 @@ extends Node3D
 var change = false
 
 func _ready():
-	animation_player.play(self.animation_name)
+	if(animation_name !=''):
+		animation_player.play(self.animation_name)
 	self.hide()
 	return
 	

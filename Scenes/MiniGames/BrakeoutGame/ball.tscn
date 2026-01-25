@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://drbhg36djnfnf"]
+[gd_scene load_steps=8 format=3 uid="uid://drbhg36djnfnf"]
 
 [ext_resource type="Script" uid="uid://c2t88rrxl4aqd" path="res://Scripts/MiniGames/BrakeoutGame/ball.gd" id="1_v8bk4"]
 [ext_resource type="Texture2D" uid="uid://crjjpv3whplbp" path="res://Assets/BrakeoutGame/ball_2.png" id="2_muhd6"]
 [ext_resource type="Texture2D" uid="uid://wiqxcyf3k410" path="res://Assets/BrakeoutGame/ball.png" id="2_x1osi"]
+[ext_resource type="AudioStream" uid="uid://c3tkc15mmfag1" path="res://Assets/Audio/Pong Sound Effects _ SFX [rJcIRj0EwQA].mp3" id="4_muhd6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v8bk4"]
 
@@ -39,3 +40,7 @@ scale_amount_min = 0.02
 scale_amount_max = 0.02
 scale_amount_curve = SubResource("Curve_v8bk4")
 color_ramp = SubResource("Gradient_x1osi")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_muhd6")
+pitch_scale = 0.4

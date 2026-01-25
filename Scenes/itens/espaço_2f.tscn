@@ -1,0 +1,185 @@
+[gd_scene load_steps=10 format=3 uid="uid://cp7atv8u3ldg8"]
+
+[ext_resource type="PackedScene" uid="uid://y57jo85xxxyt" path="res://Assets/Decoration/espaço2f.blend" id="1_qe1ww"]
+[ext_resource type="Script" uid="uid://bw71x4nshxpqf" path="res://decoration.gd" id="2_51lt4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qe1ww"]
+size = Vector3(2.3941956, 1.2858887, 3.2746582)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_51lt4"]
+size = Vector3(0.38085938, 1.086792, 0.5625)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ruvch"]
+size = Vector3(1.2431641, 0.5958252, 2.052185)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ge8ok"]
+size = Vector3(1.4411621, 0.5486164, 2.0516357)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g38lr"]
+size = Vector3(0.40307617, 0.55352783, 0.35083008)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6bwfy"]
+size = Vector3(0.38452148, 0.67529297, 0.4487915)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4an1r"]
+size = Vector3(0.24133301, 0.43614197, 0.3356018)
+
+[node name="espaço2f" instance=ExtResource("1_qe1ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1271114, 0, 9.485038)
+
+[node name="Rock_002" parent="." index="1"]
+transform = Transform3D(-0.09791522, 0.0112404525, -0.04662435, 0.019616177, 0.106108256, -0.015614535, 0.043765098, -0.022411168, -0.09731352, 6.630369, 1.1157871, -11.588035)
+
+[node name="Empty_018" parent="." index="3" node_paths=PackedStringArray("deadbody", "alivebody")]
+transform = Transform3D(-0.17150347, 0, -0.012422883, 0, 0.17195278, 0, 0.012422881, 0, -0.17150347, 5.993225, 1.7161787, -9.912856)
+script = ExtResource("2_51lt4")
+deadbody = NodePath("ALGA_005")
+alivebody = NodePath("MORTO_005")
+appear = 50.0
+
+[node name="Empty_017" parent="." index="4" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_51lt4")
+deadbody = NodePath("Cube_002")
+alivebody = NodePath("Cube_001")
+appear = 50.0
+
+[node name="Empty_016" parent="." index="5" node_paths=PackedStringArray("deadbody", "alivebody")]
+transform = Transform3D(-0.1694275, 0, 0.029361408, 0, 0.17195278, 0, -0.029361408, 0, -0.1694275, 4.036957, 1.5454808, -9.605646)
+script = ExtResource("2_51lt4")
+deadbody = NodePath("alga_morta_009")
+alivebody = NodePath("Alga_009")
+appear = 30.0
+
+[node name="Empty_015" parent="." index="6" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_51lt4")
+deadbody = NodePath("alga_morta_008")
+alivebody = NodePath("Alga_008")
+appear = 30.0
+
+[node name="Empty_014" parent="." index="7" node_paths=PackedStringArray("deadbody", "alivebody")]
+transform = Transform3D(-0.1694275, 0, 0.029361408, 0, 0.17195278, 0, -0.029361408, 0, -0.1694275, 5.4268055, 1.3157183, -9.118529)
+script = ExtResource("2_51lt4")
+deadbody = NodePath("alga_morta_007")
+alivebody = NodePath("Alga_007")
+appear = 30.0
+
+[node name="Empty_013" parent="." index="8" node_paths=PackedStringArray("deadbody", "alivebody")]
+transform = Transform3D(-0.1694275, 0, 0.029361408, 0, 0.17195278, 0, -0.029361408, 0, -0.1694275, 4.9932995, 1.2784046, -8.055333)
+script = ExtResource("2_51lt4")
+deadbody = NodePath("alga_003")
+alivebody = NodePath("morto_003")
+appear = 50.0
+
+[node name="Empty_012" parent="." index="9" node_paths=PackedStringArray("deadbody", "alivebody")]
+transform = Transform3D(-0.1694275, 0, 0.029361408, 0, 0.17195278, 0, -0.029361408, 0, -0.1694275, 4.785364, 1.2719549, -8.036412)
+script = ExtResource("2_51lt4")
+deadbody = NodePath("alga_002")
+alivebody = NodePath("morto_002")
+appear = 50.0
+
+[node name="Empty_011" parent="." index="10" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_51lt4")
+deadbody = NodePath("ALGA_003")
+alivebody = NodePath("MORTO_003")
+appear = 50.0
+
+[node name="Empty_010" parent="." index="11" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_51lt4")
+deadbody = NodePath("ALGA_004")
+alivebody = NodePath("MORTO_004")
+appear = 50.0
+
+[node name="Empty_009" parent="." index="12" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_51lt4")
+deadbody = NodePath("ALGA_001")
+alivebody = NodePath("MORTO_001")
+appear = 50.0
+
+[node name="Empty_008" parent="." index="13" node_paths=PackedStringArray("deadbody", "alivebody")]
+transform = Transform3D(-0.1694275, 0, 0.029361408, 0, 0.17195278, 0, -0.029361408, 0, -0.1694275, 5.585188, 1.7229315, -8.518797)
+script = ExtResource("2_51lt4")
+deadbody = NodePath("morto_01")
+alivebody = NodePath("alga_01")
+appear = 50.0
+
+[node name="Empty_007" parent="." index="14" node_paths=PackedStringArray("deadbody", "alivebody")]
+transform = Transform3D(-0.1694275, 0, 0.029361408, 0, 0.17195278, 0, -0.029361408, 0, -0.1694275, 5.3305225, 1.74567, -8.562932)
+script = ExtResource("2_51lt4")
+deadbody = NodePath("alga")
+alivebody = NodePath("morto")
+appear = 50.0
+
+[node name="Empty_006" parent="." index="15" node_paths=PackedStringArray("deadbody", "alivebody")]
+transform = Transform3D(-0.1694275, 0, 0.029361408, 0, 0.17195278, 0, -0.029361408, 0, -0.1694275, 5.3305225, 1.320713, -8.562932)
+script = ExtResource("2_51lt4")
+deadbody = NodePath("alga_morta_006")
+alivebody = NodePath("Alga_006")
+appear = 30.0
+
+[node name="Empty_005" parent="." index="16" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_51lt4")
+deadbody = NodePath("alga_morta_005")
+alivebody = NodePath("Alga_005")
+appear = 30.0
+
+[node name="Empty_004" parent="." index="17" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_51lt4")
+deadbody = NodePath("alga_morta_004")
+alivebody = NodePath("Alga_004")
+appear = 30.0
+
+[node name="Empty_003" parent="." index="18" node_paths=PackedStringArray("deadbody", "alivebody")]
+transform = Transform3D(-0.1694275, 0, 0.029361408, 0, 0.17195278, 0, -0.029361408, 0, -0.1694275, 5.3305225, 1.7236731, -8.562932)
+script = ExtResource("2_51lt4")
+deadbody = NodePath("alga_morta_003")
+alivebody = NodePath("Alga_003")
+appear = 30.0
+
+[node name="Empty_002" parent="." index="19" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_51lt4")
+deadbody = NodePath("ALGA_02")
+alivebody = NodePath("MORTO_02")
+appear = 50.0
+
+[node name="Empty_001" parent="." index="20" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_51lt4")
+deadbody = NodePath("alga_morta_002")
+alivebody = NodePath("Alga_002")
+appear = 30.0
+
+[node name="Empty" parent="." index="21" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_51lt4")
+deadbody = NodePath("alga_morta_001")
+alivebody = NodePath("Alga_001")
+appear = 30.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="22"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1199403, 1.0216064, -7.569372)
+shape = SubResource("BoxShape3D_qe1ww")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.42957, 1.065396, -9.207862)
+shape = SubResource("BoxShape3D_51lt4")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.846418, 1.1905494, -7.913226)
+shape = SubResource("BoxShape3D_ruvch")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" index="3"]
+transform = Transform3D(1, 0, 0, 0, 0.9758024, 0.2186542, 0, -0.2186542, 0.9758024, 6.4208336, 0.96675605, -12.083685)
+shape = SubResource("BoxShape3D_ge8ok")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.529504, 1.2645333, -9.733959)
+shape = SubResource("BoxShape3D_g38lr")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0687556, 1.0120536, -10.95109)
+shape = SubResource("BoxShape3D_6bwfy")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.360265, 1.1200833, -9.971382)
+shape = SubResource("BoxShape3D_4an1r")

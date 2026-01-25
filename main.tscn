@@ -9,24 +9,7 @@ metadata/_edit_vertical_guides_ = [-84242.0]
 [node name="character" parent="." instance=ExtResource("2_h2yge")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -35.49684, 0.94299865, 0)
 
-[node name="text_box" type="CanvasLayer" parent="."]
-visible = false
-follow_viewport_enabled = true
-
-[node name="TextEdit" type="TextEdit" parent="text_box"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 14.0
-offset_top = -59.0
-offset_right = 154.0
-offset_bottom = -19.0
-grow_vertical = 0
-size_flags_horizontal = 2
-size_flags_vertical = 10
-text = "Press E to Speak"
-
-[node name="Node3D" parent="." instance=ExtResource("1_0xm2m")]
+[node name="Map" parent="." instance=ExtResource("1_0xm2m")]
 
 [editable path="character"]
 [editable path="character/Sprit/mermaid"]

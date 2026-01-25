@@ -22,11 +22,14 @@ func _physics_process(delta: float) -> void:
 		if direction:
 			velocity = Vector2(direction * speed, -speed)
 			is_active = true
+			$AudioStreamPlayer2.play(0.0)
 	if is_active:
 		#move the ball
 		var collision = move_and_collide(velocity * delta)
 		#if collision, bounce
 		if collision:
+			if collision.get_collider().name=='Paddle' or collision.get_collider().name=='Walls':
+				$AudioStreamPlayer2.play(0.0)
 			velocity = velocity.bounce(collision.get_normal()) # get the direction it should bounce
 			
 			#keep ball from stalling
@@ -37,6 +40,7 @@ func _physics_process(delta: float) -> void:
 			
 			#trigger hit()
 			if collision.get_collider().has_method("hit"):
+				$"../AudioStreamPlayer".play(1.3)
 				collision.get_collider().hit() #call hit() on the brick we just collided with
 
 func _process(delta: float) -> void:
@@ -48,11 +52,12 @@ func _process(delta: float) -> void:
 func gameOver():
 	GameManager.score = 0 #reset score if you want
 	GameManager.level = GameManager.level #reset level if you want
-	GameManager.win_label.text = "You Lose, Good Luck Next Time!\nPress Space to Continue"
-	GameManager.win_label.visible = true
+	GameManager.win_label.get_child(0).text = "You Lose, Good Luck Next Time!\nPress Space to Continue"
+	GameManager.win_label.show()
+	GameManager.lose_audio.play()
+	print('lose')
 	await space_confirmado
-	GameManager.score_label.visible = false
-	GameManager.win_label.visible = false
+	GameManager.score_label.hide()
 	get_parent().exit_game()
 
 

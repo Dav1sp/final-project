@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8w1vl1lnmj0o"]
+
+[ext_resource type="PackedScene" uid="uid://deq0jqr4lb28i" path="res://Assets/Decoration/nucleCoral_blue.blend" id="1_v035e"]
+[ext_resource type="Script" uid="uid://bw71x4nshxpqf" path="res://decoration.gd" id="2_32w4k"]
+
+[node name="nucleCoral_blue" node_paths=PackedStringArray("deadbody", "alivebody") instance=ExtResource("1_v035e")]
+script = ExtResource("2_32w4k")
+deadbody = NodePath("Cube_046")
+alivebody = NodePath("Cube_045")
+appear = 50.0

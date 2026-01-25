@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3tkc15mmfag1"
+path="res://.godot/imported/Pong Sound Effects _ SFX [rJcIRj0EwQA].mp3-c62b4d47d6ea6e99656a648550f3e24e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Pong Sound Effects _ SFX [rJcIRj0EwQA].mp3"
+dest_files=["res://.godot/imported/Pong Sound Effects _ SFX [rJcIRj0EwQA].mp3-c62b4d47d6ea6e99656a648550f3e24e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
