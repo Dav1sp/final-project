@@ -5,6 +5,6 @@ fruit
 bites
 quack
 tenet
-porto
-lisbon
-ribeira
+forest
+moon
+sea
