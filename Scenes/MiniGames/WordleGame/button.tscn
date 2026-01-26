@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsp1h78owd70q"]
+
+[ext_resource type="FontFile" uid="uid://v770a62lemri" path="res://Assets/Fonts/TiresiasLpfont-qZ370.ttf" id="1_usg6x"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(98.5, 98.5)
+offset_right = 98.5
+offset_bottom = 98.5
+mouse_filter = 2
+theme_override_fonts/font = ExtResource("1_usg6x")
+theme_override_font_sizes/font_size = 50
+text = "X"

@@ -10,9 +10,11 @@ radius = 1.0410156
 [sub_resource type="BoxShape3D" id="BoxShape3D_l5fxf"]
 size = Vector3(0.7618103, 0.5038452, 0.75401306)
 
-[node name="pearl" instance=ExtResource("1_xcduq")]
+[node name="pearl" node_paths=PackedStringArray("iteract_range") instance=ExtResource("1_xcduq")]
 script = ExtResource("2_b3bur")
 name_item = "Pearl"
+iteract_range = NodePath("iteract range")
+pearl = true
 
 [node name="ameijoaup_001" parent="." index="0"]
 transform = Transform3D(-0.40898868, 0, -3.8160106e-08, 0, 0.29890516, 0, 3.5754926e-08, 0, -0.43650073, 0.69, 0, 0)

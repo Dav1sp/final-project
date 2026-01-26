@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyvgo730j3eop"]
+
+[ext_resource type="PackedScene" uid="uid://p03nglbat0gi" path="res://Assets/Sprites/ESPAÇO3.blend" id="1_4pbgx"]
+[ext_resource type="Script" uid="uid://bw71x4nshxpqf" path="res://decoration.gd" id="2_lalg1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n7vmw"]
+size = Vector3(13.335999, 6.269043, 16.90213)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xmxr5"]
+size = Vector3(1.5014648, 2.2685547, 1.5776978)
+
+[node name="ESPAÇO3" instance=ExtResource("1_4pbgx")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rock_002" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rock_002/StaticBody3D" index="0"]
+transform = Transform3D(0.9999999, -5.4985196e-07, 0, 7.557873e-08, 1.0000007, -1.4503536e-08, 3.5762787e-07, -5.2501997e-07, 1, -1.8225269, -0.75637066, 5.3527966)
+shape = SubResource("BoxShape3D_n7vmw")
+
+[node name="Empty_009" parent="." index="1" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_lalg1")
+deadbody = NodePath("Coral1_001")
+alivebody = NodePath("Coral1")
+appear = 50.0
+
+[node name="Empty_006" parent="." index="2" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_lalg1")
+deadbody = NodePath("alga_morta_006")
+alivebody = NodePath("Alga_006")
+appear = 30.0
+
+[node name="Empty_005" parent="." index="3" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_lalg1")
+deadbody = NodePath("alga_morta_005")
+alivebody = NodePath("Alga_005")
+appear = 30.0
+
+[node name="Empty_004" parent="." index="4" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_lalg1")
+deadbody = NodePath("alga_morta_004")
+alivebody = NodePath("Alga_004")
+appear = 30.0
+
+[node name="Empty_003" parent="." index="5" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_lalg1")
+deadbody = NodePath("alga_morta_003")
+alivebody = NodePath("Alga_003")
+appear = 30.0
+
+[node name="Empty_002" parent="." index="6" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_lalg1")
+deadbody = NodePath("Cube_046")
+alivebody = NodePath("Cube_045")
+appear = 50.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Empty_002/Cube_045" index="0"]
+transform = Transform3D(1.9953057, -0.08989984, 0.10331442, 0.07610317, 1.9822096, 0.25505757, -0.11386025, -0.25052765, 1.9809774, -0.013053894, 0.3543148, -0.014434814)
+light_color = Color(0.7797063, 0.6839225, 0.9978768, 1)
+omni_range = 0.25892103
+
+[node name="Empty_001" parent="." index="7" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_lalg1")
+deadbody = NodePath("alga_morta_002")
+alivebody = NodePath("Alga_002")
+appear = 30.0
+
+[node name="Empty" parent="." index="8" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_lalg1")
+deadbody = NodePath("alga_morta_007")
+alivebody = NodePath("Alga_001")
+appear = 30.0
+
+[node name="Empty_008" parent="." index="9" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_lalg1")
+deadbody = NodePath("coral_dead_001")
+alivebody = NodePath("coral_001")
+appear = 50.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Empty_008" index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Empty_008/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.72965, -1.471942, 5.691975)
+shape = SubResource("BoxShape3D_xmxr5")
+
+[node name="Empty_007" parent="." index="10" node_paths=PackedStringArray("deadbody", "alivebody")]
+script = ExtResource("2_lalg1")
+deadbody = NodePath("coral_dead")
+alivebody = NodePath("coral")
+appear = 50.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Empty_007" index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Empty_007/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7061558, -1.9034665, 2.2933202)
+shape = SubResource("BoxShape3D_xmxr5")

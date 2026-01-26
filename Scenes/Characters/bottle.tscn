@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfqh1phtv0jrt"]
+
+[ext_resource type="PackedScene" uid="uid://c5i2dmp5uchh1" path="res://Assets/Sprites/Bottle.blend" id="1_oqupl"]
+[ext_resource type="Script" uid="uid://l8cf58w1h73a" path="res://Scenes/itens/item_colect.gd" id="2_kvglf"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_s1jpw"]
+height = 5.593499
+radius = 4.854492
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8nob8"]
+size = Vector3(0.7618103, 5.445236, 1.9003563)
+
+[node name="Bottle" node_paths=PackedStringArray("iteract_range") instance=ExtResource("1_oqupl")]
+script = ExtResource("2_kvglf")
+name_item = "Bottle"
+iteract_range = NodePath("iteract range")
+
+[node name="Cylinder" parent="." index="0"]
+visible = false
+
+[node name="iteract range" type="Area3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 8
+metadata/type = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="iteract range" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 2.7434902, 0)
+shape = SubResource("CylinderShape3D_s1jpw")
+debug_color = Color(0, 0.62664413, 0.5122134, 0.41960785)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35125378, 0, 0.20360035)
+visible = false
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.99999845, -0.0017453283, 0, 0.0017453283, 0.99999845, -0.0032563508, 2.6168218, -0.2938015)
+shape = SubResource("BoxShape3D_8nob8")
+
+[connection signal="body_entered" from="iteract range" to="." method="_on_iteract_range_body_entered"]
+[connection signal="body_exited" from="iteract range" to="." method="_on_iteract_range_body_exited"]

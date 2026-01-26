@@ -1,20 +1,51 @@
 extends Node3D
 
 @export var name_item:String
-
-@onready var iteract = $"../../text_box"
-@onready var iteract_range = $"iteract range"
+@export var iteract:CanvasLayer = null
+@export var iteract_range:Area3D = null
+@export var pearl:bool=false
 
 func _on_iteract_range_body_entered(body: Node3D) -> void:
-	if body is CharacterBody3D:
-		body.body_enter_the_area(iteract_range)
-		iteract.get_node("TextEdit").text = 'Press E to collect '+self.name_item
-		iteract.show()
+	if self.pearl and !GameData.itens:
+		if body is CharacterBody3D and iteract_range!=null and GameData.pearl:
+			body.body_enter_the_area(iteract_range)
+			iteract.get_node("TextEdit").text = 'Press E to collect '+self.name_item
+			iteract.show()
+	elif self.pearl and GameData.itens:
+		if self.pearl and GameData.pearl:
+			if body is CharacterBody3D and iteract_range!=null:
+				body.body_enter_the_area(iteract_range)
+				iteract.get_node("TextEdit").text = 'Press E to collect '+self.name_item
+				iteract.show()
+		else:
+			if body is CharacterBody3D and iteract_range!=null and !self.pearl:
+				body.body_enter_the_area(iteract_range)
+				iteract.get_node("TextEdit").text = 'Press E to collect '+self.name_item
+				iteract.show()
+	elif !self.pearl and GameData.itens:
+		if body is CharacterBody3D and iteract_range!=null and GameData.itens:
+			body.body_enter_the_area(iteract_range)
+			iteract.get_node("TextEdit").text = 'Press E to collect '+self.name_item
+			iteract.show()
 	pass # Replace with function body.
 
 
 func _on_iteract_range_body_exited(body: Node3D) -> void:
-	if body is CharacterBody3D:
-		body.body_leave_the_area()
-		iteract.hide()
+	if pearl and !GameData.itens:
+		if body is CharacterBody3D and iteract_range!=null and GameData.pearl:
+			body.body_leave_the_area()
+			iteract.hide()
+	elif pearl and GameData.itens:
+		if self.pearl and GameData.pearl:
+			if body is CharacterBody3D and iteract_range!=null:
+				body.body_leave_the_area()
+				iteract.hide()
+		else:	
+			if body is CharacterBody3D and iteract_range!=null and !self.pearl:
+				body.body_leave_the_area()
+				iteract.hide()
+	elif !pearl and GameData.itens and iteract_range!=null and GameData.itens:
+		if body is CharacterBody3D:
+			body.body_leave_the_area()
+			iteract.hide()
 	pass # Replace with function body.

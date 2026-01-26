@@ -7,7 +7,7 @@
 metadata/_edit_vertical_guides_ = [-84242.0]
 
 [node name="character" parent="." instance=ExtResource("2_h2yge")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -35.49684, 0.94299865, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -33.562523, 0.94299865, -0.4377516)
 
 [node name="Map" parent="." instance=ExtResource("1_0xm2m")]
 

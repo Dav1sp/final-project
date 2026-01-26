@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dphbic1vky1ku"]
+
+[ext_resource type="PackedScene" uid="uid://bc6t4j8ib43lk" path="res://Assets/Sprites/Lata.blend" id="1_qu4ae"]
+[ext_resource type="Script" uid="uid://l8cf58w1h73a" path="res://Scenes/itens/item_colect.gd" id="2_uatg6"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_b52y1"]
+height = 1.0513759
+radius = 1.1069336
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fwc0i"]
+size = Vector3(0.632946, 1.0706692, 0.7269201)
+
+[node name="Lata" node_paths=PackedStringArray("iteract_range") instance=ExtResource("1_qu4ae")]
+script = ExtResource("2_uatg6")
+name_item = "Lata"
+iteract_range = NodePath("iteract range")
+
+[node name="iteract range" type="Area3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 8
+metadata/type = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="iteract range" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0.1336048, 0)
+shape = SubResource("CylinderShape3D_b52y1")
+debug_color = Color(0, 0.62664413, 0.5122134, 0.41960785)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35125378, 0, 0.20360035)
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.99999845, -0.0017453283, 0, 0.0017453283, 0.99999845, -0.34241155, 0.12269511, -0.2017842)
+shape = SubResource("BoxShape3D_fwc0i")
+
+[connection signal="body_entered" from="iteract range" to="." method="_on_iteract_range_body_entered"]
+[connection signal="body_exited" from="iteract range" to="." method="_on_iteract_range_body_exited"]

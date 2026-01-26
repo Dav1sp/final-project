@@ -10,10 +10,11 @@ radius = 4.012207
 [sub_resource type="BoxShape3D" id="BoxShape3D_uxxwf"]
 size = Vector3(4.983032, 4.0336914, 4.4831543)
 
-[node name="Trashbag" instance=ExtResource("1_na6da")]
+[node name="Trashbag" node_paths=PackedStringArray("iteract_range") instance=ExtResource("1_na6da")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("2_uxxwf")
 name_item = "Trash bag"
+iteract_range = NodePath("iteract range")
 
 [node name="iteract range" type="Area3D" parent="." index="7"]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)

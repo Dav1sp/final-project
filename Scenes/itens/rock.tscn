@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://yuenwhdou5xw"]
+
+[ext_resource type="PackedScene" uid="uid://c51wfrd7n87t1" path="res://Assets/Decoration/rock.blend" id="1_n7at0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_58ni0"]
+size = Vector3(12.648865, 7.6291504, 11.545624)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jerl5"]
+size = Vector3(12.929626, 7.8321533, 11.747803)
+
+[node name="rock" instance=ExtResource("1_n7at0")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7288513, 0.18737793, -0.53074646)
+shape = SubResource("BoxShape3D_58ni0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6309509, 0.05230713, 8.001548)
+shape = SubResource("BoxShape3D_jerl5")

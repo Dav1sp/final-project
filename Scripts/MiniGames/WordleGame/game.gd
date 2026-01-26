@@ -1,22 +1,26 @@
 extends Node2D
 
-@onready var grid: GridContainer = $GridContainer
+@onready var scroll_container: ScrollContainer = $ScrollContainer
+@onready var grid: GridContainer = $ScrollContainer/GridContainer
 @onready var menu: CanvasLayer = $Menu
 
 @onready var label: Label = $Menu/ResultLabel
-@onready var word_label: Label = $Menu/WordLabel
+@onready var word_label: Label = $Panel2/Word
 @onready var cursor: ColorRect = $Cursor
 @onready var cursor_timer: Timer = $CursorTimer
-
+@onready var mute: Button = $Panel2/Mute
+@onready var volume: Button = $Panel2/Volume
+@onready var setting_background: ColorRect = $setting_background
 
 @onready var play_button: Button = $Menu/PlayButton
+const LETTER_BUTTON_SCENE := preload("res://Scenes/MiniGames/WordleGame/button.tscn")
 
+signal space_confirmado
 
 const MAX_LEN := 10
-const ATTEMPTS := 5
+const ATTEMPTS := 100
 const MIN_LEN := 1
 const CURSOR_HEIGHT := 70
-
 
 const COLOR_GREEN := Color("#6aaa64")
 const COLOR_YELLOW := Color("#c9b458")
@@ -26,7 +30,7 @@ var cursor_slot_valid := false
 
 var buttons: Array[Button] = []
 
-var wordle: String = ""
+var wordle: String = "MATO"
 var index := 0
 var current_row := 0
 
@@ -51,22 +55,6 @@ func _lang_from_code(code: String) -> Lang:
 		"EN": return Lang.EN
 		_: return current_lang
 
-func _find_dialogue_instance() -> Node:
-	var tb := get_tree().root.find_child(TEXT_BOX_NODE_NAME, true, false)
-	if tb != null:
-		return tb
-
-	var stack: Array = [get_tree().root]
-	while not stack.is_empty():
-		var cur: Node = stack.pop_back()
-		if cur == null:
-			continue
-		if ("current_file" in cur) or ("current_language" in cur):
-			return cur
-		for c in cur.get_children():
-			stack.append(c)
-	return null
-
 func _get_dialogue_language_code(dialogue_node: Node) -> String:
 	if dialogue_node == null:
 		return ""
@@ -77,11 +65,7 @@ func _get_dialogue_language_code(dialogue_node: Node) -> String:
 	return ""
 
 func _apply_language_from_dialogue() -> void:
-	var dialogue_node := _find_dialogue_instance()
-	var code := _get_dialogue_language_code(dialogue_node)
-	if code == "":
-		return
-	current_lang = _lang_from_code(code)
+	current_lang = _lang_from_code(GameData.lang)
 
 const UI_TEXT := {
 	Lang.EN: {
@@ -150,7 +134,6 @@ var words_list: Array[String] = []
 func _ready():
 	buttons.clear()
 	cursor_timer.timeout.connect(_on_cursor_timer)
-	cursor.visible = true
 
 	for n in grid.get_children():
 		var b := n as Button
@@ -175,23 +158,28 @@ func update_cursor():
 	var row_end := row_start + MAX_LEN
 
 	cursor_slot_valid = (index >= row_start and index < row_end and index < buttons.size())
+	
 	if not cursor_slot_valid:
 		cursor.visible = false
 		return
 
 	var btn := buttons[index]
 	var rect := btn.get_global_rect()
+	
 	cursor.global_position = Vector2(
 		rect.position.x + rect.size.x / 2 - cursor.size.x / 2,
-		rect.position.y + (rect.size.y - CURSOR_HEIGHT) / 2
+		rect.position.y + (rect.size.y - CURSOR_HEIGHT + 8) / 2
 	)
-	cursor.size.y = CURSOR_HEIGHT
-	cursor.visible = true
 
 func clear_cursor():
 	cursor.visible = false
 	cursor_timer.stop()
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
+			# Isto avisa o "await" lá em cima que pode continuar
+			space_confirmado.emit()
+			
 func _unhandled_key_input(event):
 	if menu.visible:
 		return
@@ -267,9 +255,14 @@ func _after_reveal(guess: String) -> void:
 
 	if guess == wordle:
 		clear_cursor()
-		label.text = t("YOU_WON")
-		word_label.text = t("CORRECT_WORD") + " " + wordle
-		show_menu_delayed(0.35)
+		word_label.text = wordle
+		word_label.show()
+		GameManager.win_label.get_child(0).text = 'Congratulation, you completed the game!\n Press space to continue'
+		GameManager.win_label.show()
+		GameManager.win_audio.play()
+		await space_confirmado
+		queue_free()
+		#show_menu_delayed(0.35)
 		return
 
 	is_animating = false
@@ -284,7 +277,19 @@ func advance_row() -> void:
 		show_menu_delayed(0.35)
 		return
 
+	add_new_row()
 	index = current_row * MAX_LEN
+	
+	# Aguarda o Godot calcular a nova altura da Grid
+	await get_tree().process_frame
+	
+	# Faz o scroll automático para o final
+	if scroll_container:
+		var scroll_bar = scroll_container.get_v_scroll_bar()
+		scroll_container.scroll_vertical = scroll_bar.max_value
+	
+	# Aguarda mais um frame para as posições globais estabilizarem
+	await get_tree().process_frame
 	update_cursor()
 
 
@@ -294,51 +299,67 @@ func _reveal_row_flip(row_start: int, length: int, colors: Array[Color], done_cb
 	for i in range(length):
 		var btn := buttons[row_start + i]
 		var delay := i * 0.08
-		last_tween = flip_tile(btn, colors[i], delay)
+		
+		# Verifica se é a primeira ou a última letra da linha
+		var is_first = (i == 0)
+		var is_last = (i == length - 1)
+		
+		last_tween = flip_tile(btn, colors[i], delay, is_first, is_last)
 
-	
 	if last_tween != null:
-		last_tween.finished.connect(func():
-			done_cb.call()
-		)
+		last_tween.finished.connect(func(): done_cb.call())
 	else:
 		done_cb.call()
 
-func flip_tile(button: Button, color: Color, delay: float = 0.0) -> Tween:
+func flip_tile(button: Button, color: Color, delay: float, is_first: bool, is_last: bool) -> Tween:
 	var tween := create_tween()
-
-	
 	if delay > 0.0:
 		tween.tween_interval(delay)
 
-	
-	tween.tween_property(button, "scale:y", 0.0, 0.12)\
-		.set_trans(Tween.TRANS_SINE)\
-		.set_ease(Tween.EASE_IN)
+	tween.tween_property(button, "scale:y", 0.0, 0.12).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 
-	
 	tween.tween_callback(func():
-		update_button_style(button, color)
+		# Chama a nova função com a lógica de arredondamento
+		apply_rounded_style(button, color, is_first, is_last)
 	)
 
-	
-	tween.tween_property(button, "scale:y", 1.0, 0.12)\
-		.set_trans(Tween.TRANS_SINE)\
-		.set_ease(Tween.EASE_OUT)
-
+	tween.tween_property(button, "scale:y", 1.0, 0.12).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	return tween
 
 
 func _compute_colors(guess: String, target: String) -> Array[Color]:
+	var length := guess.length()
 	var out: Array[Color] = []
-	for i in range(guess.length()):
-		var g := guess[i]
-		if i < target.length() and g == target[i]:
-			out.append(COLOR_GREEN)
-		elif g in target:
-			out.append(COLOR_YELLOW)
+	out.resize(length)
+	
+	# Usamos um dicionário para contar quantas vezes cada letra aparece na palavra secreta
+	var target_counts = {}
+	for char in target:
+		target_counts[char] = target_counts.get(char, 0) + 1
+
+	# PASSAGEM 1: Encontrar os Verdes (Match exato)
+	for i in range(length):
+		if i < target.length() and guess[i] == target[i]:
+			out[i] = COLOR_GREEN
+			target_counts[guess[i]] -= 1 # Removemos esta letra da contagem disponível
 		else:
-			out.append(COLOR_GRAY)
+			out[i] = Color(0,0,0,0) # Marcador temporário para letras não processadas
+
+	# PASSAGEM 2: Encontrar os Amarelos ou Cinzas
+	for i in range(length):
+		# Se já for verde, pulamos
+		if out[i] == COLOR_GREEN:
+			continue
+			
+		var char = guess[i]
+		# Se a letra existe na palavra secreta E ainda temos saldo na contagem
+		if char in target_counts and target_counts[char] > 0:
+			out[i] = COLOR_YELLOW
+			target_counts[char] -= 1 # Consome uma instância da letra
+		else:
+			# Se a letra não existe ou o saldo acabou (ex: o segundo 'A' de AGUA)
+			out[i] = COLOR_GRAY
+
 	return out
 
 
@@ -381,6 +402,26 @@ func _load_words() -> void:
 			words_set[w] = true
 			words_list.append(w)
 
+func _process(delta: float) -> void:
+	if scroll_container:
+		var scroll_bar = scroll_container.get_v_scroll_bar()
+		if scroll_bar.visible:
+			# Este sinal detecta QUALQUER movimento (roda do mouse, arrastar, etc.)
+			scroll_bar.value_changed.connect(func(_v): 
+				var current_pos = scroll_bar.value + scroll_bar.page
+				var threshold = scroll_bar.max_value - 10.0 # 10 pixels de margem
+				var is_at_bottom = current_pos >= threshold
+				# Força a visibilidade baseada no resultado
+				if is_at_bottom:
+					# Só mostra se não estivermos a animar e o slot for válido
+					cursor.z_index = 10
+				else:
+					# Se subiu 1 pixel que seja, desaparece imediatamente
+					cursor.z_index = -10
+			)
+		
+		# Detecta se a barra apareceu/sumiu (importante para o cursor não sumir do nada)
+	pass
 
 func reset_game():
 	is_animating = false
@@ -391,16 +432,26 @@ func reset_game():
 	word_label.text = ""
 	menu.hide()
 
-	wordle = get_random_wordle()
+	# 1. LIMPEZA SEGURA: Só remove o que for botão
+	for n in grid.get_children():
+		if n is Button:
+			n.queue_free()
+	
+	# 2. LIMPA O ARRAY: Caso contrário, o jogo tentará acessar botões deletados
+	buttons.clear()
+
 	print("Wordle:", wordle)
 
-	for b in buttons:
-		init_button_styles(b)
-		b.modulate = Color(1, 1, 1, 1)
+	# 3. CRIA A PRIMEIRA LINHA
+	add_new_row()
 
-	cursor.visible = true
-	cursor_timer.start()
-	update_cursor()
+	# 4. AGUARDA O FRAME: Essencial para que os botões existam antes do cursor se mover
+	await get_tree().process_frame
+	
+	if is_instance_valid(cursor):
+		cursor.visible = true
+		cursor_timer.start()
+		update_cursor()
 
 func init_button_styles(b: Button):
 	b.scale = Vector2.ONE
@@ -438,3 +489,82 @@ func _on_button_pressed():
 	cursor.visible = true
 	cursor_timer.start()
 	update_cursor()
+
+func add_new_row():
+	for i in range(MAX_LEN): # MAX_LEN já é 10 no seu código
+		var new_btn = LETTER_BUTTON_SCENE.instantiate() as Button
+		new_btn.text = "X"
+		new_btn.focus_mode = Control.FOCUS_NONE
+		# Adiciona ao GridContainer
+		grid.add_child(new_btn)
+		# Adiciona ao seu array de controle para lógica de cor/texto
+		buttons.append(new_btn)
+		# Inicializa o estilo (escala e cores base)
+		init_button_styles(new_btn)
+		
+
+
+func _on_volume_pressed() -> void:
+	var master_bus = AudioServer.get_bus_index("Master")
+	
+	var is_muted = AudioServer.is_bus_mute(master_bus)
+
+	AudioServer.set_bus_mute(master_bus, not is_muted)
+	self.mute.show()
+	self.volume.hide()
+	pass
+
+func _on_mute_pressed() -> void:
+	var master_bus = AudioServer.get_bus_index("Master")
+	# Set mute to FALSE to hear sound again
+	AudioServer.set_bus_mute(master_bus, false)
+	self.mute.hide()
+	self.volume.show()
+	pass # Replace with function body.
+	
+func _on_settings_pressed() -> void:
+	self.setting_background.show()
+	get_tree().paused = true
+	pass # Replace with function body.
+	
+func _on_close_pressed() -> void:
+	self.setting_background.hide()
+	get_tree().paused = false
+	pass # Replace with function body.
+
+func exit_game():
+	get_tree().paused = false
+	self.player.minigame = false
+	GameManager.score_label.visible = false
+	GameManager.win_label.visible = false
+	self.npc.iteract.show()
+	queue_free()
+	pass
+	
+func _on_exit_game_pressed() -> void:
+	exit_game()
+
+
+
+func _on_save_game_pressed() -> void:
+	pass # Replace with function body.
+
+
+func apply_rounded_style(button: Button, color: Color, is_first: bool, is_last: bool):
+	var style := StyleBoxFlat.new()
+	style.bg_color = color
+	if color == COLOR_GREEN:
+		# Define o arredondamento (ex: 15 pixels)
+		var radius := 50
+		
+		if is_first:
+			style.corner_radius_top_left = radius
+			style.corner_radius_bottom_left = radius
+			
+		elif is_last:
+			
+			style.corner_radius_top_right = radius
+			style.corner_radius_bottom_right = radius
+	
+	# Aplica o estilo ao botão
+	button.add_theme_stylebox_override("normal", style)

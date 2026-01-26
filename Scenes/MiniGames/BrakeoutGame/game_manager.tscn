@@ -11,9 +11,11 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4vdns"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f2cdg"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uijn5"]
+bg_color = Color(0.50980395, 0.50980395, 0.50980395, 0)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tatf0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vdns"]
+bg_color = Color(0.20784314, 0.20784314, 0.20784314, 0.40784314)
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_tatf0")
@@ -70,21 +72,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_f2cdg")
+theme_override_styles/panel = SubResource("StyleBoxFlat_uijn5")
 
 [node name="WinLabel" type="Label" parent="CanvasLayer/Panel"]
 process_mode = 2
 layout_mode = 0
 offset_left = -1.0
-offset_top = -1.0
-offset_right = 1154.0
-offset_bottom = 649.0
+offset_top = 1.0
+offset_right = 1151.0
+offset_bottom = 647.0
 theme_override_colors/font_outline_color = Color(0.7176471, 0.5882353, 0.54509807, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_x0eq7")
 theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxTexture_tatf0")
-text = "Congratulation, you completed the game!\\nPress space to continue"
+theme_override_styles/normal = SubResource("StyleBoxFlat_4vdns")
+text = "Congratulation, you completed the game!
+Press space to continue"
 horizontal_alignment = 1
 vertical_alignment = 1
 
