@@ -1,66 +1,1771 @@
 {
-  "scene_intro": {
-	"Nacar": [
-	  {
-		"PT": "Oi, me chamo Nacar, sou seu novo colega de trabalho. Qual seu nome?",
-		"EN": "Hi, I'm Nacar, your new coworker. What is your name?",
-		"JP": "こんにちは、私はNacarです。あなたの新しい同僚です。お名前は何ですか？",
-		"IT": "Ciao, mi chiamo Nacar, sono il tuo nuovo collega. Come ti chiami?",
-		"ME": "Zdravo, zovem se Nacar, tvoj sam novi kolega. Kako se zoveš?",
-		"input": true,
-		"input_name": "character_name"
-	  },
-	  {
-		"PT": "Prazer em conhecê-lo, %s.",
-		"EN": "Nice to meet you, %s.",
-		"JP": "はじめまして、%s。",
-		"IT": "Piacere di conoscerti, %s.",
-		"ME": "Drago mi je da te upoznam, %s.",
-		"receive_input": true,
-		"receive_input_order": ["character_name"]
-	  },
-	  {
-		"PT": "Nossa próxima missão vai ser na Ria Formosa, em Portugal. Eu vou cuidar do seu transporte.",
-		"EN": "Our next mission will be in Ria Formosa, Portugal. I will handle your transport.",
-		"JP": "次のミッションはポルトガルのリア・フォルモーサで行います。あなたの移動は私が手配します。",
-		"IT": "La nostra prossima missione sarà nella Ria Formosa, in Portogallo. Mi occuperò del tuo trasporto.",
-		"ME": "Naša naredna misija biće u Ria Formosa, Portugal. Ja ću se pobrinuti za tvoj transport."
-	  },
-	  {
-		"PT": "Então, sobre a nossa missão:",
-		"EN": "So, about our mission:",
-		"JP": "それでは、ミッションについてですが：",
-		"IT": "Allora, riguardo alla nostra missione:",
-		"ME": "Dakle, o našoj misiji:"
-	  },
-	  {
-		"PT": "Alguns peixes estão tendo desentendimentos socioambientais lá, então você precisa ir para compreender melhor essa situação.",
-		"EN": "Some fish are having socio-environmental disagreements there, so you need to go and understand the situation better.",
-		"JP": "そこでは魚たちが社会環境的なトラブルに巻き込まれています。状況をよりよく理解するために現地に行く必要があります。",
-		"IT": "Alcuni pesci stanno avendo disaccordi socio-ambientali lì, quindi devi andare per capire meglio la situazione.",
-		"ME": "Neki ribe imaju socio-ekološke nesuglasice tamo, pa trebaš otići da bolje razumiješ situaciju."
-	  },
-	  {
-		"PT": "Depois disso, você conta pra mim e pro resto da equipe o que descobriu e juntos a gente decide o que fazer sobre.",
-		"EN": "After that, report back to me and the team on what you found, and together we will decide what to do.",
-		"JP": "その後、発見したことを私とチームに報告してください。そして一緒にどう対応するか決めましょう。",
-		"IT": "Dopo di ciò, riferisci a me e al resto del team ciò che hai scoperto e insieme decideremo cosa fare.",
-		"ME": "Nakon toga, javi meni i ostatku tima šta si otkrio i zajedno ćemo odlučiti šta dalje."
-	  },
-	  {
-		"PT": "É isso, tá na hora de ir, te vejo na hora de voltar.",
-		"EN": "That's it, time to go. See you when you get back.",
-		"JP": "以上です。出発の時間です。戻ったら会いましょう。",
-		"IT": "Ecco fatto, è ora di andare. Ci vediamo al tuo ritorno.",
-		"ME": "To je to, vrijeme je da ideš. Vidimo se kad se vratiš."
-	  },
-	  {
-		"PT": "Até mais.",
-		"EN": "See you later.",
-		"JP": "それでは、また。",
-		"IT": "A presto.",
-		"ME": "Vidimo se kasnije."
-	  }
-	]
-  }
+	"menu": {
+		"portugues":[
+			{
+				"PT": "Português",
+				"EN": "Portuguese",
+				"JP": "ポルトガル語",
+				"IT": "Portoghese",
+				"ME": "Portugalski"
+			}
+		],
+		"ingles":[
+			{
+				"PT": "Inglês",
+				"EN": "English",
+				"JP": "英語",
+				"IT": "Inglese",
+				"ME": "Engleski"
+			}
+		],
+		"japones":[
+			{
+				"PT": "Japonês",
+				"EN": "Japanese",
+				"JP": "日本語",
+				"IT": "Giapponese",
+				"ME": "Japanski"
+			}
+		],
+		"italiano":[
+			{
+				"PT": "Italiano",
+				"EN": "Italian",
+				"JP": "イタリア語",
+				"IT": "Italiano",
+				"ME": "Italijanski"
+			}
+		],
+		"montenegrino":[
+			{
+				"PT": "Montenegrino",
+				"EN": "Montenegrin",
+				"JP": "モンテネグロ語",
+				"IT": "Montenegrino",
+				"ME": "Crnogorski"
+			}
+		],
+		"change_language":[
+			{
+				"PT": "Idioma",
+				"EN": "Language",
+				"JP": "言語",
+				"IT": "Lingua",
+				"ME": "Jezik"
+			}
+		],
+		"new_game":[
+			{
+				"PT": "Novo Jogo",
+				"EN": "New Game",
+				"JP": "ニューゲーム",
+				"IT": "Nuova Partita",
+				"ME": "Nova Igra"
+			}
+		],
+		"fumo": [
+			{
+				"PT": "FUMO",
+				"EN": "SMOKE",
+				"JP": "煙",
+				"IT": "FUMO",
+				"ME": "DIM"
+			}
+		],
+		"acido": [
+			{
+				"PT": "ACIDO",
+				"EN": "ACID",
+				"JP": "酸",
+				"IT": "ACIDO",
+				"ME": "KISELINA"
+			}
+		],
+		"casca": [
+			{
+				"PT": "CASCA",
+				"EN": "SHELL",
+				"JP": "殻",
+				"IT": "GUSCIO",
+				"ME": "OKLOP"
+			}
+		],
+		"raiz": [
+			{
+				"PT": "RAIZ",
+				"EN": "ROOT",
+				"JP": "根",
+				"IT": "RADICE",
+				"ME": "KORIJEN"
+			}
+		],
+		"casa": [
+			{
+				"PT": "CASA",
+				"EN": "HOME",
+				"JP": "家",
+				"IT": "CASA",
+				"ME": "KUCA"
+			}
+		],
+		"zostera": [
+			{
+				"PT": "ZOSTERA",
+				"EN": "ZOSTERA",
+				"JP": "アマモ",
+				"IT": "ZOSTERA",
+				"ME": "ZOSTERA"
+			}
+		],
+		"space_press":[
+			{
+				"PT": "Espaço",
+				"EN": "Space",
+				"JP": "スペース",
+				"IT": "Spazio",
+				"ME": "Razmak"
+			}
+		],
+		"enter_press":[
+			{
+				"PT": "Enter",
+				"EN": "Enter",
+				"JP": "エンター",
+				"IT": "Invio",
+				"ME": "Enter"
+			}
+		],
+		"press_e_npc":[
+			{
+				"PT": "Pressiona E para falar",
+				"EN": "Press E to speak",
+				"JP": "Eを押して話す",
+				"IT": "Premi E per parlare",
+				"ME": "Pritisni E za razgovor"
+			}
+		],
+		"press_e_object":[
+			{
+				"PT": "Pressiona E para recolher %s",
+				"EN": "Press E to collect %s",
+				"JP": "Eを押して%sを回収",
+				"IT": "Premi E per raccogliere %s",
+				"ME": "Pritisni E da pokupiš %s"
+			}
+		],
+		"lata":[
+			{
+				"PT": "Lata",
+				"EN": "Can",
+				"JP": "缶",
+				"IT": "Lattina",
+				"ME": "Limenka"
+			}
+		],
+		"pearl":[
+			{
+				"PT": "Pérola",
+				"EN": "Pearl",
+				"JP": "真珠",
+				"IT": "Perla",
+				"ME": "Biser"
+			}
+			
+		],
+		"rede":[
+			{
+				"PT": "Rede",
+				"EN": "Net",
+				"JP": "網",
+				"IT": "Rete",
+				"ME": "Mreža"
+			}
+			
+		],
+		"bottle":[
+			{
+				"PT": "Garrafa",
+				"EN": "Bottle",
+				"JP": "ボトル",
+				"IT": "Bottiglia",
+				"ME": "Flaša"
+			}
+		],
+		"trashbag":[
+			{
+				"PT": "Saco do Lixo",
+				"EN": "Trash Bag",
+				"JP": "ゴミ袋",
+				"IT": "Sacco della spazzatura",
+				"ME": "Vreća za smeće"
+			}
+		],
+		"moves":[
+			{
+				"PT": "Passos",
+				"EN": "Moves",
+				"JP": "手数",
+				"IT": "Mosse",
+				"ME": "Potezi"
+			}
+		],
+		"best_score":[
+			{
+				"PT": "Recorde",
+				"EN": "Record",
+				"JP": "記録",
+				"IT": "Record",
+				"ME": "Rekord"
+			}
+		],
+		"reset":[
+			{
+				"PT": "Reiniciar",
+				"EN": "Restart",
+				"JP": "リスタート",
+				"IT": "Riavvia",
+				"ME": "Ponovo pokreni"
+			}
+		],
+		"save_game":[
+			{
+				"PT": "Guardar Jogo",
+				"EN": "Save Game",
+				"JP": "ゲームを保存",
+				"IT": "Salva Partita",
+				"ME": "Sačuvaj igru"
+			}
+		],
+		"close":[
+			{
+				"PT": "Fechar",
+				"EN": "Close",
+				"JP": "閉じる",
+				"IT": "Chiudi",
+				"ME": "Zatvori"
+			}
+		],
+		"exit_game":[
+			{
+				"PT": "Sair do Jogo",
+				"EN": "Exit Game",
+				"JP": "ゲーム終了",
+				"IT": "Esci dal Gioco",
+				"ME": "Izađi iz igre"
+			}
+		],
+		"level":[
+			{
+				"PT": "Nível",
+				"EN": "Level",
+				"JP": "レベル",
+				"IT": "Livello",
+				"ME": "Nivo"
+			}
+		],
+		"complete_game":[
+			{
+				"PT": "Parabéns, completaste o jogo!\nPressiona Espaço para continuar",
+				"EN": "Congratulation, you completed the game!\n Press space to continue",
+				"JP": "おめでとう、ゲームクリア！\nスペースキーを押して続ける",
+				"IT": "Congratulazioni, hai completato il gioco!\nPremi Spazio per continuare",
+				"ME": "Čestitam, završio si igru!\nPritisni Razmak za nastavak"
+			}
+		],
+		"lose_game":[
+			{
+				"PT": "Perdeste, boa sorte para a próxima!\nPressiona Espaço para continuar",
+				"EN": "You Lose, Good Luck Next Time!\nPress Space to Continue",
+				"JP": "残念、ゲームオーバー！\nスペースキーを押して続ける",
+				"IT": "Hai perso, buona fortuna per la prossima volta!\nPremi Spazio per continuare",
+				"ME": "Izgubio si, više sreće drugi put!\nPritisni Razmak za nastavak"
+			}
+		],
+		"half_level":[
+			{
+				"PT": "Parabéns, completaste %d de %d!\nPressiona Espaço para continuar",
+				"EN": "Congratulation, you completed %d of %d!\n Press space to continue",
+				"JP": "おめでとう、%d / %d 完了！\nスペースキーを押して続ける",
+				"IT": "Congratulazioni, hai completato %d di %d!\nPremi Spazio per continuare",
+				"ME": "Čestitam, završio si %d od %d!\nPritisni Razmak za nastavak"
+			}
+		],
+		"score": [
+			{
+				"PT": "Pontuação: ",
+				"EN": "Score: ",
+				"JP": "スコア: ",
+				"IT": "Punteggio: ",
+				"ME": "Rezultat: "
+			}
+		]
+	},
+  	"scene_intro": {
+		"lata":[
+		{
+			"PT": "Apanhaste uma Lata",
+			"EN": "You picked up a Can",
+			"JP": "缶を拾った",
+			"IT": "Hai raccolto una barattolo",
+			"ME": "Pokupio si konzervu"
+		}
+		],
+		"pearl":[
+		{
+			"PT": "Apanhaste uma Pérola",
+			"EN": "You picked up a Pearl",
+			"JP": "真珠を拾った",
+			"IT": "Hai raccolto una perlalo",
+			"ME": "Pokupio si biser"
+		}
+		],
+		"rede":[
+		{
+			"PT": "Apanhaste uma Rede",
+			"EN": "You picked up a Net",
+			"JP": "網を拾った",
+			"IT": "Hai raccolto una rete",
+			"ME": "Pokupio si mrežur"	
+		}
+		],
+		"bottle":[
+			{
+				"PT": "Apanhaste uma Garrafa",
+				"EN": "You picked up a Bottle",
+				"JP": "瓶を拾った",
+				"IT": "Hai raccolto una bottiglia",
+				"ME": "Pokupio si flašu"
+			}
+		],
+		"trashbag":[
+			{
+				"PT": "Apanhaste um Saco do Lixo",
+				"EN": "You picked up a Trash Bag",
+				"JP": "ゴミ袋を拾った",
+				"IT": "Hai raccolto un sacco della spazzatura",
+				"ME": "Pokupio si vreću za smeće"
+			}
+		],
+		"Nacar": [
+			{
+				"first_dialogue": [
+					{
+						"PT": "Olá, chamo-me Nacar, sou o teu novo colega de trabalho. Como te chamas?",
+						"EN": "Hi, I'm Nacar, your new coworker. What is your name?",
+						"JP": "こんにちは、私はNacarです。あなたの新しい同僚です。お名前は何ですか？",
+						"IT": "Ciao, mi chiamo Nacar, sono il tuo nuovo collega. Come ti chiami?",
+						"ME": "Zdravo, zovem se Nacar, tvoj sam novi kolega. Kako se zoveš?",
+						"input": true,
+						"input_name": "character_name"
+					},
+					{
+						"PT": "Prazer em conhecer-te, %s.",
+						"EN": "Nice to meet you, %s.",
+						"JP": "はじめまして、%s。",
+						"IT": "Piacere di conoscerti, %s.",
+						"ME": "Drago mi je da te upoznam, %s.",
+						"receive_input": true,
+						"receive_input_order": ["character_name"]
+					},
+					{
+						"PT": "A nossa próxima missão é aqui no Lodaçal da Ria Formosa, em Portugal.",
+						"EN": "Our next mission is here at the Ria Formosa Mudflat, in Portugal.",
+						"JP": "次のミッションは、ここポルトガルのリア・フォルモーサ干潟です。",
+						"IT": "La nostra prossima missione è qui nella piana di fango di Ria Formosa, in Portogallo.",
+						"ME": "Naša sljedeća misija je ovdje u blatu Ria Formose, u Portugalu."
+					},
+					{
+						"PT": "Então, sobre a nossa missão:",
+						"EN": "So, about our mission:",
+						"JP": "それでは、ミッションについてですが：",
+						"IT": "Allora, riguardo alla nostra missione:",
+						"ME": "Dakle, o našoj misiji:"
+					},
+					{
+						"PT": "Preciso que você vá até lá abaixo e perceba por que tudo está a morrer.",
+						"EN": "I need you to go down there and figure out why everything is dying.",
+						"JP": "下に行って、なぜすべてのものが死んでいるのかを突き止めてほしいのです。",
+						"IT": "Ho bisogno che tu vada laggiù e capisca perché tutto sta morendo.",
+						"ME": "Treba da odeš dolje i shvatiš zašto sve umire."
+					},
+					{
+						"PT": "Depois de perceberes o que se passa, conta-me a mim e ao resto da equipa o que descobriste, e juntos talvez possamos fazer a diferença.",
+						"EN": "After you realize what's happening, tell me and the rest of the team what you found, and together maybe we can make a difference.",
+						"JP": "何が起きているか分かったら、私とチームのみんなに発見したことを教えてください。そうすれば、一緒に状況を変えられるかもしれません。",
+						"IT": "Dopo aver capito cosa sta succedendo, riferisci a me e al resto della squadra ciò che hai scoperto, e insieme forse potremo fare la differenza.",
+						"ME": "Nakon što shvatiš šta se dešava, reci meni i ostatku tima šta si otkrio, i zajedno možda možemo napraviti razliku."
+					},
+					{
+						"PT": "Mas primeiro vamos ver um checkup para ver se sabes tudo.",
+						"EN": "But first, let's do a checkup to see if you know everything.",
+						"JP": "でもその前に、あなたが全て知っているか確認するために、チェックアップをしましょう。",
+						"IT": "Ma prima, facciamo un checkup per vedere se sai tutto.",
+						"ME": "Ali prvo, hajde da uradimo provjeru da vidimo znaš li sve.",
+						"quiz":true,
+						"begin":true,
+						"quests":[
+							{
+								"id": 0,
+								"question": {
+									"PT": "O que é a 'Pesca Fantasma'?",
+									"EN": "What is 'Ghost Fishing'?",
+									"JP": "「ゴーストフィッシング（幽霊漁）」とは何ですか？",
+									"IT": "Cos'è la 'Pesca Fantasma'?",
+									"ME": "Šta je 'Fantomski ribolov'?"
+								},
+								"options": [
+									{
+										"PT": "Pescar durante a noite com lanternas.",
+										"EN": "Fishing at night with lanterns.",
+										"JP": "夜にランタンを使って釣りをすること。",
+										"IT": "Pescare di notte con le lanterne.",
+										"ME": "Ribolov noću sa lampionima."
+									},
+									{
+										"PT": "Fantasmas que assustam os peixes.",
+										"EN": "Ghosts that scare the fish.",
+										"JP": "魚を怖がらせる幽霊。",
+										"IT": "Fantasmi che spaventano i pesci.",
+										"ME": "Duhovi koji plaše ribe."
+									},
+									{
+										"PT": "Redes abandonadas que continuam a apanhar peixes para sempre.",
+										"EN": "Abandoned nets that keep catching fish forever.",
+										"JP": "捨てられた網が、永遠に魚を捕まえ続けること。",
+										"IT": "Reti abbandonate che continuano a catturare pesci per sempre.",
+										"ME": "Napuštene mreže koje nastavljaju hvatati ribu zauvijek."
+									}
+								],
+								"correct_option_index": 2
+							},
+							{
+								"id": 1,
+								"question": {
+									"PT": "O que é a 'Zostera noltii'?",
+									"EN": "What is 'Zostera noltii'?",
+									"JP": "「アマモ (Zostera noltii)」とは何ですか？",
+									"IT": "Cos'è la 'Zostera noltii'?",
+									"ME": "Šta je 'Zostera noltii'?"
+								},
+								"options": [
+									{
+										"PT": "É uma alga marinha viscosa.",
+										"EN": "It's a slimy seaweed.",
+										"JP": "ヌルヌルした海藻です。",
+										"IT": "È un'alga marina viscosa.",
+										"ME": "To je sluzava morska trava."
+									},
+									{
+										"PT": "É uma planta com raízes e flores (Pradaria Marinha).",
+										"EN": "It's a plant with roots and flowers (Seagrass Meadow).",
+										"JP": "根と花を持つ植物（海草藻場）です。",
+										"IT": "È una pianta con radici e fiori (Prateria Marina).",
+										"ME": "To je biljka sa korijenjem i cvjetovima (Morska livada)."
+									},
+									{
+										"PT": "É um tipo de ameijoa rara.",
+										"EN": "It's a type of rare clam.",
+										"JP": "珍しい種類のアサリです。",
+										"IT": "È un tipo di vongola rara.",
+										"ME": "To je vrsta rijetke školjke."
+									}
+								],
+								"correct_option_index": 1
+							},
+							{
+								"id": 2,
+								"question": {
+									"PT": "O que acontece quando o mar fica mais ácido?",
+									"EN": "What happens when the sea becomes more acidic?",
+									"JP": "海が酸性になるとどうなりますか？",
+									"IT": "Cosa succede quando il mare diventa più acido?",
+									"ME": "Šta se dešava kada more postane kiselije?"
+								},
+								"options": [
+									{
+										"PT": "Os peixes ficam mais coloridos.",
+										"EN": "Fish become more colorful.",
+										"JP": "魚がよりカラフルになります。",
+										"IT": "I pesci diventano più colorati.",
+										"ME": "Ribe postaju šarenije."
+									},
+									{
+										"PT": "As cascas e conchas dos animais dissolvem-se ou ficam fracas.",
+										"EN": "Animal shells dissolve or become weak.",
+										"JP": "動物の殻や貝殻が溶けたり、弱くなったりします。",
+										"IT": "I gusci e le conchiglie degli animali si dissolvono o si indeboliscono.",
+										"ME": "Oklopi i školjke životinja se rastvaraju ili postaju slabi."
+									},
+									{
+										"PT": "A água fica mais quente para nadar.",
+										"EN": "The water gets warmer for swimming.",
+										"JP": "泳ぐのに水が温かくなります。",
+										"IT": "L'acqua diventa più calda per nuotare.",
+										"ME": "Voda postaje toplija za plivanje."
+									}
+								],
+								"correct_option_index": 1
+							},
+							{
+								"id": 3,
+								"question": {
+									"PT": "O que acontece ao plástico que vai parar ao mar?",
+									"EN": "What happens to the plastic that ends up in the sea?",
+									"JP": "海に流れ着いたプラスチックはどうなりますか？",
+									"IT": "Cosa succede alla plastica che finisce in mare?",
+									"ME": "Šta se dešava sa plastikom koja završi u moru?"
+								},
+								"options": [
+									{
+										"PT": "Desaparece completamente em poucos dias.",
+										"EN": "It disappears completely in a few days.",
+										"JP": "数日で完全に消えます。",
+										"IT": "Scompare completamente in pochi giorni.",
+										"ME": "Potpuno nestaje za nekoliko dana."
+									},
+									{
+										"PT": "Transforma-se em comida saudável para os peixes.",
+										"EN": "It turns into healthy food for fish.",
+										"JP": "魚のための健康的な食べ物に変わります。",
+										"IT": "Si trasforma in cibo sano per i pesci.",
+										"ME": "Pretvara se u zdravu hranu za ribe."
+									},
+									{
+										"PT": "Vira microplástico, entra na cadeia alimentar e chega ao nosso prato.",
+										"EN": "Turns into microplastics, enters the food chain, and reaches our plate.",
+										"JP": "マイクロプラスチックになり、食物連鎖に入り、私たちの皿に届きます。",
+										"IT": "Diventa microplastica, entra nella catena alimentare e arriva nel nostro piatto.",
+										"ME": "Pretvara se u mikroplastiku, ulazi u lanac ishrane i stiže na naš tanjir."
+									}
+								],
+								"correct_option_index": 2
+							},
+							{
+								"id": 4,
+								"question": {
+									"PT": "Você faria algo para ajudar na resolução dos problemas socioambientais?",
+									"EN": "Would you do something to help solve socio-environmental problems?",
+									"JP": "社会環境問題の解決を助けるために、あなたは何か行動しますか？",
+									"IT": "Faresti qualcosa per aiutare a risolvere i problemi socio-ambientali?",
+									"ME": "Da li biste uradili nešto da pomognete u rješavanju socio-ekoloških problema?"
+								},
+								"options": [
+									{
+										"PT": "Não faria",
+										"EN": "I wouldn't",
+										"JP": "しない",
+										"IT": "Non lo farei",
+										"ME": "Ne bih"
+									},
+									{
+										"PT": "Talvez faria",
+										"EN": "Maybe I would",
+										"JP": "たぶんする",
+										"IT": "Forse lo farei",
+										"ME": "Možda bih"
+									},
+									{
+										"PT": "Faria",
+										"EN": "I would",
+										"JP": "する",
+										"IT": "Lo farei",
+										"ME": "Bih"
+									}
+								],
+								"correct_option_index": 2
+							},
+							{
+								"id": 5,
+								"question": {
+									"PT": "Sobre os modos de produção e consumo dos humanos, eu acho que eles ____ visando a resolução dos problemas.",
+									"EN": "Regarding human production and consumption modes, I think they ____ aiming at solving the problems.",
+									"JP": "人間の生産と消費のあり方について、問題解決のためには ____ と思います。",
+									"IT": "Riguardo ai modi di produzione e consumo umani, penso che ____ per risolvere i problemi.",
+									"ME": "Što se tiče ljudskih načina proizvodnje i potrošnje, mislim da ____ u cilju rješavanja problema."
+								},
+								"options": [
+									{
+										"PT": "Não deviam mudar",
+										"EN": "Should not change",
+										"JP": "変わるべきではない",
+										"IT": "Non dovrebbero cambiare",
+										"ME": "Ne bi trebalo da se mijenjaju"
+									},
+									{
+										"PT": "Deviam mudar um pouco",
+										"EN": "Should change a little",
+										"JP": "少し変わるべきだ",
+										"IT": "Dovrebbero cambiare un po'",
+										"ME": "Trebalo bi da se malo promijene"
+									},
+									{
+										"PT": "Deviam mudar muito",
+										"EN": "Should change a lot",
+										"JP": "大きく変わるべきだ",
+										"IT": "Dovrebbero cambiare molto",
+										"ME": "Trebalo bi da se mnogo promijene"
+									}
+								],
+								"correct_option_index": 2
+							}
+						]
+					},
+					{
+						"PT": "É isto, está na hora de ir. Vemo-nos no regresso.",
+						"EN": "That's it, time to go. See you when you get back.",
+						"JP": "以上です。出発の時間です。戻ったら会いましょう。",
+						"IT": "Ecco fatto, è ora di andare. Ci vediamo al tuo ritorno.",
+						"ME": "To je to, vrijeme je da ideš. Vidimo se kad se vratiš."
+					},
+					{
+						"PT": "Até logo.",
+						"EN": "See you later.",
+						"JP": "それでは、また。",
+						"IT": "A presto.",
+						"ME": "Vidimo se kasnije."
+					}
+				],
+				"game_complete":[
+					{
+						"PT": "Continua assim, já conseguiste completar %s da missão.",
+						"EN": "Keep it up, you have already completed %s of the mission.",
+						"JP": "その調子だ、すでにミッションの%sを完了したぞ。",
+						"IT": "Continua così, hai già completato il %s della missione.",
+						"ME": "Samo tako nastavi, već si završio %s misije.",
+						"receive_input": true,
+						"receive_input_order": ["progress"]
+					},
+					{
+						"PT": "Agora volta ao trabalho. O ecossistema não espera por ninguém.",
+						"EN": "Now get back to work. The ecosystem waits for no one.",
+						"JP": "さあ、仕事に戻れ。生態系は誰のことも待ってはくれないぞ。",
+						"IT": "Ora torna al lavoro. L'ecosistema non aspetta nessuno.",
+						"ME": "Sada se vrati na posao. Ekosistem nikoga ne čeka."
+					},
+					{
+						"PT": "Até já.",
+						"EN": "See you soon.",
+						"JP": "また後でな。",
+						"IT": "A dopo.",
+						"ME": "Vidimo se uskoro."
+					}
+				],
+				"end_dialogue": [
+					{
+						"PT": "Parece que conseguiste completar a missão e ajudar o Lodaçal. Bom trabalho.",
+						"EN": "It seems you managed to complete the mission and help the Mudflat. Good job.",
+						"JP": "ミッションを完了し、干潟を救うことができたようですね。よくやりました。",
+						"IT": "Sembra che tu sia riuscito a completare la missione e ad aiutare la piana di fango. Bel lavoro.",
+						"ME": "Izgleda da si uspio završiti misiju i pomoći blatu. Dobar posao."
+					},
+					{
+						"PT": "Agora vamos ao relatório final. Quero ver se aprendeste mesmo a lição.",
+						"EN": "Now let's get to the final report. I want to see if you really learned the lesson.",
+						"JP": "さて、最終報告に移りましょう。あなたが本当に教訓を学んだのか確認させてもらいます。",
+						"IT": "Ora passiamo al rapporto finale. Voglio vedere se hai davvero imparato la lezione.",
+						"ME": "Sada pređimo na završni izvještaj. Želim da vidim jesi li zaista naučio lekciju.",
+						"quiz":true,
+						"begin":true,
+						"quests":[
+							{
+								"id": 0,
+								"question": {
+									"PT": "O que é a 'Pesca Fantasma'?",
+									"EN": "What is 'Ghost Fishing'?",
+									"JP": "「ゴーストフィッシング（幽霊漁）」とは何ですか？",
+									"IT": "Cos'è la 'Pesca Fantasma'?",
+									"ME": "Šta je 'Fantomski ribolov'?"
+								},
+								"options": [
+									{
+										"PT": "Pescar durante a noite com lanternas.",
+										"EN": "Fishing at night with lanterns.",
+										"JP": "夜にランタンを使って釣りをすること。",
+										"IT": "Pescare di notte con le lanterne.",
+										"ME": "Ribolov noću sa lampionima."
+									},
+									{
+										"PT": "Fantasmas que assustam os peixes.",
+										"EN": "Ghosts that scare the fish.",
+										"JP": "魚を怖がらせる幽霊。",
+										"IT": "Fantasmi che spaventano i pesci.",
+										"ME": "Duhovi koji plaše ribe."
+									},
+									{
+										"PT": "Redes abandonadas que continuam a apanhar peixes para sempre.",
+										"EN": "Abandoned nets that keep catching fish forever.",
+										"JP": "捨てられた網が、永遠に魚を捕まえ続けること。",
+										"IT": "Reti abbandonate che continuano a catturare pesci per sempre.",
+										"ME": "Napuštene mreže koje nastavljaju hvatati ribu zauvijek."
+									}
+								],
+								"correct_option_index": 2
+							},
+							{
+								"id": 1,
+								"question": {
+									"PT": "O que é a 'Zostera noltii'?",
+									"EN": "What is 'Zostera noltii'?",
+									"JP": "「アマモ (Zostera noltii)」とは何ですか？",
+									"IT": "Cos'è la 'Zostera noltii'?",
+									"ME": "Šta je 'Zostera noltii'?"
+								},
+								"options": [
+									{
+										"PT": "É uma alga marinha viscosa.",
+										"EN": "It's a slimy seaweed.",
+										"JP": "ヌルヌルした海藻です。",
+										"IT": "È un'alga marina viscosa.",
+										"ME": "To je sluzava morska trava."
+									},
+									{
+										"PT": "É uma planta com raízes e flores (Pradaria Marinha).",
+										"EN": "It's a plant with roots and flowers (Seagrass Meadow).",
+										"JP": "根と花を持つ植物（海草藻場）です。",
+										"IT": "È una pianta con radici e fiori (Prateria Marina).",
+										"ME": "To je biljka sa korijenjem i cvjetovima (Morska livada)."
+									},
+									{
+										"PT": "É um tipo de ameijoa rara.",
+										"EN": "It's a type of rare clam.",
+										"JP": "珍しい種類のアサリです。",
+										"IT": "È un tipo di vongola rara.",
+										"ME": "To je vrsta rijetke školjke."
+									}
+								],
+								"correct_option_index": 1
+							},
+							{
+								"id": 2,
+								"question": {
+									"PT": "O que acontece quando o mar fica mais ácido?",
+									"EN": "What happens when the sea becomes more acidic?",
+									"JP": "海が酸性になるとどうなりますか？",
+									"IT": "Cosa succede quando il mare diventa più acido?",
+									"ME": "Šta se dešava kada more postane kiselije?"
+								},
+								"options": [
+									{
+										"PT": "Os peixes ficam mais coloridos.",
+										"EN": "Fish become more colorful.",
+										"JP": "魚がよりカラフルになります。",
+										"IT": "I pesci diventano più colorati.",
+										"ME": "Ribe postaju šarenije."
+									},
+									{
+										"PT": "As cascas e conchas dos animais dissolvem-se ou ficam fracas.",
+										"EN": "Animal shells dissolve or become weak.",
+										"JP": "動物の殻や貝殻が溶けたり、弱くなったりします。",
+										"IT": "I gusci e le conchiglie degli animali si dissolvono o si indeboliscono.",
+										"ME": "Oklopi i školjke životinja se rastvaraju ili postaju slabi."
+									},
+									{
+										"PT": "A água fica mais quente para nadar.",
+										"EN": "The water gets warmer for swimming.",
+										"JP": "泳ぐのに水が温かくなります。",
+										"IT": "L'acqua diventa più calda per nuotare.",
+										"ME": "Voda postaje toplija za plivanje."
+									}
+								],
+								"correct_option_index": 1
+							},
+							{
+								"id": 3,
+								"question": {
+									"PT": "O que acontece ao plástico que vai parar ao mar?",
+									"EN": "What happens to the plastic that ends up in the sea?",
+									"JP": "海に流れ着いたプラスチックはどうなりますか？",
+									"IT": "Cosa succede alla plastica che finisce in mare?",
+									"ME": "Šta se dešava sa plastikom koja završi u moru?"
+								},
+								"options": [
+									{
+										"PT": "Desaparece completamente em poucos dias.",
+										"EN": "It disappears completely in a few days.",
+										"JP": "数日で完全に消えます。",
+										"IT": "Scompare completamente in pochi giorni.",
+										"ME": "Potpuno nestaje za nekoliko dana."
+									},
+									{
+										"PT": "Transforma-se em comida saudável para os peixes.",
+										"EN": "It turns into healthy food for fish.",
+										"JP": "魚のための健康的な食べ物に変わります。",
+										"IT": "Si trasforma in cibo sano per i pesci.",
+										"ME": "Pretvara se u zdravu hranu za ribe."
+									},
+									{
+										"PT": "Vira microplástico, entra na cadeia alimentar e chega ao nosso prato.",
+										"EN": "Turns into microplastics, enters the food chain, and reaches our plate.",
+										"JP": "マイクロプラスチックになり、食物連鎖に入り、私たちの皿に届きます。",
+										"IT": "Diventa microplastica, entra nella catena alimentare e arriva nel nostro piatto.",
+										"ME": "Pretvara se u mikroplastiku, ulazi u lanac ishrane i stiže na naš tanjir."
+									}
+								],
+								"correct_option_index": 2
+							},
+							{
+								"id": 4,
+								"question": {
+									"PT": "Você faria algo para ajudar na resolução dos problemas socioambientais?",
+									"EN": "Would you do something to help solve socio-environmental problems?",
+									"JP": "社会環境問題の解決を助けるために、あなたは何か行動しますか？",
+									"IT": "Faresti qualcosa per aiutare a risolvere i problemi socio-ambientali?",
+									"ME": "Da li biste uradili nešto da pomognete u rješavanju socio-ekoloških problema?"
+								},
+								"options": [
+									{
+										"PT": "Não faria",
+										"EN": "I wouldn't",
+										"JP": "しない",
+										"IT": "Non lo farei",
+										"ME": "Ne bih"
+									},
+									{
+										"PT": "Talvez faria",
+										"EN": "Maybe I would",
+										"JP": "たぶんする",
+										"IT": "Forse lo farei",
+										"ME": "Možda bih"
+									},
+									{
+										"PT": "Faria",
+										"EN": "I would",
+										"JP": "する",
+										"IT": "Lo farei",
+										"ME": "Bih"
+									}
+								],
+								"correct_option_index": 2
+							},
+							{
+								"id": 5,
+								"question": {
+									"PT": "Sobre os modos de produção e consumo dos humanos, eu acho que eles ____ visando a resolução dos problemas.",
+									"EN": "Regarding human production and consumption modes, I think they ____ aiming at solving the problems.",
+									"JP": "人間の生産と消費のあり方について、問題解決のためには ____ と思います。",
+									"IT": "Riguardo ai modi di produzione e consumo umani, penso che ____ per risolvere i problemi.",
+									"ME": "Što se tiče ljudskih načina proizvodnje i potrošnje, mislim da ____ u cilju rješavanja problema."
+								},
+								"options": [
+									{
+										"PT": "Não deviam mudar",
+										"EN": "Should not change",
+										"JP": "変わるべきではない",
+										"IT": "Non dovrebbero cambiare",
+										"ME": "Ne bi trebalo da se mijenjaju"
+									},
+									{
+										"PT": "Deviam mudar um pouco",
+										"EN": "Should change a little",
+										"JP": "少し変わるべきだ",
+										"IT": "Dovrebbero cambiare un po'",
+										"ME": "Trebalo bi da se malo promijene"
+									},
+									{
+										"PT": "Deviam mudar muito",
+										"EN": "Should change a lot",
+										"JP": "大きく変わるべきだ",
+										"IT": "Dovrebbero cambiare molto",
+										"ME": "Trebalo bi da se mnogo promijene"
+									}
+								],
+								"correct_option_index": 2
+							}
+						]
+					}
+				],
+				"evolution": [
+					{
+						"PT": "Impressionante! Começaste com dúvidas, mas agora és um especialista no Lodaçal.",
+						"EN": "Impressive! You started with doubts, but now you are a Mudflat expert.",
+						"JP": "素晴らしい！最初は疑問だらけでしたが、今では干潟の専門家ですね。",
+						"IT": "Impressionante! Hai iniziato con dei dubbi, ma ora sei un esperto della piana di fango.",
+						"ME": "Impresivno! Počeo si sa sumnjama, ali sada si stručnjak za blato."
+					},
+					{
+						"PT": "Nota-se que ouviste as histórias do Tito e do Paco. É de agentes assim que precisamos.",
+						"EN": "It shows that you listened to Tito and Paco's stories. We need agents like that.",
+						"JP": "ティトとパコの話をよく聞いていたのが分かります。我々が必要としているのはそういうエージェントです。",
+						"IT": "Si vede che hai ascoltato le storie di Tito e Paco. Abbiamo bisogno di agenti così.",
+						"ME": "Vidi se da si slušao priče Tita i Paca. Takvi agenti nam trebaju."
+					}
+				],
+				"master": [
+					{
+						"PT": "Tu já chegaste aqui a saber tudo, e provaste que não foi sorte. Pontuação perfeita!",
+						"EN": "You arrived here knowing everything, and you proved it wasn't luck. Perfect score!",
+						"JP": "ここに来た時点で既に全て知っていましたね。それが運ではなかったことを証明しました。満点です！",
+						"IT": "Sei arrivato qui sapendo tutto, e hai dimostrato che non era fortuna. Punteggio perfetto!",
+						"ME": "Stigao si ovdje znajući sve, i dokazao si da nije bila sreća. Savršen rezultat!"
+					},
+					{
+						"PT": "És um defensor nato da natureza. O quartel-general vai ficar orgulhoso.",
+						"EN": "You are a born defender of nature. Headquarters will be proud.",
+						"JP": "あなたは生まれながらの自然の守護者ですね。司令部も誇りに思うでしょう。",
+						"IT": "Sei un difensore nato della natura. Il quartier generale sarà orgoglioso.",
+						"ME": "Ti si rođeni branilac prirode. Štab će biti ponosan."
+					}
+				],
+				"failed": [
+					{
+						"PT": "Hum... Os teus resultados no segundo teste não são famosos.",
+						"EN": "Hmm... Your results on the second test aren't great.",
+						"JP": "うーん… 2回目のテストの結果はあまり良くありませんね。",
+						"IT": "Hmm... I tuoi risultati nel secondo test non sono un granché.",
+						"ME": "Hm... Tvoji rezultati na drugom testu nisu sjajni."
+					},
+					{
+						"PT": "Andaste a dormir enquanto os animais falavam? O ecossistema precisa de mais atenção.",
+						"EN": "Were you sleeping while the animals were talking? The ecosystem needs more attention.",
+						"JP": "動物たちが話している間、寝ていたのですか？生態系にはもっと注意が必要です。",
+						"IT": "Dormivi mentre gli animali parlavano? L'ecosistema ha bisogno di più attenzione.",
+						"ME": "Jesi li spavao dok su životinje pričale? Ekosistem treba više pažnje."
+					}
+				]
+			}
+		],
+		"Mariel":[
+			{
+				"first_dialogue":[
+					{
+						"PT": "Olá, prazer, o meu nome é Mariel.",
+						"EN": "Hi, nice to meet you, my name is Mariel.",
+						"JP": "やあ、はじめまして。私の名前はマリエルだよ。",
+						"IT": "Ciao, piacere, mi chiamo Mariel.",
+						"ME": "Zdravo, drago mi je, ja sam Mariel."
+					},
+					{
+						"PT": "O pessoal daqui é muito crítico em relação aos seres humanos. Sinceramente, eu acho tudo isso uma parvoíce.",
+						"EN": "The folks around here are very critical of humans. Honestly, I think that's all nonsense.",
+						"JP": "ここのみんなは人間に対してすごく批判的なんだ。正直、私はそういうの馬鹿げてると思うけどね。",
+						"IT": "La gente qui è molto critica verso gli umani. Onestamente, penso che siano tutte sciocchezze.",
+						"ME": "Ljudi ovdje su veoma kritični prema ljudima. Iskreno, mislim da je to glupost."
+					},
+					{
+						"PT": "Eu também não gosto muito de humanos, mas às vezes chegam coisas fixes deles cá, como este mosaico que eu montei com uns azulejos.",
+						"EN": "I don't love humans either, but sometimes cool things of theirs end up here, like this mosaic I made with some tiles.",
+						"JP": "私も人間が大好きってわけじゃないけど、たまに彼らの面白いものがここに流れてくるの。このタイルで作ったモザイクみたいにね。",
+						"IT": "Neanch'io amo molto gli umani, ma a volte arrivano cose carine da loro, come questo mosaico che ho fatto con delle piastrelle.",
+						"ME": "Ni ja ne volim ljude previše, ali ponekad njihove lijepe stvari završe ovdje, kao ovaj mozaik koji sam napravila od pločica."
+					},
+					{
+						"PT": "Inclusive, encontrei uns azulejos recentemente que parecem formar uma imagem, mas não estou a conseguir montá-la.",
+						"EN": "Actually, I found some tiles recently that seem to form an image, but I can't put it together.",
+						"JP": "実は最近、絵になりそうなタイルを見つけたんだけど、うまく組み立てられないの。",
+						"IT": "A proposito, ho trovato delle piastrelle di recente che sembrano formare un'immagine, ma non riesco a completarla.",
+						"ME": "Zapravo, nedavno sam našla neke pločice koje izgleda formiraju sliku, ali ne mogu da je sastavim."
+					},
+					{
+						"PT": "Podes ajudar-me?",
+						"EN": "Could you help me?",
+						"JP": "手伝ってくれない？",
+						"IT": "Potresti aiutarmi?",
+						"ME": "Možeš li mi pomoći?"
+					}
+				],
+				"leave":[
+					{
+					"PT": "Então não conseguiste... não faz mal. Podes voltar a tentar quando quiseres, toda a ajuda é bem-vinda.",
+					"EN": "So you couldn't do it... no problem. You can try again whenever you want, any help is welcome.",
+					"JP": "できなかったんだね…問題ないよ。いつでもまた挑戦してね。助けてくれるだけで嬉しいから。",
+					"IT": "Quindi non ci sei riuscito... nessun problema. Puoi riprovare quando vuoi, ogni aiuto è ben accetto.",
+					"ME": "Dakle nisi uspio... nema problema. Možeš pokušati ponovo kad god želiš, svaka pomoć je dobrodošla."
+					}
+				],
+				"win":[
+					{
+						"PT": "Que fixe, forma uma imagem de corais! Que linda.",
+						"EN": "That's so cool, it forms an image of corals! How beautiful.",
+						"JP": "すごい！サンゴの絵になったね。なんて綺麗なんだろう。",
+						"IT": "Che bello, forma un'immagine di coralli! Che meraviglia.",
+						"ME": "Kako kul, formira sliku korala! Prelijepo."
+					},
+					{
+						"PT": "Soube que há algum tempo este lago estava cheio de corais vivos, brilhantes e com muita vida.",
+						"EN": "I heard that some time ago, this lake was full of bright, living corals and lots of life.",
+						"JP": "昔はこの湖も、鮮やかな生きたサンゴとたくさんの命で溢れていたんだって。",
+						"IT": "Ho sentito dire che tempo fa questo lago era pieno di coralli vivi e brillanti, e di tanta vita.",
+						"ME": "Čula sam da je nekada davno ovo jezero bilo puno živih, sjajnih korala i života."
+					},
+					{
+						"PT": "Espero que um dia volte a ser assim.",
+						"EN": "I hope one day it goes back to being like that.",
+						"JP": "いつかまた、そんな姿に戻るといいな。",
+						"IT": "Spero che un giorno torni a essere così.",
+						"ME": "Nadam se da će jednog dana ponovo biti tako."
+					},
+					{
+						"PT": "Sempre que quiseres ajudar, podes vir. Os meus irmãos estão por aí, talvez possas ajudá-los também.",
+						"EN": "Whenever you want to help, come by. My brothers are around, maybe you can help them too.",
+						"JP": "手伝いたい時はいつでも来てね。私の兄弟たちも近くにいるから、彼らのことも手伝ってあげて。",
+						"IT": "Ogni volta che vuoi aiutare, passa pure. I miei fratelli sono in giro, forse puoi aiutare anche loro.",
+						"ME": "Kad god želiš pomoći, dođi. Moja braća su u blizini, možda možeš i njima pomoći."
+					}
+				],
+				"back":[
+					{
+						"PT": "Então vieste ajudar-me novamente? Que fixe.",
+						"EN": "So you came back to help me again? That's cool.",
+						"JP": "また手伝いに来てくれたんだね？嬉しいよ。",
+						"IT": "Quindi sei tornato ad aiutarmi? Che bello.",
+						"ME": "Vratio si se da mi ponovo pomogneš? To je super."
+					}
+				],
+				"again":[
+					{
+						"PT": "Boa, conseguiste novamente! És incrível.",
+						"EN": "Yay, you did it again! You are amazing.",
+						"JP": "やったー、またできたね！君ってすごい！",
+						"IT": "Evviva, ce l'hai fatta di nuovo! Sei incredibile.",
+						"ME": "Jej, uspio si ponovo! Nevjerovatan si."
+					}
+				]
+			}
+		],
+		"Mel":[
+			{
+				"first_dialogue": [
+					{
+						"PT": "Aqueles humanos... não sabem o mal que fazem ao planeta.",
+						"EN": "Those humans... they don't know the harm they do to the planet.",
+						"JP": "あの人間たち… 自分たちが地球にどれほど悪いことをしているか分かっていないわ。",
+						"IT": "Quegli umani... non sanno il male che fanno al pianeta.",
+						"ME": "Ti ljudi... ne znaju kakvo zlo čine planeti."
+					},
+					{
+						"PT": "Olha para isto, arrancaram toda a Zostera noltii para pôr ameijoas e ostras. Tudo para enriquecer.",
+						"EN": "Look at this, they ripped out all the Zostera noltii to plant clams and oysters. All to get rich.",
+						"JP": "これを見て。お金持ちになるために、アマモ (Zostera noltii) を全部抜いて、アサリやカキを植えたのよ。",
+						"IT": "Guarda qui, hanno strappato via tutta la Zostera noltii per mettere vongole e ostriche. Tutto per arricchirsi.",
+						"ME": "Pogledaj ovo, počupali su svu Zosteru noltii da bi uzgajali školjke i kamenice. Sve da bi se obogatili."
+					},
+					{
+						"PT": "Antes era só eu e o meu mundo aqui em baixo. Agora só vejo animais iguais a mim... Às vezes sinto que nem sei o que sou.",
+						"EN": "It used to be just me and my world down here. Now I only see animals just like me... Sometimes I feel like I don't even know what I am.",
+						"JP": "昔は私と私の世界だけだったのに。今は私と同じような動物ばかり… 時々、自分が何なのかさえ分からなくなるわ。",
+						"IT": "Prima eravamo solo io e il mio mondo quaggiù. Ora vedo solo animali uguali a me... A volte sento di non sapere nemmeno cosa sono.",
+						"ME": "Prije smo bili samo ja i moj svijet ovdje dolje. Sada vidim samo životinje iste kao ja... Ponekad osjećam da ni sama ne znam šta sam."
+					},
+					{
+						"PT": "Adorava quando podíamos ver peixes a nadar por aqui. Era incrível.",
+						"EN": "I loved when we could see fish swimming around here. It was incredible.",
+						"JP": "ここを魚たちが泳いでいるのを見るのが大好きだったわ。素晴らしかった。",
+						"IT": "Adoravo quando potevamo vedere i pesci nuotare qui intorno. Era incredibile.",
+						"ME": "Obožavala sam kad smo mogli vidjeti ribe kako plivaju ovuda. Bilo je nevjerovatno."
+					},
+					{
+						"PT": "Espera aí... A minha pérola?",
+						"EN": "Wait a minute... My pearl?",
+						"JP": "待って… 私の真珠は？",
+						"IT": "Aspetta un attimo... La mia perla?",
+						"ME": "Čekaj malo... Moj biser?"
+					},
+					{
+						"PT": "OHHHHHHHHHHHHHH NÃO!!!!!!!!!!!!!!!!!!!!",
+						"EN": "OHHHHHHHHHHHHHH NO!!!!!!!!!!!!!!!!!!!!",
+						"JP": "うわあああああああああ！！！！",
+						"IT": "OHHHHHHHHHHHHHH NO!!!!!!!!!!!!!!!!!!!!",
+						"ME": "OHHHHHHHHHHHHHH NE!!!!!!!!!!!!!!!!!!!!"
+					},
+					{
+						"PT": "Devo tê-la perdido por aí. Achas que a consegues encontrar?",
+						"EN": "I must have lost it around here. Do you think you can find it?",
+						"JP": "この辺りで落としちゃったみたい。見つけてくれる？",
+						"IT": "Devo averla persa qui in giro. Pensi di riuscire a trovarla?",
+						"ME": "Mora da sam ga negdje ovdje izgubila. Misliš li da ga možeš naći?"
+					},
+					{
+						"PT": "Por favor, devolve-me a pérola quando a encontrares.",
+						"EN": "Please, return the pearl to me when you find it.",
+						"JP": "お願い、見つけたら私に返してね。",
+						"IT": "Per favore, riportami la perla quando la trovi.",
+						"ME": "Molim te, vrati mi biser kad ga nađeš."
+					}
+				],
+				"falar_sem_perola": [
+					{
+						"PT": "Ainda não a conseguiste encontrar?",
+						"EN": "Haven't you found it yet?",
+						"JP": "まだ見つからないの？",
+						"IT": "Non l'hai ancora trovata?",
+						"ME": "Još uvijek ga nisi našao?"
+					},
+					{
+						"PT": "Vão gozar comigo... acho que vou chorar.",
+						"EN": "Everyone will make fun of me... I think I'm going to cry.",
+						"JP": "みんなに笑われちゃう… 泣きそう…",
+						"IT": "Mi prenderanno tutti in giro... Penso che piangerò.",
+						"ME": "Svi će mi se smijati... Mislim da ću zaplakati."
+					},
+					{
+						"PT": "Buááá... Buááá... Buááá...",
+						"EN": "Waaah... Waaah... Waaah...",
+						"JP": "うわーん… うわーん… うわーん…",
+						"IT": "Ueeee... Ueeee... Ueeee...",
+						"ME": "Uaaa... Uaaa... Uaaa..."
+					}
+				],
+				"falar_com_perola": [
+					{
+						"PT": "Obrigada! Salvaste-me a vida. Talvez nem todos os humanos sejam assim tão maus.",
+						"EN": "Thank you! You saved my life. Maybe not all humans are that bad.",
+						"JP": "ありがとう！命の恩人よ。人間もみんながみんな悪いわけじゃないのかもね。",
+						"IT": "Grazie! Mi hai salvato la vita. Forse non tutti gli umani sono così cattivi.",
+						"ME": "Hvala ti! Spasio si mi život. Možda nisu svi ljudi tako loši."
+					}
+				]
+			}
+		],
+		"Maria":[
+			{
+				"end_dialogue": [
+					{
+						"PT": "Tenho tantas saudades do meu Joseph.",
+						"EN": "I miss my Joseph so much.",
+						"JP": "私のジョセフ… 会いたいわ。",
+						"IT": "Mi manca tanto il mio Joseph.",
+						"ME": "Mnogo mi nedostaje moj Joseph."
+					},
+					{
+						"PT": "Fuuuun! Fuuuun!",
+						"EN": "Honk! Honk!",
+						"JP": "チーン！ チーン！",
+						"IT": "Pfffft! Pfffft!",
+						"ME": "Fuuu! Fuuu!"
+					},
+					{
+						"PT": "A forma como os humanos nos usaram e nos descartaram foi horrível. Felizmente, as coisas começam a recompor-se.",
+						"EN": "The way humans used and discarded us was horrible. Fortunately, things are starting to recover.",
+						"JP": "人間たちの私たちへの扱いは酷いものだったわ。でも幸いなことに、少しずつ良くなってきている。",
+						"IT": "Il modo in cui gli umani ci hanno usato e gettato via è stato orribile. Per fortuna, le cose stanno iniziando a sistemarsi.",
+						"ME": "Način na koji su nas ljudi iskoristili i odbacili bio je užasan. Srećom, stvari se počinju popravljati."
+					},
+					{
+						"PT": "Pode ser que o meu pequeno chegue a ver um mundo melhor.",
+						"EN": "Maybe my little one will get to see a better world.",
+						"JP": "この子は、もっと良い世界を見られるかもしれないわね。",
+						"IT": "Forse il mio piccolo riuscirà a vedere un mondo migliore.",
+						"ME": "Možda će moj mališan doživjeti da vidi bolji svijet."
+					}
+				]
+			}						
+		],
+		"Rui":[
+			{
+				"first_dialogue": [
+					{
+						"PT": "Olá %s, não sabia que vinhas trabalhar aqui. Que seca de trabalho... estou farto de ver esta natureza morta, até cansa a vista.",
+						"EN": "Hi %s, I didn't know you were coming to work here. What a boring job... I'm sick of looking at this dead nature, it's exhausting to look at.",
+						"JP": "やあ %s、ここで働くことになったなんて知らなかったよ。退屈な仕事だろ。この死んだ自然を見てるだけで目が疲れるよ。",
+						"IT": "Ciao %s, non sapevo che saresti venuto a lavorare qui. Che noia questo lavoro... sono stufo di vedere questa natura morta, è stancante per gli occhi.",
+						"ME": "Zdravo %s, nisam znao da ćeš ovdje raditi. Dosadan posao... muka mi je da gledam ovu mrtvu prirodu, umara mi oči.",
+						"receive_input": true,
+						"receive_input_order": ["character_name"]
+					},
+					{
+						"PT": "Ninguém quer saber de uns quantos animais mortos. A minha missão era apanhar o lixo deste lago, mas estou mais virado para ficar na conversa com o Artur.",
+						"EN": "Nobody cares about a few dead animals. My mission was to collect the trash from this lake, but I'd rather stay here chatting with Artur.",
+						"JP": "死んだ動物のことなんて誰も気にしないさ。湖のゴミ拾いが俺の任務だけど、アルトゥールと喋ってる方がいいや。",
+						"IT": "A nessuno importa di qualche animale morto. La mia missione era raccogliere i rifiuti da questo lago, ma preferisco restare qui a chiacchierare con Artur.",
+						"ME": "Nikoga nije briga za nekoliko mrtvih životinja. Moja misija je bila da pokupim smeće iz ovog jezera, ali radije bih ostao ovdje da pričam sa Arturom."
+					},
+					{
+						"PT": "Achas que consegues fazer isso por mim?",
+						"EN": "Do you think you can do that for me?",
+						"JP": "俺の代わりにやってくれないか？",
+						"IT": "Pensi di poterlo fare al posto mio?",
+						"ME": "Misliš li da to možeš uraditi umjesto mene?"
+					},
+					{
+						"PT": "Abençoado sejas.",
+						"EN": "Bless you.",
+						"JP": "助かるよ。",
+						"IT": "Che tu sia benedetto.",
+						"ME": "Bog te blagoslovio."
+					}
+				],
+				"end_dialogue": [
+					{
+						"PT": "Ainda bem que estás aqui, %s. Não sei o que faria sem ti.",
+						"EN": "I'm glad you're here, %s. I don't know what I'd do without you.",
+						"JP": "君がいてくれてよかったよ、%s。君がいなかったらどうなっていたことか。",
+						"IT": "Meno male che ci sei tu, %s. Non so cosa farei senza di te.",
+						"ME": "Sreća što si ovdje, %s. Ne znam šta bih bez tebe.",
+						"receive_input": true,
+						"receive_input_order": ["character_name"]
+					}
+				]
+			}
+		],
+		"Gobys":[
+			{
+				"block": [
+					{
+						"PT": "Quem és tu? Nós nunca te vimos por aqui, cai fora.",
+						"EN": "Who are you? We have never seen you around here, get lost.",
+						"JP": "誰だお前？我々はお前など見たことがない。失せろ。",
+						"IT": "Chi sei? Non ti abbiamo mai visto qui, sparisci.",
+						"ME": "Ko si ti? Nikad te nismo vidjeli ovdje, gubi se."
+					}
+				],
+				"first_dialogue": [
+					{
+						"PT": "Olá, nós vimos-te a conversar com o nosso irmãozinho. Quem és tu?",
+						"EN": "Hi, we saw you talking to our little brother. Who are you?",
+						"JP": "やあ、我々の弟と話しているのを見たぞ。君は誰だい？",
+						"IT": "Ciao, ti abbiamo visto parlare con il nostro fratellino. Chi sei?",
+						"ME": "Zdravo, vidjeli smo te kako pričaš sa našim mlađim bratom. Ko si ti?"
+					},
+					{
+						"PT": "Entendo, então tu és o %s. Os animais estão a falar de ti, e não é coisa boa. Humanos não são bem vistos aqui no lodaçal.",
+						"EN": "I see, so you are %s. The animals are talking about you, and it's not good. Humans aren't well-regarded here in the mudflat.",
+						"JP": "なるほど、お前が%sか。動物たちが君の噂をしているが、いい話ではないな。この干潟では、人間はあまり好かれていないのだ。",
+						"IT": "Capisco, quindi tu sei %s. Gli animali parlano di te, e non è nulla di buono. Gli umani non sono visti di buon occhio qui nella piana di fango.",
+						"ME": "Razumijem, dakle ti si %s. Životinje pričaju o tebi, i to nisu dobre stvari. Ljudi nisu dobrodošli ovdje u blatu.",
+						"receive_input": true,
+						"receive_input_order": ["character_name"]
+					},
+					{
+						"PT": "Bem, seja como for, o nosso irmãozinho pareceu gostar de ti. Nós chamamo-nos Goby.",
+						"EN": "Well, anyway, our little brother seemed to like you. We are Goby.",
+						"JP": "まあ、とにかく、我々の弟は君を気に入ったようだ。我々はゴビーだ。",
+						"IT": "Beh, comunque sia, al nostro fratellino sei piaciuto. Noi ci chiamiamo Goby.",
+						"ME": "Pa, kako god, našem mlađem bratu si se svidio. Mi se zovemo Goby."
+					},
+					{
+						"PT": "Estamos aqui a tentar montar este azulejo há horas, mas não conseguimos entender o que é.",
+						"EN": "We've been trying to put this tile together for hours, but we can't figure out what it is.",
+						"JP": "何時間もこのタイルを組み立てようとしているのだが、我々には何なのかさっぱり分からん。",
+						"IT": "È da ore che cerchiamo di assemblare questa piastrella, ma non riusciamo a capire cosa sia.",
+						"ME": "Već satima pokušavamo da sastavimo ovu pločicu, ali ne možemo da shvatimo šta je."
+					}
+				],
+				"leave": [
+					{
+						"PT": "Então tu também não conseguiste? É complicado mesmo. Podes voltar a tentar quando quiseres.",
+						"EN": "So you couldn't do it either? It really is complicated. You can try again whenever you want.",
+						"JP": "君もダメだったか… 実際、難しいのだ。気が向いたらまたやってみてくれ。",
+						"IT": "Quindi non ci sei riuscito neanche tu? È davvero complicato. Puoi riprovare quando vuoi.",
+						"ME": "Dakle, ni ti nisi uspio? Stvarno je komplikovano. Možeš pokušati ponovo kad god želiš."
+					}
+				],
+				"back": [
+					{
+						"PT": "Então vieste tentar a sorte de novo?",
+						"EN": "So you came to try your luck again?",
+						"JP": "また運試しに来たのか？",
+						"IT": "Quindi sei tornato a tentare la fortuna?",
+						"ME": "Dakle, došao si da ponovo okušaš sreću?"
+					}
+				],
+				"again": [
+					{
+						"PT": "Boa, conseguiste novamente! És incrível.",
+						"EN": "Nice, you did it again! You are amazing.",
+						"JP": "やったぞ、またできたな！君はすごい！",
+						"IT": "Grande, ce l'hai fatta di nuovo! Sei incredibile.",
+						"ME": "Bravo, uspio si ponovo! Nevjerovatan si."
+					}
+				],
+				"win":[
+					{
+						"PT": "Que imagem triste... Conseguiste montar o puzzle, mas a realidade é dura. Vês esta foca?",
+						"EN": "What a sad image... You solved the puzzle, but the reality is harsh. Do you see this seal?",
+						"JP": "なんて悲しい絵なんだ… パズルは解けたけど、現実は厳しいね。このアザラシが見えるかい？",
+						"IT": "Che immagine triste... Hai risolto il puzzle, ma la realtà è dura. Vedi questa foca?",
+						"ME": "Kakva tužna slika... Riješio si slagalicu, ali stvarnost je surova. Vidiš li ovu foku?"
+					},
+					{
+						"PT": "Ela está presa no que chamamos de 'Pesca Fantasma'. São redes que os humanos perdem ou abandonam, mas que continuam a pescar sozinhas para sempre.",
+						"EN": "It is trapped in what we call 'Ghost Fishing'. These are nets humans lose or abandon, but they keep catching fish on their own forever.",
+						"JP": "これは「ゴーストフィッシング（幽霊漁）」って呼ばれるものに捕まっているんだ。人間が捨てた網が、ずっと魚を捕まえ続けているんだよ。",
+						"IT": "È intrappolata in quella che chiamiamo 'Pesca Fantasma'. Sono reti che gli umani perdono o abbandonano, ma continuano a pescare da sole per sempre.",
+						"ME": "Zarobljena je u onome što zovemo 'Fantosmki ribolov'. To su mreže koje ljudi izgube ili bace, ali one nastavljaju da love same zauvijek."
+					},
+					{
+						"PT": "E olha para o plástico à volta. Ele demora centenas de anos a desaparecer e muitos de nós comem-no a pensar que é comida.",
+						"EN": "And look at the plastic around it. It takes hundreds of years to disappear, and many of us eat it thinking it's food.",
+						"JP": "周りのプラスチックを見て。なくなるのに何百年もかかるし、僕たちの多くが食べ物と間違えて食べちゃうんだ。",
+						"IT": "E guarda la plastica intorno. Ci vogliono centinaia di anni perché scompaia e molti di noi la mangiano pensando sia cibo.",
+						"ME": "I pogledaj plastiku okolo. Potrebne su stotine godina da nestane, a mnogi od nas je jedu misleći da je hrana."
+					},
+					{
+						"PT": "Aprende com esta imagem: o mar não é um caixote do lixo. Protege a nossa casa, por favor.",
+						"EN": "Learn from this image: the ocean is not a trash can. Please protect our home.",
+						"JP": "この絵から学んでほしい。海はゴミ箱じゃないんだ。お願いだから、僕たちの家を守って。",
+						"IT": "Impara da questa immagine: l'oceano non è un cestino. Proteggi la nostra casa, per favore.",
+						"ME": "Nauči nešto iz ove slike: okean nije kanta za smeće. Molim te, čuvaj naš dom."
+					}
+				]
+			}
+		],
+		"Miro":[
+			{
+				"block": [
+					{
+						"PT": "Um humano... O cheiro da destruição segue-te para onde vais. Desaparece da minha frente, não és bem-vindo aqui.",
+						"EN": "A human... The stench of destruction follows you wherever you go. Get out of my sight, you are not welcome here.",
+						"JP": "人間か… お前たちが行くところには破壊の臭いがついて回る。失せろ、ここにお前の居場所はない。",
+						"IT": "Un umano... Il puzzo della distruzione ti segue ovunque vai. Sparisci dalla mia vista, non sei il benvenuto qui.",
+						"ME": "Čovjek... Smrad uništenja te prati kuda god kreneš. Gubi mi se s očiju, nisi dobrodošao ovdje."
+					}
+				],
+				"first_dialogue": [
+					{
+						"PT": "Ah... então tu és o humano %s. A Mariel e os Gobys falaram-me de ti.",
+						"EN": "Ah... so you are the human %s. Mariel and the Gobys told me about you.",
+						"JP": "ああ… 君が人間の%sだね。マリエルとゴビーたちから君の話は聞いているよ。",
+						"IT": "Ah... quindi tu sei l'umano %s. Mariel e i Goby mi hanno parlato di te.",
+						"ME": "Ah... dakle ti si čovjek %s. Mariel i Goby su mi pričali o tebi.",
+						"receive_input": true,
+						"receive_input_order": ["character_name"]
+					},
+					{
+						"PT": "Eu sou o Miro. Eu passo os meus dias a observar o que as correntes trazem para aqui. Normalmente, são apenas memórias tristes.",
+						"EN": "I am Miro. I spend my days observing what the currents bring here. Usually, they are just sad memories.",
+						"JP": "僕はミロ。海流がここに運んでくるものを眺めて過ごしているんだ。大抵は、悲しい思い出ばかりだけどね。",
+						"IT": "Io sono Miro. Passo le mie giornate a osservare ciò che le correnti portano qui. Di solito, sono solo ricordi tristi.",
+						"ME": "Ja sam Miro. Provodim dane posmatrajući šta struje donose ovdje. Obično su to samo tužna sjećanja."
+					},
+					{
+						"PT": "Hoje, as águas trouxeram estes destroços. Parecem formar uma imagem gigante, mas tenho medo de ver o que é sozinho.",
+						"EN": "Today, the waters brought this debris. It seems to form a giant image, but I'm afraid to look at it alone.",
+						"JP": "今日、水がこの残骸を運んできた。巨大な絵になっているようだけど、一人で見るのが怖いんだ。",
+						"IT": "Oggi le acque hanno portato questi detriti. Sembrano formare un'immagine gigante, ma ho paura di guardarla da solo.",
+						"ME": "Danas je voda donijela ove krhotine. Izgleda da formiraju ogromnu sliku, ali bojim se da je pogledam sam."
+					},
+					{
+						"PT": "Podes ajudar-me a montar isto para encararmos a realidade juntos?",
+						"EN": "Can you help me assemble this so we can face reality together?",
+						"JP": "現実を直視するために、これを組み立てるのを手伝ってくれないか？",
+						"IT": "Puoi aiutarmi a montarlo così affrontiamo la realtà insieme?",
+						"ME": "Možeš li mi pomoći da ovo sastavim kako bismo se zajedno suočili sa stvarnošću?"
+					}
+				],
+				"leave": [
+					{
+						"PT": "É uma visão demasiado pesada... eu compreendo. Vai, descansa os olhos.",
+						"EN": "It's too heavy a sight... I understand. Go, rest your eyes.",
+						"JP": "見るに堪えない光景だよね… 分かるよ。行って、目を休めておいで。",
+						"IT": "È una visione troppo pesante... capisco. Vai, riposa gli occhi.",
+						"ME": "To je pretežak prizor... razumijem. Idi, odmori oči."
+					}
+				],
+				"back": [
+					{
+						"PT": "A tua consciência trouxe-te de volta? Vamos tentar outra vez.",
+						"EN": "Did your conscience bring you back? Let's try again.",
+						"JP": "良心が君を呼び戻したのかい？もう一度やってみよう。",
+						"IT": "La tua coscienza ti ha riportato qui? Proviamo di nuovo.",
+						"ME": "Da li te je savjest vratila? Pokušajmo ponovo."
+					}
+				],
+				"again": [
+					{
+						"PT": "Consegues olhar para a verdade mais do que uma vez. Tens coragem, humano.",
+						"EN": "You can look at the truth more than once. You have courage, human.",
+						"JP": "真実を何度も直視できるんだね。勇気があるよ、人間さん。",
+						"IT": "Riesci a guardare la verità più di una volta. Hai coraggio, umano.",
+						"ME": "Možeš pogledati istini u oči više puta. Imaš hrabrosti, čovječe."
+					}
+				],
+				"win": [
+					{
+						"PT": "Olha para isto... Que visão pavorosa. É uma autêntica lixeira flutuante no meio do nosso oceano.",
+						"EN": "Look at this... What a dreadful sight. It is a genuine floating dump in the middle of our ocean.",
+						"JP": "これを見てくれ… なんて恐ろしい光景だ。僕たちの海の真ん中に浮かぶ、正真正銘のゴミ捨て場だ。",
+						"IT": "Guardate questo... Che visione spaventosa. È una vera discarica galleggiante in mezzo al nostro oceano.",
+						"ME": "Pogledaj ovo... Kakav užasan prizor. To je prava plutajuća deponija usred našeg okeana."
+					},
+					{
+						"PT": "Sabias que existem 'Ilhas de Plástico' maiores que alguns países inteiros? As correntes empurram o lixo todo para o mesmo sítio.",
+						"EN": "Did you know there are 'Plastic Islands' bigger than entire countries? Currents push all the trash to the same place.",
+						"JP": "いくつかの国より大きな「プラスチックの島」があることを知っているか？海流がゴミをすべて同じ場所に集めるのだ。",
+						"IT": "Sapevi che esistono 'Isole di Plastica' più grandi di interi paesi? Le correnti spingono tutti i rifiuti nello stesso posto.",
+						"ME": "Znaš li da postoje 'Ostrva plastike' veća od cijelih država? Struje guraju svo smeće na isto mjesto."
+					},
+					{
+						"PT": "Com o tempo, este plástico desfaz-se em microplásticos que nós engolimos sem querer. Isso deixa-nos doentes e envenena tudo.",
+						"EN": "Over time, this plastic breaks down into microplastics that we swallow unintentionally. It makes us sick and poisons everything.",
+						"JP": "時間が経つと、このプラスチックはマイクロプラスチックになり、我々が誤って飲み込んでしまう。それは僕たちを病気にし、すべてを汚染するんだ。",
+						"IT": "Col tempo, questa plastica si scompone in microplastiche che noi ingoiamo involontariamente. Questo ci fa ammalare e avvelena tutto.",
+						"ME": "Vremenom, ova plastika se raspada na mikroplastiku koju mi slučajno progutamo. To nas čini bolesnim i truje sve."
+					},
+					{
+						"PT": "Aprende com esta imagem, %s. O que deitas para o chão, acaba sempre aqui. Não deixes a nossa casa morrer.",
+						"EN": "Learn from this image, %s. What you throw on the ground always ends up here. Don't let our home die.",
+						"JP": "この絵から学んでくれ、%s。地面に捨てたものは、必ず最後にはここに来る。僕たちの家を死なせないでくれ。",
+						"IT": "Impara da questa immagine, %s. Ciò che butti per terra finisce sempre qui. Non lasciare che la nostra casa muoia.",
+						"ME": "Nauči nešto iz ove slike, %s. Ono što baciš na zemlju uvijek završi ovdje. Ne dozvoli da naš dom umre.",
+						"receive_input": true,
+						"receive_input_order": ["character_name"]
+					}
+				]
+			}
+		],
+		"Hippo":[
+			{
+				"first_dialogue": [
+					{
+						"PT": "Afasta-te! Vais arrancar a minha casa também? Já não sobra nada...",
+						"EN": "Stay back! Are you going to rip out my home too? There's nothing left...",
+						"JP": "あっちへ行け！僕の家まで引き抜くつもりか？もう何も残ってないのに…",
+						"IT": "Stammi lontano! Strapperai via anche la mia casa? Non è rimasto più niente...",
+						"ME": "Drži se podalje! Hoćeš li i moju kuću isčupati? Ništa više nije ostalo..."
+					},
+					{
+						"PT": "Oh... tu és o %s? Desculpa o medo. É que, antigamente, isto era uma floresta colorida de corais e plantas.",
+						"EN": "Oh... you are %s? Sorry for the fear. It's just that, in the old days, this was a colorful forest of corals and plants.",
+						"JP": "ああ… 君が%sかい？怖がってごめんよ。昔ここは、サンゴや植物のカラフルな森だったんだ。",
+						"IT": "Oh... tu sei %s? Scusa la paura. È che un tempo questa era una foresta colorata di coralli e piante.",
+						"ME": "Oh... ti si %s? Izvini na strahu. Nekad je ovo bila šarena šuma korala i biljaka.",
+						"receive_input": true,
+						"receive_input_order": ["character_name"]
+					},
+					{
+						"PT": "Agora olho à volta e só vejo areia revirada e redes. Perdi a minha família quando as máquinas passaram.",
+						"EN": "Now I look around and only see churned sand and nets. I lost my family when the machines came through.",
+						"JP": "今は見渡す限り、掘り返された砂と網ばかりだ。機械が通った時、僕は家族を失ったんだ。",
+						"IT": "Ora mi guardo intorno e vedo solo sabbia smossa e reti. Ho perso la mia famiglia quando sono passate le macchine.",
+						"ME": "Sada gledam okolo i vidim samo prevrnut pijesak i mreže. Izgubio sam porodicu kad su mašine prošle."
+					},
+					{
+						"PT": "Encontrei estes pedaços do que costumava ser o nosso fundo do mar. Podes ajudar-me a lembrar como era?",
+						"EN": "I found these pieces of what used to be our seafloor. Can you help me remember what it looked like?",
+						"JP": "かつての海底の欠片を見つけたんだ。どんな姿だったか思い出すのを手伝ってくれないかい？",
+						"IT": "Ho trovato questi pezzi di quello che era il nostro fondale. Puoi aiutarmi a ricordare com'era?",
+						"ME": "Našao sam ove djeliće onoga što je nekad bilo naše dno. Možeš li mi pomoći da se sjetim kako je izgledalo?"
+					}
+				],
+				"leave": [
+					{
+						"PT": "É difícil olhar para o passado, eu sei. Volta quando tiveres forças.",
+						"EN": "It's hard to look at the past, I know. Come back when you have the strength.",
+						"JP": "過去を見るのはつらいよね、分かるよ。力が湧いたらまた来て。",
+						"IT": "È difficile guardare al passato, lo so. Torna quando avrai le forze.",
+						"ME": "Teško je gledati u prošlost, znam. Vrati se kad skupiš snage."
+					}
+				],
+				"back": [
+					{
+						"PT": "Vieste ajudar-me a reconstruir a memória da minha casa?",
+						"EN": "Did you come to help me rebuild the memory of my home?",
+						"JP": "僕の家の記憶を取り戻すのを手伝ってくれるの？",
+						"IT": "Sei venuto ad aiutarmi a ricostruire il ricordo della mia casa?",
+						"ME": "Došao si da mi pomogneš da obnovim sjećanje na moj dom?"
+					}
+				],
+				"again": [
+					{
+						"PT": "Obrigado por não desistires de nós, humano.",
+						"EN": "Thank you for not giving up on us, human.",
+						"JP": "僕たちを見捨てないでいてくれてありがとう、人間さん。",
+						"IT": "Grazie per non averci abbandonato, umano.",
+						"ME": "Hvala što niste odustali od nas, čovječe."
+					}
+				],
+				"win": [
+					{
+						"PT": "Era exatamente assim... As ervas marinhas dançavam e os corais davam abrigo aos bebés peixes.",
+						"EN": "It was exactly like this... The seagrass danced and the corals gave shelter to the baby fish.",
+						"JP": "まさにこうだった… 海草が踊り、サンゴが魚の赤ちゃんたちを守っていたんだ。",
+						"IT": "Era esattamente così... Le alghe danzavano e i coralli davano rifugio ai pesciolini.",
+						"ME": "Baš je bilo ovako... Morska trava je plesala, a korali su pružali utočište ribicama."
+					},
+					{
+						"PT": "Mas vocês humanos arrancaram tudo para criar viveiros de amêijoas. Sim, elas dão dinheiro, mas onde é que nós vivemos agora?",
+						"EN": "But you humans ripped it all out to create clam farms. Yes, they make money, but where do we live now?",
+						"JP": "でも君たち人間は、アサリの養殖場を作るために全部引き抜いてしまった。確かにお金にはなるだろうけど、僕たちはどこに住めばいいの？",
+						"IT": "Ma voi umani avete strappato via tutto per creare allevamenti di vongole. Sì, portano soldi, ma noi ora dove viviamo?",
+						"ME": "Ali vi ljudi ste sve isčupali da biste napravili farmu školjki. Da, one donose novac, ali gdje mi sad da živimo?"
+					},
+					{
+						"PT": "Sem estas plantas, a água fica turva e não há oxigénio. Trocámos um oceano vivo por um deserto de lama.",
+						"EN": "Without these plants, the water gets murky and there is no oxygen. We traded a living ocean for a mud desert.",
+						"JP": "植物がないと、水は濁って酸素もなくなる。生きた海が、泥の砂漠に変わってしまったんだ。",
+						"IT": "Senza queste piante, l'acqua diventa torbida e non c'è ossigeno. Abbiamo scambiato un oceano vivo con un deserto di fango.",
+						"ME": "Bez ovih biljaka, voda postaje mutna i nema kiseonika. Zamijenili smo živi okean za blatnjavu pustinju."
+					}
+				]
+			}
+		],
+		"Kark":[
+			{
+				"first_dialogue": [
+					{
+						"PT": "Cof, cof! Não te aproximes! As minhas guelras... cof... estão cheias de areia. Não consigo respirar!",
+						"EN": "Cough, cough! Don't come closer! My gills... cough... are full of sand. I can't breathe!",
+						"JP": "ゴホッ、ゴホッ！近づくな！エラが… ゴホッ… 砂でいっぱいだ。息ができない！",
+						"IT": "Coff, coff! Non avvicinarti! Le mie branchie... coff... sono piene di sabbia. Non riesco a respirare!",
+						"ME": "Kašlj, kašlj! Ne prilazi! Moje škrge... kašlj... pune su pijeska. Ne mogu da dišem!"
+					},
+					{
+						"PT": "Humano? Tu és o tal %s? Olha para esta água... está tão turva que nem te vejo bem.",
+						"EN": "Human? Are you that %s? Look at this water... it's so murky I can barely see you.",
+						"JP": "人間？お前が噂の%sか？この水を見てくれ… 濁りすぎてお前がよく見えないよ。",
+						"IT": "Umano? Sei quel %s? Guarda quest'acqua... è così torbida che non ti vedo bene.",
+						"ME": "Čovjek? Ti si taj %s? Pogledaj ovu vodu... toliko je mutna da te jedva vidim.",
+						"receive_input": true,
+						"receive_input_order": ["character_name"]
+					},
+					{
+						"PT": "A entrada da ria está entupida com areia. A água fresca não entra e nós estamos a sufocar aqui dentro.",
+						"EN": "The inlet is clogged with sand. Fresh water isn't coming in and we are suffocating in here.",
+						"JP": "入江の入り口が砂で詰まってるんだ。新鮮な水が入ってこなくて、僕たちはここで窒息しそうだ。",
+						"IT": "L'ingresso della ria è intasato dalla sabbia. L'acqua fresca non entra e noi stiamo soffocando qui dentro.",
+						"ME": "Ulaz u rijeku je začepljen pijeskom. Svježa voda ne ulazi i mi se gušimo ovdje."
+					},
+					{
+						"PT": "Estou a tentar perceber como era o canal antigamente com estes pedaços. Podes ajudar-me a limpar esta visão?",
+						"EN": "I'm trying to figure out what the channel used to look like with these pieces. Can you help me clear this vision?",
+						"JP": "この欠片を使って、昔の水路がどうだったか思い出そうとしてるんだ。この視界を晴らすのを手伝ってくれないか？",
+						"IT": "Sto cercando di capire com'era il canale un tempo con questi pezzi. Puoi aiutarmi a chiarire questa visione?",
+						"ME": "Pokušavam da shvatim kako je kanal nekad izgledao uz pomoć ovih komada. Možeš li pomoći da razbistrim ovaj pogled?"
+					}
+				],
+				"leave": [
+					{
+						"PT": "A areia magoa-te os olhos? Imagina a nós, que temos de a respirar.",
+						"EN": "Does the sand hurt your eyes? Imagine us, who have to breathe it.",
+						"JP": "砂で目が痛いだって？それを吸わなきゃいけない僕たちの身にもなってよ。",
+						"IT": "La sabbia ti fa male agli occhi? Immagina a noi, che dobbiamo respirarla.",
+						"ME": "Pijesak te boli za oči? Zamisli kako je nama, koji moramo da ga udišemo."
+					}
+				],
+				"back": [
+					{
+						"PT": "Vamos lá, temos de abrir caminho para a água nova entrar.",
+						"EN": "Let's go, we need to make way for the new water to come in.",
+						"JP": "さあ、新しい水が入ってくるように道を開けよう。",
+						"IT": "Forza, dobbiamo far strada all'acqua nuova.",
+						"ME": "Hajde, moramo napraviti put da nova voda uđe."
+					}
+				],
+				"again": [
+					{
+						"PT": "Isso mesmo! Sinto a água a querer fluir.",
+						"EN": "That's it! I feel the water wanting to flow.",
+						"JP": "その調子！水が流れたがっているのを感じるよ。",
+						"IT": "Esatto! Sento l'acqua che vuole scorrere.",
+						"ME": "To je to! Osjećam da voda želi da teče."
+					}
+				],
+				"win": [
+					{
+						"PT": "Uau... Olha para esta água límpida e azul! É um espaço aberto perfeito para nadar livremente.",
+						"EN": "Wow... Look at this clear blue water! It's a perfect open space to swim freely.",
+						"JP": "うわあ… この透き通った青い水を見て！自由に泳げる完璧なオープンスペースだ。",
+						"IT": "Wow... Guarda quest'acqua limpida e blu! È uno spazio aperto perfetto per nuotare liberamente.",
+						"ME": "Vau... Pogledaj ovu bistru plavu vodu! To je savršen otvoren prostor za slobodno plivanje."
+					},
+					{
+						"PT": "Quando os canais estão abertos, a maré entra e limpa tudo. Sem as barreiras de areia, a Ria respira e a água renova-se.",
+						"EN": "When the channels are open, the tide comes in and cleans everything. Without sand barriers, the Ria breathes and the water renews itself.",
+						"JP": "水路が開いていれば、潮が入ってきて全てをきれいにしてくれる。砂の壁がなければ、リア（入江）は呼吸し、水は新しくなるんだ。",
+						"IT": "Quando i canali sono aperti, la marea entra e pulisce tutto. Senza barriere di sabbia, la Ria respira e l'acqua si rinnova.",
+						"ME": "Kada su kanali otvoreni, plima ulazi i čisti sve. Bez pješčanih barijera, rijeka diše i voda se obnavlja."
+					},
+					{
+						"PT": "É assim que deve ser: água limpa e corrente, nunca estagnada. Ajuda-nos a manter o caminho do mar sempre aberto.",
+						"EN": "This is how it should be: clean, flowing water, never stagnant. Help us keep the path to the sea always open.",
+						"JP": "こうあるべきなんだ。淀みのない、きれいに流れる水。海への道をいつも開けておくのを手伝ってくれ。",
+						"IT": "È così che dovrebbe essere: acqua pulita e corrente, mai stagnante. Aiutaci a tenere la via per il mare sempre aperta.",
+						"ME": "Ovako treba da bude: čista, tekuća voda, nikad ustajala. Pomozi nam da održimo put do mora uvijek otvorenim."
+					}
+				]
+			}
+		],
+		"Paco":[
+			{
+				"first_dialogue": [
+					{
+						"PT": "Psst. Agente %s. Aqui o Agente Especial Paco. A missão 'Fundo Verde' falhou.",
+						"EN": "Psst. Agent %s. Special Agent Paco here. Mission 'Green Bottom' has failed.",
+						"JP": "シーッ。エージェント%s。こちらは特別捜査官パコ。作戦「緑の底」は失敗した。",
+						"IT": "Psst. Agente %s. Qui Agente Speciale Paco. La missione 'Fondale Verde' è fallita.",
+						"ME": "Psst. Agent %s. Ovdje specijalni agent Paco. Misija 'Zeleno dno' je propala.",
+						"receive_input": true,
+						"receive_input_order": ["character_name"]
+					},
+					{
+						"PT": "Antigamente, eu podia atravessar este lodaçal invisível, escondido numa floresta subaquática. Mas agora... é um deserto.",
+						"EN": "In the old days, I could cross this mudflat invisible, hidden in an underwater forest. But now... it's a desert.",
+						"JP": "かつては、水中の森に隠れてこの干潟を見えずに渡れたんだ。だが今は… 砂漠だ。",
+						"IT": "Un tempo potevo attraversare questa piana di fango invisibile, nascosto in una foresta sottomarina. Ma ora... è un deserto.",
+						"ME": "Nekad sam mogao preći ovo blato nevidljiv, skriven u podvodnoj šumi. Ali sada... to je pustinja."
+					},
+					{
+						"PT": "Esqueci-me do nome de código do nosso melhor esconderijo. Não é alga, é uma planta especial! Sem ela, os peixes bebés e eu somos alvos fáceis.",
+						"EN": "I forgot the code name of our best hideout. It's not algae, it's a special plant! Without it, baby fish and I are sitting ducks.",
+						"JP": "最高の隠れ家のコードネームを忘れてしまった。藻じゃない、特別な植物なんだ！それがないと、魚の赤ちゃんも私も格好の的だ。",
+						"IT": "Ho dimenticato il nome in codice del nostro miglior nascondiglio. Non è un'alga, è una pianta speciale! Senza di essa, io e i pesciolini siamo bersagli facili.",
+						"ME": "Zaboravio sam kodno ime našeg najboljeg skrovišta. Nije alga, to je posebna biljka! Bez nje, ribice i ja smo lake mete."
+					},
+					{
+						"PT": "Preciso de enviar um pedido de auxílio. Ajuda-me a codificar a mensagem. O que é que perdemos?",
+						"EN": "I need to send a distress signal. Help me encode the message. What have we lost?",
+						"JP": "救援要請を送らなきゃならない。メッセージの暗号化を手伝ってくれ。我々は何を失った？",
+						"IT": "Devo inviare una richiesta di aiuto. Aiutami a codificare il messaggio. Cosa abbiamo perso?",
+						"ME": "Moram poslati poziv u pomoć. Pomozi mi da šifrujem poruku. Šta smo izgubili?"
+					}
+				],
+				"leave": [
+					{
+						"PT": "Vais deixar um agente no terreno sem cobertura? Isso é traição!",
+						"EN": "Leaving an agent in the field without cover? That's treason!",
+						"JP": "潜伏場所もないエージェントを置き去りにするのか？裏切りだ！",
+						"IT": "Lasci un agente sul campo senza copertura? Questo è tradimento!",
+						"ME": "Ostavljaš agenta na terenu bez zaklona? To je izdaja!"
+					}
+				],
+				"back": [
+					{
+						"PT": "Reagrupar! Temos de restabelecer a camuflagem imediatamente.",
+						"EN": "Regroup! We need to re-establish camouflage immediately.",
+						"JP": "再集結！直ちにカモフラージュを再構築する必要がある。",
+						"IT": "Raggrupparsi! Dobbiamo ristabilire la mimetizzazione immediatamente.",
+						"ME": "Pregrupisavanje! Moramo odmah ponovo uspostaviti kamuflažu."
+					}
+				],
+				"win": [
+					{
+						"PT": "Código aceite: ERVA, RAIZ, ZOSTERA. O Quartel General confirmou: referimo-nos à 'Zostera noltii'.",
+						"EN": "Code accepted: GRASS, ROOT, ZOSTERA. Headquarters confirmed: we are referring to 'Zostera noltii'.",
+						"JP": "コード受理：草、根、ゾステラ。司令部確認：対象は『Zostera noltii』だ。",
+						"IT": "Codice accettato: ERBA, RADICE, ZOSTERA. Il Quartier Generale ha confermato: ci riferiamo alla 'Zostera noltii'.",
+						"ME": "Kod prihvaćen: TRAVA, KORIJEN, ZOSTERA. Štab je potvrdio: mislimo na 'Zostera noltii'."
+					},
+					{
+						"PT": "A Zostera não é uma alga, é uma planta com flores e raízes que segura a areia e nos esconde. É a pradaria do mar.",
+						"EN": "Zostera is not algae, it is a plant with flowers and roots that holds the sand and hides us. It is the meadow of the sea.",
+						"JP": "アマモは藻類じゃなくて、花も咲くし、根っこで砂を固定して僕らを隠してくれる植物なんだ。海の草原だよ。",
+						"IT": "La Zostera non è un'alga, è una pianta con fiori e radici che trattiene la sabbia e ci nasconde. È la prateria del mare.",
+						"ME": "Zostera nije alga, to je biljka sa cvjetovima i korijenjem koja drži pijesak i skriva nas. To je livada mora."
+					},
+					{
+						"PT": "Mas a apanha excessiva de amêijoa revira o solo e arranca as raízes. Sem Zostera, o fundo torna-se um deserto sem vida. Protege o nosso relvado!",
+						"EN": "But excessive clam digging churns the soil and rips out the roots. Without Zostera, the bottom becomes a lifeless desert. Protect our lawn!",
+						"JP": "でも、アサリの採りすぎで土が掘り返されて、根こそぎ抜かれてしまうんだ。アマモがないと、海底は命のない砂漠になる。僕らの芝生を守ってくれ！",
+						"IT": "Ma l'eccessiva raccolta di vongole smuove il terreno e strappa le radici. Senza Zostera, il fondale diventa un deserto senza vita. Proteggi il nostro prato!",
+						"ME": "Ali prekomjerno sakupljanje školjki prevrće tlo i čupa korijenje. Bez Zostere, dno postaje beživotna pustinja. Čuvaj naš travnjak!"
+					}
+				]
+			}
+		],
+		"Tito":[
+			{
+				"first_dialogue": [
+					{
+						"PT": "Saudações, %s. O Professor Tito saúda-te. Estou preocupadíssimo. Sinto a minha armadura a ficar mais fraca.",
+						"EN": "Greetings, %s. Professor Tito greets you. I am extremely worried. I feel my armor getting weaker.",
+						"JP": "やあ、%s。ティト教授だ。私は非常に心配している。私の鎧が弱くなっているのを感じるんだ。",
+						"IT": "Saluti, %s. Il Professor Tito ti saluta. Sono preoccupatissimo. Sento la mia armatura diventare più debole.",
+						"ME": "Zdravo, %s. Profesor Tito te pozdravlja. Veoma sam zabrinut. Osjećam da mi oklop postaje slabiji.",
+						"receive_input": true,
+						"receive_input_order": ["character_name"]
+					},
+					{
+						"PT": "O mar está a mudar quimicamente. Estava a calcular a fórmula, mas o sol aqueceu-me o miolo e esqueci os componentes.",
+						"EN": "The sea is changing chemically. I was calculating the formula, but the sun heated up my brain and I forgot the components.",
+						"JP": "海の化学的性質が変わってきている。式を計算していたのだが、太陽で脳みそが温まって成分を忘れてしまった。",
+						"IT": "Il mare sta cambiando chimicamente. Stavo calcolando la formula, ma il sole mi ha scaldato il cervello e ho dimenticato i componenti.",
+						"ME": "More se hemijski mijenja. Računao sam formulu, ali sunce mi je zagrijalo mozak i zaboravio sam komponente."
+					},
+					{
+						"PT": "Tem a ver com o ar sujo que as vossas fábricas libertam, o que isso cria na água, e o que destrói no meu corpo. É uma reação em cadeia!",
+						"EN": "It has to do with the dirty air your factories release, what it creates in the water, and what destroys in my body. It's a chain reaction!",
+						"JP": "君たちの工場が出す汚れた空気、それが水の中に作り出すもの、そして私の体で破壊されるものに関係している。連鎖反応だ！",
+						"IT": "Ha a che fare con l'aria sporca che le vostre fabbriche rilasciano, cosa crea nell'acqua, e cosa distrugge nel mio corpo. È una reazione a catena!",
+						"ME": "Ima veze sa prljavim vazduhom koji vaše fabrike ispuštaju, šta to stvara u vodi i šta uništava u mom tijelu. To je lančana reakcija!"
+					},
+					{
+						"PT": "Para o bem da ciência, ajuda-me a lembrar. Quais são as três palavras desta tragédia?",
+						"EN": "For the sake of science, help me remember. What are the three words of this tragedy?",
+						"JP": "科学のために、思い出すのを手伝ってくれ。この悲劇の3つの言葉は何だ？",
+						"IT": "Per il bene della scienza, aiutami a ricordare. Quali sono le tre parole di questa tragedia?",
+						"ME": "Za dobrobit nauke, pomozi mi da se sjetim. Koje su tri riječi ove tragedije?"
+					}
+				],
+				"leave": [
+					{
+						"PT": "A ignorância é uma bênção, não é? Enquanto tu ignoras, eu dissolvo-me.",
+						"EN": "Ignorance is bliss, isn't it? While you ignore it, I dissolve.",
+						"JP": "知らぬが仏とはこのことか。君が無視している間に、私は溶けていくのだ。",
+						"IT": "L'ignoranza è una benedizione, vero? Mentre tu ignori, io mi dissolvo.",
+						"ME": "Neznanje je blagoslov, zar ne? Dok ti ignorišeš, ja se rastvaram."
+					}
+				],
+				"back": [
+					{
+						"PT": "Voltaste para o laboratório? Rápido, o nível de acidez está a subir!",
+						"EN": "Back to the lab? Quick, the acidity level is rising!",
+						"JP": "研究室に戻ってきたか？急げ、酸性度が上がっているぞ！",
+						"IT": "Tornato in laboratorio? Presto, il livello di acidità sta salendo!",
+						"ME": "Vratio si se u laboratoriju? Brzo, nivo kiselosti raste!"
+					}
+				],
+				"win": [
+					{
+						"PT": "Eureka! FUMO, ÁCIDO, CASCA! A equação está correta... e é aterradora.",
+						"EN": "Eureka! SMOKE, ACID, SHELL! The equation is correct... and it is terrifying.",
+						"JP": "ユリイカ！煙、酸、殻！方程式は正しい… そして恐ろしい。",
+						"IT": "Eureka! FUMO, ACIDO, GUSCIO! L'equazione è corretta... ed è terrificante.",
+						"ME": "Eureka! DIM, KISELINA, OKLOP! Jednačina je tačna... i zastrašujuća je."
+					},
+					{
+						"PT": "Quando os humanos libertam demasiado CO2, o oceano absorve-o e torna-se mais ácido. Esse ácido consome o carbonato de cálcio da água.",
+						"EN": "When humans release too much CO2, the ocean absorbs it and becomes more acidic. This acid consumes calcium carbonate from the water.",
+						"JP": "人間がCO2を出しすぎると、海がそれを吸収して酸性になる。その酸が水中の炭酸カルシウムを消費してしまうんだ。",
+						"IT": "Quando gli umani rilasciano troppa CO2, l'oceano la assorbe e diventa più acido. Questo acido consuma il carbonato di calcio dall'acqua.",
+						"ME": "Kada ljudi ispuštaju previše CO2, okean ga apsorbuje i postaje kiseliji. Ta kiselina troši kalcijum karbonat iz vode."
+					},
+					{
+						"PT": "Sem cálcio, nós caranguejos, os corais e as amêijoas não conseguimos construir as nossas cascas. É como se tivéssemos osteoporose do mar.",
+						"EN": "Without calcium, we crabs, corals, and clams cannot build our shells. It's like we have osteoporosis of the sea.",
+						"JP": "カルシウムがないと、僕たちカニやサンゴ、アサリは殻を作れない。「海の骨粗鬆症」にかかっているようなものさ。",
+						"IT": "Senza calcio, noi granchi, i coralli e le vongole non riusciamo a costruire i nostri gusci. È come se avessimo l'osteoporosi del mare.",
+						"ME": "Bez kalcijuma, mi rakovi, korali i školjke ne možemo da gradimo svoje oklope. To je kao da imamo osteoporozu mora."
+					}
+				]
+			}
+		],
+		"Tom":[
+			{
+				"first_dialogue": [
+					{
+						"PT": "Olá! Também vieste ajudar na limpeza? Eu parei um pouco para descansar as costas.",
+						"EN": "Hello! Did you come to help with the cleanup too? I stopped for a bit to rest my back.",
+						"JP": "やあ！君も掃除の手伝いに来たのかい？僕は腰を休めるために少し休憩中さ。",
+						"IT": "Ciao! Sei venuto ad aiutare con la pulizia anche tu? Mi sono fermato un po' per riposare la schiena.",
+						"ME": "Zdravo! Jesi li i ti došao da pomogneš u čišćenju? Stao sam malo da odmorim leđa."
+					},
+					{
+						"PT": "Olha para este horizonte... Às vezes, com tanto lixo para apanhar, esquecemo-nos de olhar para cima e apreciar a beleza que estamos a tentar salvar.",
+						"EN": "Look at this horizon... Sometimes, with so much trash to pick up, we forget to look up and appreciate the beauty we are trying to save.",
+						"JP": "この地平線を見てごらん… ゴミ拾いに夢中になりすぎて、僕たちが守ろうとしているこの美しさを見るのを忘れてしまうことがあるんだ。",
+						"IT": "Guarda questo orizzonte... A volte, con tanta spazzatura da raccogliere, ci dimentichiamo di guardare in alto e apprezzare la bellezza che stiamo cercando di salvare.",
+						"ME": "Pogledaj ovaj horizont... Ponekad, sa toliko smeća za pokupiti, zaboravimo pogledati gore i cijeniti ljepotu koju pokušavamo spasiti."
+					},
+					{
+						"PT": "É uma paz incrível, não achas? É exatamente por isto que vale a pena todo o esforço.",
+						"EN": "It's an incredible peace, isn't it? This is exactly why all the effort is worth it.",
+						"JP": "信じられないくらい平和だろ？だからこそ、努力する価値があるんだ。",
+						"IT": "È una pace incredibile, vero? È esattamente per questo che ne vale la pena.",
+						"ME": "To je nevjerovatan mir, zar ne? Upravo zbog toga sav trud vrijedi."
+					}
+				],
+				"end_dialogue": [
+					{
+						"PT": "Vai indo na frente, %s. Eu vou ficar aqui mais uns minutos a guardar esta imagem na memória. É bom saber que não estou sozinho nesta luta.",
+						"EN": "Go ahead, %s. I'm going to stay here a few more minutes to keep this image in my memory. It's good to know I'm not alone in this fight.",
+						"JP": "先に行っててくれ、%s。僕はもう少しここで、この景色を目に焼き付けておくよ。この戦いで一人じゃないと知れてよかった。",
+						"IT": "Vai avanti tu, %s. Resterò qui ancora qualche minuto per imprimere questa immagine nella memoria. È bello sapere di non essere solo in questa lotta.",
+						"ME": "Samo naprijed, %s. Ostaću ovdje još nekoliko minuta da sačuvam ovu sliku u sjećanju. Dobro je znati da nisam sam u ovoj borbi.",
+						"receive_input": true,
+						"receive_input_order": ["character_name"]
+					}
+				]
+			}
+		]
+  	}
 }

@@ -25,6 +25,8 @@ shape = SubResource("BoxShape3D_gkvuf")
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, -1.0942905)
 collision_layer = 8
 metadata/type = false
+metadata/name = "rede"
+metadata/name_var = ""
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="iteract range" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0.6112062, 0)

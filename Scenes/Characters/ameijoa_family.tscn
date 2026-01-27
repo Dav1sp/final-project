@@ -186,7 +186,10 @@ collision_layer = 8
 metadata/type_minigame = ""
 metadata/path = ""
 metadata/game = ""
-metadata/Type = true
+metadata/name = ""
+metadata/name_var = "Ameijoa_yellow_pearl_family"
+metadata/first_talk = true
+metadata/type = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="iteract range" index="0"]
 transform = Transform3D(0.99949163, 0, 0.031881765, 0, 1.0000001, 0, -0.031881765, 0, 0.99949163, -0.122294605, 0.4009378, -0.03574848)

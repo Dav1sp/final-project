@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://col6x6k5s7cck"]
+[gd_scene load_steps=4 format=3 uid="uid://col6x6k5s7cck"]
 
 [ext_resource type="PackedScene" uid="uid://05tea8bkh05i" path="res://Assets/Sprites/mermaidpijama.blend" id="1_m1w7a"]
 [ext_resource type="Script" uid="uid://caim1mchijp47" path="res://Scenes/Characters/mermaid_NPC.gd" id="2_sr6yp"]
@@ -7,13 +7,8 @@
 radius = 1.1958008
 height = 6.446533
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_f183u"]
-height = 7.065032
-radius = 5.559082
-
-[node name="mermaidpijama" node_paths=PackedStringArray("iteract_range") instance=ExtResource("1_m1w7a")]
+[node name="mermaidpijama" instance=ExtResource("1_m1w7a")]
 script = ExtResource("2_sr6yp")
-iteract_range = NodePath("iteract range")
 
 [node name="Skeleton3D" parent="Character" index="0"]
 bones/0/position = Vector3(-0.4243164, -0.11277795, -244.20575)
@@ -69,19 +64,3 @@ bones/24/position = Vector3(-0.0003039655, 6.198936, -3.019326e-05)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04559828, 3.047485, -0.014091134)
 shape = SubResource("CapsuleShape3D_vjav7")
-
-[node name="iteract range" type="Area3D" parent="." index="3"]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0.058816016, 0.1499064, -0.078309715)
-collision_layer = 8
-metadata/type_minigame = ""
-metadata/path = ""
-metadata/game = ""
-metadata/Type = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="iteract range" index="0"]
-transform = Transform3D(0.99949163, 0, 0.031881765, 0, 1.0000001, 0, -0.031881765, 0, 0.99949163, -0.122294605, 3.011, -0.03574848)
-shape = SubResource("CylinderShape3D_f183u")
-debug_color = Color(0, 0.62664413, 0.5122134, 0.41960785)
-
-[connection signal="body_entered" from="iteract range" to="." method="_on_iteract_range_body_entered"]
-[connection signal="body_exited" from="iteract range" to="." method="_on_iteract_range_body_exited"]

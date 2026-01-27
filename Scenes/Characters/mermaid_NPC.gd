@@ -24,7 +24,7 @@ func _ready():
 func _on_iteract_range_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
 		body.body_enter_the_area(iteract_range)
-		iteract.get_node("TextEdit").text = 'Press E to Speak'
+		iteract.get_node("TextEdit").text = DialogueManager.get_dialogue_text('menu','press_e_npc')[0]
 		iteract.show()
 
 

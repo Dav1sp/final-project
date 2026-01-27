@@ -8,6 +8,7 @@ const UI_HEIGHT: int = 90
 @export var image_path: String = "res://Assets/PuzzleGame/thumb__2400_0_0_0_auto.jpg"
 @export var player: CharacterBody3D
 @export var npc: Node3D
+
 @export var GRID: int = 4
 
 var grey_tile_path = ColorRect.new()
@@ -56,17 +57,38 @@ var sound_ranges = [
 signal space_confirmado
 
 func _ready() -> void:
+	if self.GRID==4:
+		if GameData.puzzle_best_score_4 != null:
+			$CanvasLayer/UI/BestScore.text = DialogueManager.get_dialogue_text('menu','best_score')[0] + ' '+ str(GameData.puzzle_best_score_4)
+		else:
+			$CanvasLayer/UI/BestScore.text = DialogueManager.get_dialogue_text('menu','best_score')[0] + ' -'
+	elif self.GRID==5:
+		if GameData.puzzle_best_score_5 != null:
+			$CanvasLayer/UI/BestScore.text = DialogueManager.get_dialogue_text('menu','best_score')[0] + ' '+ str(GameData.puzzle_best_score_5)
+		else:
+			$CanvasLayer/UI/BestScore.text = DialogueManager.get_dialogue_text('menu','best_score')[0] + ' -'
+	elif self.GRID==6:
+		if GameData.puzzle_best_score_6 != null:
+			$CanvasLayer/UI/BestScore.text = DialogueManager.get_dialogue_text('menu','best_score')[0] + ' '+ str(GameData.puzzle_best_score_6)
+		else:
+			$CanvasLayer/UI/BestScore.text = DialogueManager.get_dialogue_text('menu','best_score')[0] + ' -'
 	ui_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	moves_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	win_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	grey_tile_path.color = Color(2.015, 2.015, 2.015, 0.729) # RGBA: last value = alpha (0.0-1.0)
 	grey_tile_path.size = Vector2(64, 64) 
+	$setting_background/Setting_panel/Setting/Exit_game.text = DialogueManager.get_dialogue_text('menu','exit_game')[0]
+	$setting_background/Setting_panel/Setting/Save_game.text = DialogueManager.get_dialogue_text('menu','save_game')[0]
+	$setting_background/Setting_panel/Setting/Close.text = DialogueManager.get_dialogue_text('menu','close')[0]
+	$CanvasLayer/Restart.text = DialogueManager.get_dialogue_text('menu','reset')[0]
 	start_game()
 
 
 func start_game() -> void:
 	self.image_help.texture = load(image_path)
 	self.image_background.texture = load(image_path)
+	
+	# Limpar tiles antigos
 	for n: Node2D in tiles:
 		if is_instance_valid(n):
 			n.queue_free()
@@ -78,12 +100,11 @@ func start_game() -> void:
 	previous = ""
 	t = 0
 
-	moves_label.text = "Moves: 0"
+	moves_label.text = DialogueManager.get_dialogue_text('menu','moves')[0]+' 0'
 	win_label.visible = false
 	win_label.text = ""
 	
 	var panel_size: Vector2 = game_panel.size
-	
 	var vp: Vector2 = get_viewport_rect().size  
 
 	var usable_h: float = vp.y - float(UI_HEIGHT)
@@ -103,11 +124,22 @@ func start_game() -> void:
 		rs.size = panel_size
 	collision_shape.position = game_panel.position + (panel_size / 2.0)
 
-	var image: Image = Image.load_from_file(image_path)
-	if image == null:
-		push_error("Ne mogu da učitam sliku: " + image_path)
+	# --- CARREGAMENTO DA IMAGEM ---
+	var loaded_texture = load(image_path)
+	if loaded_texture == null:
+		push_error("ERRO CRÍTICO: Não foi possível carregar a textura: " + image_path)
 		return
+		
+	var image: Image = loaded_texture.get_image()
 
+	# Descomprimir se necessário para editar
+	if image.is_compressed():
+		image.decompress()
+			
+	if image.get_format() != Image.FORMAT_RGBA8:
+		image.convert(Image.FORMAT_RGBA8)
+		
+	# Cortar a região quadrada
 	var w: int = image.get_width()
 	var h: int = image.get_height()
 	var side: int = min(w, h)
@@ -115,25 +147,16 @@ func start_game() -> void:
 	var y0: int = int((h - side) / 2)
 	image = image.get_region(Rect2i(x0, y0, side, side))
 
+	# Redimensionar para o tamanho exato da grelha
 	image.resize(GRID * tile_h, GRID * tile_h, Image.INTERPOLATE_CUBIC)
+	
+	# Textura completa para o final
 	var texture: ImageTexture = ImageTexture.create_from_image(image)
-
-	var grey_image = grey_tile_path
-
-	var gw: int = grey_image.size.x
-	var gh: int = grey_image.size.y
-	var gside: int = min(gw, gh)
-	var gx0: int = int((gw - gside) / 2)
-	var gy0: int = int((gh - gside) / 2)
-
-	var grey_texture: ImageTexture = ImageTexture.create_from_image(grey_image)
 
 	full_image.texture = texture
 	full_image.centered = true
 	full_image.hide()
-
 	full_image.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-
 	full_image.position = panel_size / 2.0
 
 	var tex_size: Vector2 = full_image.texture.get_size()
@@ -141,8 +164,11 @@ func start_game() -> void:
 		full_image.scale = Vector2(float(board_w) / tex_size.x, float(board_h) / tex_size.y)
 	else:
 		full_image.scale = Vector2.ONE
+		
+	# --- CRIAÇÃO DAS PEÇAS ---
 	for j: int in range(GRID):
 		for i: int in range(GRID):
+			# Cortar o pedaço da imagem
 			var region: Rect2i = Rect2i(i * tile_h, j * tile_h, tile_h, tile_h)
 			var new_img: Image = image.get_region(region)
 			var new_tex: ImageTexture = ImageTexture.create_from_image(new_img)
@@ -159,10 +185,13 @@ func start_game() -> void:
 			var tile_name: String = "Tile" + str(j * GRID + i + 1)
 			newtile.tilename = tile_name
 
+			# --- AQUI ESTÁ A MUDANÇA PARA O BURACO ---
 			if tile_name == "Tile16":
-				newtile.tiletexture = grey_texture
-				newtile.realtexture = new_tex
+				# Se for a última peça, passamos null (sem textura)
+				newtile.tiletexture = null 
+				newtile.realtexture = new_tex # Guardamos a textura real para o fim se precisares
 			else:
+				# Se for uma peça normal, pomos a imagem
 				newtile.tiletexture = new_tex
 
 			add_child(newtile)
@@ -174,7 +203,7 @@ func start_game() -> void:
 	save_restart_state()
 	self.sound = true
 	movecounter = 0
-	moves_label.text = "Moves: 0"
+	moves_label.text = DialogueManager.get_dialogue_text('menu','moves')[0] + ' 0'
 	win_label.visible = false
 	win_label.text = ""
 
@@ -255,12 +284,31 @@ func _process(_delta: float) -> void:
 
 		if _current_names() == solved_names and movecounter > 1:
 			full_image.show()
-			GameManager.win_label.get_child(0).text = 'Congratulation, you completed the game!\n Press space to continue'
+			GameManager.win_label.get_child(0).text = DialogueManager.get_dialogue_text('menu','complete_game')[0]
 			GameManager.win_label.show()
+			GameManager.win=true
 			if !song:
 				GameManager.win_audio.play()
 				song = true
 			await space_confirmado
+			if self.GRID==4:
+				if GameData.puzzle_best_score_4 != null:
+					if self.movecounter < GameData.puzzle_best_score_4:
+						GameData.puzzle_best_score_4 = self.movecounter
+				else:
+					GameData.puzzle_best_score_4 = self.movecounter
+			elif self.GRID==5:
+				if GameData.puzzle_best_score_5 != null:
+					if self.movecounter < GameData.puzzle_best_score_5:
+						GameData.puzzle_best_score_5 = self.movecounter
+				else:
+					GameData.puzzle_best_score_5 = self.movecounter
+			elif self.GRID==6:
+				if GameData.puzzle_best_score_6 != null:
+					if self.movecounter < GameData.puzzle_best_score_6:
+						GameData.puzzle_best_score_6 = self.movecounter
+				else:
+					GameData.puzzle_best_score_6 = self.movecounter
 			queue_free()
 
 
@@ -325,7 +373,7 @@ func swap_tiles(tile_src: int, tile_dst: int) -> void:
 	tiles[tile_dst] = temp_tile
 
 	movecounter += 1
-	moves_label.text = "Moves: " + str(movecounter)
+	moves_label.text = DialogueManager.get_dialogue_text('menu','moves')[0]+" " + str(movecounter)
 
 	previous = tiles[tile_dst].tilename
 
@@ -367,8 +415,6 @@ func _input(event):
 
 func exit_game():
 	self.player.minigame = false
-	self.npc.iteract.show()
-	GameManager.win_label.visible = false
 	queue_free()
 	pass
 

@@ -1,20 +1,144 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcyarng3uddky"]
+[gd_scene load_steps=28 format=3 uid="uid://dcyarng3uddky"]
 
 [ext_resource type="Script" uid="uid://cny5i8bo1ieb1" path="res://Scripts/dialogue.gd" id="1_v3au0"]
 [ext_resource type="FontFile" uid="uid://v770a62lemri" path="res://Assets/Fonts/TiresiasLpfont-qZ370.ttf" id="2_0fjus"]
+[ext_resource type="Texture2D" uid="uid://d0jyai52b8ald" path="res://Assets/PuzzleGame/light-cartoon-wood-texture-photo.jpg" id="2_u2o4w"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h34bx"]
-bg_color = Color(0.7381486, 0.9324047, 0.95790356, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.5236011, 0.76971847, 0.8773257, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gue02"]
+texture = ExtResource("2_u2o4w")
+modulate_color = Color(0.7176471, 0.5882353, 0.54509807, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7utue"]
+bg_color = Color(0.5268864, 0.4087015, 0.36675674, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.46588087, 0.35732132, 0.32112917, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_v3au0"]
-font_color = Color(0.003921569, 0.26666668, 0.34117648, 1)
+font_size = 12
+font_color = Color(0.98039216, 0.9764706, 0.9647059, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u2o4w"]
+content_margin_right = 90.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u2o4w"]
+bg_color = Color(0.27227482, 0.20080766, 0.17697516, 0.7764706)
+border_width_left = 5
+border_width_right = 5
+border_color = Color(0.27058825, 0.2, 0.1764706, 0.7764706)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gue02"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7utue"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gue02"]
+bg_color = Color(0.27058825, 0.2, 0.1764706, 0.7764706)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dnoa4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpl4r"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0, 0, 0.30980393)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tr5uy"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0, 0, 0.30980393)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68v60"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 6.0
+bg_color = Color(0.21960784, 0.21960784, 0.21960784, 0.30980393)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ybiic"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4gt0h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybiic"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0, 0, 0.30980393)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcve8"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0, 0, 0.30980393)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ojoc"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 6.0
+bg_color = Color(0.21960784, 0.21960784, 0.21960784, 0.30980393)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tr5uy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2k01s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gt0h"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0, 0, 0.30980393)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n274s"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0, 0, 0.30980393)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4emav"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 6.0
+bg_color = Color(0.27387273, 0.27387273, 0.27387273, 0.30980393)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bpl4r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dnoa4"]
 
 [node name="TextBox" type="CanvasLayer"]
+layer = 10
 script = ExtResource("1_v3au0")
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
@@ -23,16 +147,13 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -193.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 37
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
-
-[node name="Panel" type="Panel" parent="TextboxContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_h34bx")
 
 [node name="MarginContainer" type="MarginContainer" parent="TextboxContainer"]
 layout_mode = 2
@@ -41,50 +162,86 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/MarginContainer"]
+[node name="Panel2" type="Panel" parent="TextboxContainer/MarginContainer"]
 layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gue02")
 
-[node name="Name" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
+[node name="Panel" type="Panel" parent="TextboxContainer/MarginContainer/Panel2"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 9.0
+offset_right = 1092.0
+offset_bottom = 119.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7utue")
+
+[node name="HBoxContainer" type="Control" parent="TextboxContainer/MarginContainer/Panel2/Panel"]
+clip_contents = true
+anchors_preset = 0
+offset_left = 5.0
+offset_top = 12.0
+offset_right = 1078.0
+offset_bottom = 100.0
+
+[node name="Name" type="Label" parent="TextboxContainer/MarginContainer/Panel2/Panel/HBoxContainer"]
+clip_contents = true
+layout_mode = 0
+offset_left = 6.0
+offset_right = 86.0
+offset_bottom = 38.0
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0.003921569, 0.26666668, 0.34117648, 1)
+theme_override_colors/font_color = Color(0.98039216, 0.9764706, 0.9647059, 1)
 theme_override_fonts/font = ExtResource("2_0fjus")
-theme_override_font_sizes/font_size = 55
+theme_override_font_sizes/font_size = 24
 text = "Name:"
 autowrap_trim_flags = 0
 justification_flags = 0
 
-[node name="text" type="RichTextLabel" parent="TextboxContainer/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(91, 155)
-layout_mode = 2
+[node name="Press Spacebar" type="Label" parent="TextboxContainer/MarginContainer/Panel2/Panel/HBoxContainer"]
+layout_mode = 0
+offset_left = 972.0
+offset_top = 70.0
+offset_right = 1060.0
+offset_bottom = 84.0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.003921569, 0.26666668, 0.34117648, 1)
+theme_override_fonts/font = ExtResource("2_0fjus")
+theme_override_font_sizes/font_size = 10
+text = "space"
+label_settings = SubResource("LabelSettings_v3au0")
+horizontal_alignment = 1
+autowrap_trim_flags = 0
+justification_flags = 0
+
+[node name="text" type="RichTextLabel" parent="TextboxContainer/MarginContainer/Panel2/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.3611111
+anchor_right = 1.0
+anchor_bottom = 1.3611112
+offset_left = 86.0
+offset_top = 31.5
+offset_right = -3.0
+offset_bottom = -33.500008
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0.003921569, 0.26666668, 0.34117648, 1)
+theme_override_colors/default_color = Color(0.98039216, 0.9764706, 0.9647059, 1)
 theme_override_fonts/normal_font = ExtResource("2_0fjus")
 theme_override_fonts/bold_font = ExtResource("2_0fjus")
 theme_override_fonts/bold_italics_font = ExtResource("2_0fjus")
 theme_override_fonts/italics_font = ExtResource("2_0fjus")
 theme_override_fonts/mono_font = ExtResource("2_0fjus")
-theme_override_font_sizes/normal_font_size = 55
-text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-scroll_following_visible_characters = true
-autowrap_trim_flags = 0
-horizontal_alignment = 3
-vertical_alignment = 3
-justification_flags = 0
-
-[node name="Press Spacebar" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_colors/font_color = Color(0.003921569, 0.26666668, 0.34117648, 1)
-theme_override_fonts/font = ExtResource("2_0fjus")
-theme_override_font_sizes/font_size = 20
-text = "Press Spacebar"
-label_settings = SubResource("LabelSettings_v3au0")
-vertical_alignment = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u2o4w")
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 autowrap_trim_flags = 0
 justification_flags = 0
 
 [node name="disable_input" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -93,23 +250,29 @@ grow_vertical = 2
 color = Color(0.36862746, 0.36862746, 0.36862746, 0.45882353)
 
 [node name="insertInput" type="LineEdit" parent="disable_input"]
+z_index = 10
 clip_contents = true
 custom_minimum_size = Vector2(400, 70)
 layout_direction = 4
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.2
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.8
-anchor_bottom = 0.553
-offset_top = -43.0
-offset_bottom = 17.828003
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -239.0
+offset_top = -35.0
+offset_right = 241.0
+offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_0fjus")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_u2o4w")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_gue02")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7utue")
 
 [node name="Label" type="Label" parent="disable_input/insertInput"]
 layout_mode = 1
@@ -123,4 +286,93 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_0fjus")
-text = "Press Enter"
+text = "Enter"
+horizontal_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.36862746, 0.36862746, 0.36862746, 0.45882353)
+
+[node name="quiz_box" type="PanelContainer" parent="CanvasLayer"]
+layout_direction = 4
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = -163.0
+offset_right = 384.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_gue02")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/quiz_box"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/quiz_box/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/quiz_box/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0fjus")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_dnoa4")
+text = "Sobre os modos de produção e consumo dos humanos, eu acho que eles ____ visando a resolução dos problemas."
+autowrap_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/quiz_box/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/quiz_box/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/quiz_box/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_0fjus")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_bpl4r")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tr5uy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_68v60")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ybiic")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4gt0h")
+text = "Não deviam mudar"
+autowrap_mode = 3
+
+[node name="Button2" type="Button" parent="CanvasLayer/quiz_box/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_0fjus")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ybiic")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vcve8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ojoc")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tr5uy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2k01s")
+text = "Deviam mudar um pouco"
+autowrap_mode = 3
+
+[node name="Button3" type="Button" parent="CanvasLayer/quiz_box/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_0fjus")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_4gt0h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n274s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4emav")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bpl4r")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dnoa4")
+text = "Deviam mudar muito"
+autowrap_mode = 3

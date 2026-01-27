@@ -1,15 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv3gum3en5j8a"]
+[gd_scene load_steps=2 format=3 uid="uid://bv3gum3en5j8a"]
 
-[ext_resource type="PackedScene" uid="uid://c8rrtcfyixvq4" path="res://Scenes/Levels/scene_1.tscn" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://cdfwegc2olax1" path="res://Scenes/Characters/ameijoa_1.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://6o0bjfwnfrgk" path="res://control.tscn" id="2_0xm2m"]
 
 [node name="Main" type="Node3D"]
 metadata/_edit_vertical_guides_ = [-84242.0]
 
-[node name="character" parent="." instance=ExtResource("2_h2yge")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -33.562523, 0.94299865, -0.4377516)
-
-[node name="Map" parent="." instance=ExtResource("1_0xm2m")]
-
-[editable path="character"]
-[editable path="character/Sprit/mermaid"]
+[node name="Control" parent="." instance=ExtResource("2_0xm2m")]

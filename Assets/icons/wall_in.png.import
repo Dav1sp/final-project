@@ -2,24 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxas4ny17buem"
-path.etc2="res://.godot/imported/Blue Crab_360_F_247228043_eNXkq3rHjZiBsfQXFTHKMjBh9W0Vo4cI.jpg-aebec63ebf5651ec9432417dac21dc35.etc2.ctex"
+uid="uid://cjhaurvyph808"
+path="res://.godot/imported/wall_in.png-cad11827156618113040180da7c3c5b9.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
-"vram_texture": true
-}
-generator_parameters={
-"md5": "9951edf485e39418b48045102d70b59b"
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Blue Crab_360_F_247228043_eNXkq3rHjZiBsfQXFTHKMjBh9W0Vo4cI.jpg"
-dest_files=["res://.godot/imported/Blue Crab_360_F_247228043_eNXkq3rHjZiBsfQXFTHKMjBh9W0Vo4cI.jpg-aebec63ebf5651ec9432417dac21dc35.etc2.ctex"]
+source_file="res://Assets/icons/wall_in.png"
+dest_files=["res://.godot/imported/wall_in.png-cad11827156618113040180da7c3c5b9.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -27,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -41,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

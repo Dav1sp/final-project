@@ -4,9 +4,8 @@ extends Node
 @export var animation_name: String = "open"
 @export var min_time := 3.0
 @export var max_time := 6.0
-@onready var iteract = $"../../text_box"
+@export var iteract: Node
 @onready var iteract_range = $"iteract range"
-
 var player_in_zone := false
 
 func _on_area_3d_body_entered(body):
@@ -20,6 +19,9 @@ func _on_area_3d_body_exited(body):
 		print("Player left the zone!")
 		
 func _ready():
+	if iteract == null:
+		# ...ele vai buscar o padrão
+		iteract = $"../../text_box"
 	randomize()
 	_schedule_next()
 
@@ -41,7 +43,7 @@ func _play_animation():
 func _on_iteract_range_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
 		body.body_enter_the_area(iteract_range)
-		iteract.get_node("TextEdit").text = 'Press E to Speak'
+		iteract.get_node("TextEdit").text = DialogueManager.get_dialogue_text('menu','press_e_npc')[0]
 		iteract.show()
 
 

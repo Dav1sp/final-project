@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bs6imvs03bdmj"]
+[gd_scene load_steps=37 format=3 uid="uid://bs6imvs03bdmj"]
 
 [ext_resource type="Script" uid="uid://bkjf0rh6gx18j" path="res://Scripts/MiniGames/WordleGame/game.gd" id="1_jc43q"]
 [ext_resource type="FontFile" uid="uid://v770a62lemri" path="res://Assets/Fonts/TiresiasLpfont-qZ370.ttf" id="3_3b4ug"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://htfqb3td83nt" path="res://Assets/icons/volume.png" id="4_ly4xy"]
 [ext_resource type="Texture2D" uid="uid://b50go81a5u3xn" path="res://Assets/icons/setting.png" id="5_t8siw"]
 [ext_resource type="Texture2D" uid="uid://c731uqv2tvy7g" path="res://Assets/icons/mute.png" id="6_8okcl"]
+[ext_resource type="AudioStream" uid="uid://dow4mfy1kfq0u" path="res://Assets/Audio/keyboard-typing-one-short-1-292590.mp3" id="7_t8siw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3b4ug"]
 texture = ExtResource("3_fnsr5")
@@ -573,6 +574,9 @@ theme_override_font_sizes/font_size = 26
 text = "macacocaco"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_t8siw")
 
 [connection signal="pressed" from="Menu/PlayButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="setting_background/Setting_panel/Setting/Save_game" to="." method="_on_save_game_pressed"]

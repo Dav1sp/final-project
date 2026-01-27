@@ -171,7 +171,7 @@ size = Vector3(82.516, 28.317, 1)
 script = ExtResource("1_6jpfq")
 
 [node name="character" parent="." instance=ExtResource("2_lfem8")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -33.562523, 0.7661482, -0.4377516)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -33.562523, 0.94299865, -0.4377516)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_n323s")
@@ -2816,7 +2816,7 @@ transform = Transform3D(-0.022649838, 0, -0.09740116, 0, 0.1, 0, 0.09740116, 0, 
 iteract = NodePath("../../text_box")
 
 [node name="mermaidpreto" parent="NPCS" node_paths=PackedStringArray("iteract") instance=ExtResource("42_ebuwy")]
-transform = Transform3D(-0.052765284, 0, -0.084946014, 0, 0.1, 0, 0.084946014, 0, -0.052765284, -33.245, 0.8131844, -0.008283764)
+transform = Transform3D(-0.010558727, 0, -0.09944101, 0, 0.1, 0, 0.09944101, 0, -0.010558727, -33.061947, 0.94955456, -0.45365044)
 iteract = NodePath("../../text_box")
 
 [node name="iteract range" parent="NPCS/mermaidpreto" index="3"]

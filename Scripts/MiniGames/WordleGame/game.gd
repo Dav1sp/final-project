@@ -1,5 +1,10 @@
 extends Node2D
 
+
+@export var player: CharacterBody3D
+@export var npc: Node3D
+@export var wordle_array: Array
+
 @onready var scroll_container: ScrollContainer = $ScrollContainer
 @onready var grid: GridContainer = $ScrollContainer/GridContainer
 @onready var menu: CanvasLayer = $Menu
@@ -11,6 +16,7 @@ extends Node2D
 @onready var mute: Button = $Panel2/Mute
 @onready var volume: Button = $Panel2/Volume
 @onready var setting_background: ColorRect = $setting_background
+@onready var tents: Label = $Panel2/Tents
 
 @onready var play_button: Button = $Menu/PlayButton
 const LETTER_BUTTON_SCENE := preload("res://Scenes/MiniGames/WordleGame/button.tscn")
@@ -18,7 +24,6 @@ const LETTER_BUTTON_SCENE := preload("res://Scenes/MiniGames/WordleGame/button.t
 signal space_confirmado
 
 const MAX_LEN := 10
-const ATTEMPTS := 100
 const MIN_LEN := 1
 const CURSOR_HEIGHT := 70
 
@@ -30,16 +35,17 @@ var cursor_slot_valid := false
 
 var buttons: Array[Button] = []
 
-var wordle: String = "MATO"
+
+var wordle:String = ''
 var index := 0
 var current_row := 0
-
+var index_word :=0
 
 var is_animating := false
 
 enum Lang { EN, IT, PT, ME, JP }
 var current_lang: Lang = Lang.EN
-
+var can_receive_input: bool = false
 
 const TEXT_BOX_SCENE_PATH := "res://Scenes/UI/text_box.tscn"
 const DIALOGUE_SCRIPT_PATH := "res://Scripts/dialogue.gd"
@@ -133,8 +139,9 @@ var words_list: Array[String] = []
 
 func _ready():
 	buttons.clear()
-	cursor_timer.timeout.connect(_on_cursor_timer)
-
+	if not cursor_timer.timeout.is_connected(_on_cursor_timer):
+		cursor_timer.timeout.connect(_on_cursor_timer)
+	
 	for n in grid.get_children():
 		var b := n as Button
 		if b != null:
@@ -145,7 +152,14 @@ func _ready():
 
 	_apply_language_from_dialogue()
 	set_language(current_lang)
-	reset_game()
+	$setting_background/Setting_panel/Setting/Save_game.text = DialogueManager.get_dialogue_text('menu','save_game')[0]
+	$setting_background/Setting_panel/Setting/Close.text = DialogueManager.get_dialogue_text('menu','close')[0]
+	$setting_background/Setting_panel/Setting/Exit_game.text = DialogueManager.get_dialogue_text('menu','exit_game')[0]
+	tents.text = DialogueManager.get_dialogue_text('menu','level')[0]+" %d/%d"% [index_word +1, wordle_array.size()]
+	reset_game(wordle_array[index_word])
+	await get_tree().create_timer(0.2).timeout
+	can_receive_input = true
+	index_word = index_word + 1
 
 func _on_cursor_timer():
 	if not cursor_slot_valid:
@@ -185,8 +199,11 @@ func _unhandled_key_input(event):
 		return
 	if is_animating:
 		return
+	if !can_receive_input:
+		return
 
 	if event is InputEventKey and event.is_pressed() and not event.echo:
+		$AudioStreamPlayer.play()
 		if event.keycode == KEY_ENTER or event.keycode == KEY_KP_ENTER:
 			submit_current_row()
 			return
@@ -257,11 +274,22 @@ func _after_reveal(guess: String) -> void:
 		clear_cursor()
 		word_label.text = wordle
 		word_label.show()
-		GameManager.win_label.get_child(0).text = 'Congratulation, you completed the game!\n Press space to continue'
-		GameManager.win_label.show()
-		GameManager.win_audio.play()
-		await space_confirmado
-		queue_free()
+		if(index_word < wordle_array.size()):
+			GameManager.win_label.get_child(0).text = DialogueManager.get_dialogue_text('menu','half_level')[0] % [index_word, wordle_array.size()]
+			GameManager.win_label.show()
+			GameManager.win_audio.play()
+			await space_confirmado
+			_ready()
+			GameManager.win_label.hide()
+		else:
+			GameManager.win_label.get_child(0).text = DialogueManager.get_dialogue_text('menu','complete_game')[0]
+			GameManager.win=true
+			GameManager.win_label.show()
+			GameManager.win_audio.play()
+			await space_confirmado
+			self.player.minigame = false
+			self.npc.iteract.show()
+			queue_free()
 		#show_menu_delayed(0.35)
 		return
 
@@ -270,12 +298,6 @@ func _after_reveal(guess: String) -> void:
 
 func advance_row() -> void:
 	current_row += 1
-	if current_row >= ATTEMPTS:
-		clear_cursor()
-		label.text = t("YOU_LOST")
-		word_label.text = t("CORRECT_WORD") + " " + wordle
-		show_menu_delayed(0.35)
-		return
 
 	add_new_row()
 	index = current_row * MAX_LEN
@@ -423,7 +445,7 @@ func _process(delta: float) -> void:
 		# Detecta se a barra apareceu/sumiu (importante para o cursor não sumir do nada)
 	pass
 
-func reset_game():
+func reset_game(word):
 	is_animating = false
 	index = 0
 	current_row = 0
@@ -439,7 +461,7 @@ func reset_game():
 	
 	# 2. LIMPA O ARRAY: Caso contrário, o jogo tentará acessar botões deletados
 	buttons.clear()
-
+	wordle = word
 	print("Wordle:", wordle)
 
 	# 3. CRIA A PRIMEIRA LINHA
@@ -485,7 +507,9 @@ func get_random_wordle() -> String:
 	return words_list.pick_random()
 
 func _on_button_pressed():
-	reset_game()
+	if(index_word > wordle_array.size()):
+			reset_game(wordle_array[index_word])
+			index_word = index_word + 1
 	cursor.visible = true
 	cursor_timer.start()
 	update_cursor()

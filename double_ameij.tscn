@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcj8xk7oollhn"]
+
+[ext_resource type="PackedScene" uid="uid://c5c5hutcn2k44" path="res://Assets/Sprites/Ameijoa_blue_pearl.blend" id="1_l7j2o"]
+[ext_resource type="Script" uid="uid://b2864lbbyimxk" path="res://Assets/Sprites/ameijoa.gd" id="2_5h2qw"]
+[ext_resource type="PackedScene" uid="uid://xpl5ulvfsfh4" path="res://Assets/Sprites/Ameijoa.blend" id="3_stgoy"]
+[ext_resource type="Script" uid="uid://cy7tseq6k4dxh" path="res://Assets/Sprites/ameijoa_simple.gd" id="4_5h2qw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kj5qu"]
+size = Vector3(1.4584961, 0.98095703, 1.6482086)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ohi6t"]
+radius = 4.111328
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ticlh"]
+size = Vector3(1.4584961, 0.98095703, 1.6482086)
+
+[node name="double_ameij" type="Node3D"]
+
+[node name="Ameijoa_blue_pearl" parent="." instance=ExtResource("1_l7j2o")]
+transform = Transform3D(0.2976218, 0.020812217, -0.03143481, -0.026739862, 0.2928689, -0.059269108, 0.026575875, 0.061601132, 0.2924022, 10.892129, -2.9508214, 22.19302)
+script = ExtResource("2_5h2qw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ameijoa_blue_pearl"]
+transform = Transform3D(1.0000001, 7.450581e-09, 0, -1.4901161e-08, 1.0000001, -7.450581e-09, -2.9802322e-08, 7.450581e-09, 1.0000001, 0.8352051, -1.9073486e-06, 0.014259338)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ameijoa_blue_pearl/StaticBody3D"]
+transform = Transform3D(0.98806775, -0.15048937, 0.032788485, 0.15092689, 0.98848045, -0.011290595, -0.030711673, 0.01610452, 0.9993985, -0.12743378, -0.009521484, -0.03149414)
+shape = SubResource("BoxShape3D_kj5qu")
+
+[node name="iteract range" type="Area3D" parent="Ameijoa_blue_pearl"]
+transform = Transform3D(1.0000001, 5.5879354e-09, 7.450581e-09, -1.3038516e-08, 1.000001, -1.4901161e-08, -2.9802322e-08, 0, 1.0000005, 1.367363, -0.19479275, -1.1887054)
+collision_layer = 8
+metadata/type_minigame = "slide_puzzle"
+metadata/path = "\"res://Assets/PuzzleGame/thumb__2400_0_0_0_auto.jpg\""
+metadata/game = "\"res://Scenes/MiniGames/PuzzleGame/game.tscn\""
+metadata/grid = 5
+metadata/type = true
+metadata/name = "Gobys"
+metadata/name_var = "double_ameij"
+metadata/first_talk = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ameijoa_blue_pearl/iteract range"]
+transform = Transform3D(0.99999887, 3.1664968e-08, -1.1026859e-06, 1.3038516e-08, 0.9999999, 4.7683716e-07, 4.4703484e-08, 7.4505806e-08, 0.9999896, 0, 0, 0)
+shape = SubResource("CylinderShape3D_ohi6t")
+debug_color = Color(0, 0.62664413, 0.5122134, 0.41960785)
+
+[node name="ostra4" parent="." instance=ExtResource("3_stgoy")]
+transform = Transform3D(0.108466744, 0.0064452444, -0.2796309, -0.017720107, 0.29947618, 2.916152e-05, 0.27914318, 0.016506385, 0.10865812, 11.643149, -2.9363716, 21.358166)
+script = ExtResource("4_5h2qw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ostra4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83520126, 0, 0.014257431)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ostra4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12743378, -0.009521484, -0.03150034)
+shape = SubResource("BoxShape3D_ticlh")
+
+[connection signal="body_entered" from="Ameijoa_blue_pearl/iteract range" to="Ameijoa_blue_pearl" method="_on_iteract_range_body_entered"]
+[connection signal="body_exited" from="Ameijoa_blue_pearl/iteract range" to="Ameijoa_blue_pearl" method="_on_iteract_range_body_exited"]

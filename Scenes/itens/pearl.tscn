@@ -23,6 +23,8 @@ transform = Transform3D(-0.40898868, 0, -3.8160106e-08, 0, 0.29890516, 0, 3.5754
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 8
 metadata/type = false
+metadata/name = "pearl"
+metadata/name_var = ""
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="iteract range" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0.037797835, 0)

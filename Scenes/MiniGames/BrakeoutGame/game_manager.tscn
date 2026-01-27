@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxw58yajadxvg"]
+[gd_scene load_steps=9 format=3 uid="uid://bxw58yajadxvg"]
 
 [ext_resource type="Script" uid="uid://bxents1u7gdi7" path="res://Scripts/MiniGames/BrakeoutGame/game_manager.gd" id="1_tatf0"]
 [ext_resource type="FontFile" uid="uid://v770a62lemri" path="res://Assets/Fonts/TiresiasLpfont-qZ370.ttf" id="2_x0eq7"]
@@ -8,8 +8,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vatg3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uijn5"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4vdns"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uijn5"]
 bg_color = Color(0.50980395, 0.50980395, 0.50980395, 0)
@@ -31,39 +29,27 @@ offset_bottom = 650.0
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 2
 
-[node name="ScoreLabel" type="TextEdit" parent="CanvasLayer"]
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
 z_index = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 984.0
-offset_top = -76.0
-offset_right = 1141.0
-offset_bottom = -49.0
+offset_left = 935.0
+offset_top = -72.0
+offset_right = 1055.0
+offset_bottom = -42.0
 grow_vertical = 0
 size_flags_horizontal = 2
-size_flags_vertical = 10
+size_flags_vertical = 8
 mouse_force_pass_scroll_events = false
-mouse_default_cursor_shape = 0
-theme_override_colors/search_result_color = Color(18.892157, 18.892157, 18.892157, 1)
-theme_override_colors/search_result_border_color = Color(1, 1, 1, 1)
-theme_override_colors/caret_color = Color(1, 1, 1, 1)
-theme_override_colors/caret_background_color = Color(1, 1, 1, 1)
-theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
-theme_override_colors/selection_color = Color(18.892157, 18.892157, 18.892157, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.7176471, 0.5882353, 0.54509807, 1)
-theme_override_colors/background_color = Color(0.76244515, 0.53634405, 0.6792947, 0)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_x0eq7")
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxEmpty_vatg3")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_uijn5")
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_4vdns")
 text = "Score: 000"
-editable = false
-scroll_fit_content_width = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 visible = false

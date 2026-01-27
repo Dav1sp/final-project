@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 func gameOver():
 	GameManager.score = 0 #reset score if you want
 	GameManager.level = GameManager.level #reset level if you want
-	GameManager.win_label.get_child(0).text = "You Lose, Good Luck Next Time!\nPress Space to Continue"
+	GameManager.win_label.get_child(0).text = DialogueManager.get_dialogue_text('menu','lose_game')[0]
 	GameManager.win_label.show()
 	GameManager.lose_audio.play()
 	print('lose')

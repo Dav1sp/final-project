@@ -15,6 +15,9 @@ signal space_confirmado
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$setting_background/Setting_panel/Setting/Save_game.text = DialogueManager.get_dialogue_text('menu','save_game')[0]
+	$setting_background/Setting_panel/Setting/Close.text = DialogueManager.get_dialogue_text('menu','close')[0]
+	$setting_background/Setting_panel/Setting/Exit_game.text = DialogueManager.get_dialogue_text('menu','exit_game')[0]
 	GameManager.show_score(true)
 	setupLevel()
 
@@ -67,9 +70,10 @@ func setupLevel():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if GameManager.game_finished:
-		GameManager.win_label.get_child(0).text = 'Congratulation, you completed the game!\n Press space to continue'
+		GameManager.win_label.get_child(0).text = DialogueManager.get_dialogue_text('menu','complete_game')[0]
 		GameManager.win_label.show()
 		GameManager.win_audio.play()
+		GameManager.win=true
 		await space_confirmado
 		GameManager.score = 0
 		exit_game()
